@@ -1,0 +1,1115 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+          'event':'virtualPageView',
+          'page':{
+            'title':'Landing page',
+            'url':'/'
+          }
+        });
+        console.log('window.datalayer',window.dataLayer);
+    </script>
+    
+    <div class="home">
+    <form #termForm="ngForm" novalidate> 
+                <header>
+                    <div class="container">
+                        <div class="logoContentWrap clearfix"><a href="https://www.indiafirstlife.com/" style="cursor: pointer;" class="logo"><img src="/assets/images/indiaFirstLogo.png" alt="IndianFirst Life Insurance"></a></div>
+                        <div class="hamburgerMenu jsMenu topNav">
+                            <div class="navTrigger"><span></span><span></span><span></span></div>
+                        </div> 
+                             <div class="navContent">
+                                <div class="back"><a href="" class="navBack icon-close"> </a></div>
+                                <div class="navWrap">
+                                    <ul>
+                                        <li class="Calculatepremium"><a href="#calculatepremium">Calculate premium</a></li>
+                                        <li class="Aboutus"><a href="#Aboutus">About us</a></li>
+                                        <li class="benefits"><a href="#benefits">benefits</a></li>
+                                        <li class="features"><a href="#features">FEATURES</a></li>
+                                        <li class="testimonials"><a href="#testimonials">testimonials</a></li>
+                                        <li class="Blogs"><a href="#Blogs">Blogs</a></li>
+                                        <li class="faqs"><a href="#faqs">faq<span>s</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="resumApplicationBtn"><a href="#" type="button" data-toggle="modal" data-target="#resumeApplModal" class="applicationBtn">Resume application</a></div>
+                            </div>
+                    </div>
+                </header>  
+                <div  class="wrapper-content home" > 
+                        <div class="container">
+                            <ol class="breadcrumb">
+                              <li><a href="https://www.indiafirstlife.com/">Home</a></li>
+                              <li><a href="https://www.indiafirstlife.com/buy-online-life-insurance">Online Plans</a></li>
+                              <li class="active onlineTermLink">Online Term Plan</li>        
+                            </ol>
+                       </div> 
+                        <div class="mainBanner">
+                            <picture>
+                                <source media="(max-width: 480px)" srcset="/assets/images/NewBanner-Mobile.png"><img src="/assets/images/NewBanner.png" alt="Main banner" width="1600">
+                            </picture>
+                            <div class="container">
+                                <div class="bannerTextPlan">
+                                    <h2 class="guranteePlan">IndiaFirst Life<span>e-Term Plus Plan</span></h2>
+                                     <div class="rating">
+                                        <label title="1 stars" class="full checkedStar"></label>
+                                        <label title="1 stars" class="full checkedStar"></label>
+                                        <label title="1 stars" class="full checkedStar"></label>
+                                        <label title="1 stars" class="full checkedStar"></label>
+                                        <label title="1 stars" class="half"></label><span>(80 Votes)</span>
+                                    </div>
+                                    <a href="javascript:void(0)" class="btnDefault secondaryBtn" ng-click="downloadPDF('broucher')">Download Brochure</a><a href="#calculatepremium" class="btnDefault blueBtn js-anchor-link">Calculate Premium<span class="icon-rightarrow btnIcon"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                            <div style="padding: 2rem;text-align: center;"><p style="font-size: 1.6rem;font-family: Whitney-Medium;text-align: center;">Protect your family financially with a 50 Lakhs cover @<span style="font-weight: 600;"> Rs. 8/day*. </span>
+                            Claims** under COVID-19 covered.</p>
+                            </div>
+                       
+                    <div class="onlTermSectionWrap" id="calculatepremium">
+                        <!-- <div class="topCurve"></div> -->
+                        <div id="onlinetermWrapper" class="onlinetermWrapper">
+                            <div class="bird1"><img src="/assets/images/Bird.svg" alt="bird" width="35" height="33"></div>
+                            <div class="bird2"><img src="/assets/images/Bird.svg" alt="bird" width="43" height="42"></div>
+                            <div class="cloud1"><img src="/assets/images/Cloud.svg" alt="cloud" width="130" height="54"></div>
+                            <div class="cloud2"><img src="/assets/images/Cloud.svg" alt="cloud" width="97" height="40"></div>
+                            
+                            <div class="container"> 
+                                <div class="onlinetermSection forCurveSpacing" style="padding-top: 0">
+                                    
+                                    <div class="onlineTermForm">
+                                        <div class="row">
+                                            <!-- <div class="col-sm-5">
+                                                <div [ngClass]="{'errorBlock':termForm.controls['mobile'] && termForm.controls['mobile'].touched && termForm.controls['mobile'].invalid,'active': !termForm.controls['mobile']}" class="inputEffect mob">
+                                                    <label class="effectLabel star labelFocus"><span data-content="Mobile number" class="placeHolder">Mobile number</span></label><span class="defaultNo">+91</span>
+                                                    <input type="tel" appOnlynumber name="mobile" id="mobno" [(ngModel)]="assuredDOB.day"
+                                                     required minlength="10" maxlength="10" ng-pattern="/^[6-9][0-9]{9}$/" 
+                                                       class="textBox">
+                                                    <div *ngIf="termForm.controls['mobile'] && (termForm.controls['mobile'].touched) && !termForm.controls['mobile'].valid" class="error">Please enter valid Mobile Number</div>
+                                                  </div>
+                                            </div> -->
+                                            <div class="col-md-7 col-sm-7">
+                                                <!--Date of birth directive--> 
+                                                <!-- <dob id="termPlanDOB" validon-clk="validonClick" dob="quoteDetails.dob" selected-age="quoteDetails.age" min="{{min}}" max="{{max}}" birth-date="quoteDetails.date" birth-month="quoteDetails.month" birth-year="quoteDetails.year"></dob> -->
+                                                 <date-picker formname="termplan" formid="termid1" [validonclick]="validonClk"
+                                                  [inputdate]="quote.assuredDOB" (dateOfbirth)="quote.assuredDOB = $event;"></date-picker> 
+                                            </div>
+                                            <div class="col-md-5 col-sm-5"> 
+                                                <h6>Smoking Habits<span class="icon-no-smoking"></span></h6>
+                                                <div class="toggleBt active">
+                                                    <span class="chckCondition label1" [ngClass]="{'white': !quote.isSmoker}"><span class="spcfy1 icon-no-smoking"></span>No</span>
+                                                    <label class="switch">
+                                                        <input type="checkbox" [(ngModel)]="quote.isSmoker" name="isSmoker">
+                                                        <div class="slider round"></div>
+                                                    </label>
+                                                    <span class="chckCondition label2" [ngClass]="{'white': quote.isSmoker}"><span class="spcfy2 icon-smoking"></span>Yes</span>
+                                                </div>
+                                                <p>Say no if you haven&rsquo;t smoked in last 12 months</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-7 col-sm-7"> 
+                                                <h6>Gender</h6>
+                                                <ul class="clearfix">
+                                                    <li> 
+                                                        <label class="radioBt" [ngClass]="quote.assuredGender=='M'?'active':''"><span class="radioText"><span class="radioIcon icon-male"> </span>Male</span>
+                                                            <input type="radio" name="gender" value="M" [(ngModel)]="quote.assuredGender">
+                                                        </label>
+                                                    </li>
+                                                    <li> 
+                                                        <label class="radioBt" [ngClass]="quote.assuredGender=='F'?'active':''"><span class="radioText"><span class="radioIcon icon-female"></span>Female</span>
+                                                            <input type="radio" name="gender" value="F" [(ngModel)]="quote.assuredGender">
+                                                        </label>
+                                                    </li>
+                                                    <li> 
+                                                        <label class="radioBt" [ngClass]="quote.assuredGender=='O'?'active':''"><span class="radioText"><span class="radioIcon icon-others"></span>Other</span>
+                                                            <input type="radio" name="gender" value="O" [(ngModel)]="quote.assuredGender">
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mobCenter">
+                                                    <button type="button" class="defaultBtn blueBtn submit"  (click) ="getQuoteDetails()"><span>Get Quote</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><span class="scroll-btn"><span class="mouse"><span class="icon-top-arrow"></span></span></span>
+                            </div>
+                            <div class="bottomCurve"></div>
+                            <div class="house"><img src="/assets/images/House.svg" alt="home" width="230" height="107"></div>
+                            <div class="onlineFamily"><img src="/assets/images/Family.svg" alt="family" width="350" height="152"></div>
+                        </div>
+                    </div> 
+                    <div id="offersModal" role="dialog" class="modal fade videoPopup">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="videoWrapper">
+                                        <!-- <iframe width="854" height="480" src="" data-src="https://www.youtube.com/embed/ZT_4cQgofDs" allowfullscreen id="closeVideo"></iframe> -->
+                                        <!-- <iframe width="854" height="480" src="" data-src="https://www.youtube.com/embed/H9qWn18r9So" allowfullscreen id="closeVideo"></iframe> -->
+                                        <iframe width="854" height="480"  allowfullscreen id="closeVideo"></iframe>
+                                        <!-- ng-src="{{trustSrc(youTubeUrl.src1)}}" -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Aboutus" class="aboutOnlinePlanWrap">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h1> <span>About Indiafirst life</span>Online Term Plan</h1>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="loadmoreSec readMoreSec">
+                                            <p>IndiaFirst Life Online Term Plan is a term insurance plan which can be directly purchased online.</p>
+                                            <p class="loadmoreBlock"> This term plan is aimed at helping you ensure your financial security for an affordable price in the face of an unforeseen event. As our lives get busier, we at IndiaFirst Life want to make it easier and more convenient for you to secure the financial protection of your loved ones. With our online term insurance, you can buy term life insurance instantly with the click of a button. Our affordably-priced term insurance plans can be tailored to suit your specific requirements.</p>
+                                            <p class="loadmoreBlock">The online term insurance policy will provide you and your family with financial support in the face of unfortunate events like Accidental Total Permanent Disability (ATPD), Critical Illness (CI), and Death and Accidental Death (ADB). Our Online Term Plan offers you a choice of 7 different coverage options. </p><span class="loadBtn LoadMore">Read more</span><span class="loadBtn LoadLess">Read less</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p>The term policy covers uncertainties like </p>
+                                        <ul class="iconsPlans owl-carousel owl-theme mobileCarousal">
+                                            <li><span class="icon-demise-of-the-family-breadwinner-01"></span>demise of the <br/> family breadwinner</li>
+                                            <li><span class="icon-Accidental-total-permanent-disability-01"></span>Accidental total permanent disability</li>
+                                            <li><span class="icon-Critical-illnesses-as-well-as-Terminal-illness-01"></span>Critical illness</li>
+                                        </ul>
+                                        <div class="loadmoreSec readMoreSec">
+                                            <p>Our term policy also offers high flexibility as you can choose to pay your premium via several modes like monthly, quarterly, half yearly, yearly, or even a single premium as well as choose to receive the benefits as a lump sum or as level incomes.</p>
+                                            <p class="loadmoreBlock">The option to increase your Sum Assured is offered only under select coverage options (Life Benefit, Income Benefit, Income Plus Benefit, and Accident Shield Benefit). Choosing from our many coverage options, is one step closer to ensuring a financially secure future for both you and your family. Buy Term Insurance online to ensure a secure and happy future.</p><span class="loadBtn LoadMore">Read more</span><span class="loadBtn LoadLess">Read less</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="benefitsOfBuyingWrap">
+                            <div class="container">
+                                <div id="benefits" class="row">
+                                    <div class="col-md-4">
+                                        <h2><span>Benefits Of Buying</span>Term Insurance plan</h2>
+                                        <p class="bannerTitle">IndiaFirst Life Online Term Plan insurance secures your familys financial future and also has several <a href="https://www.indiafirstlife.com/individual-life-insurance/term-insurance" target="_blank">term insurance </a>benefits. Buy Term Plan online to enjoy the these benefits:</p><img src="/assets/images/famUmbrella.png" alt="" class="benefitsImg">
+                                    </div>
+                                    <div class="col-md-8 no-padding">
+                                        <div class="termIns loadmoreSec faqsContent">
+                                            <div class="boxParts">
+                                                <div class="accord">
+                                                    <h3>Financial Protection from Inflation<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">With the Online Term Plan, you can increase your coverage by 5% per annum.</div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>Coverage against Critical Illnesses<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">If diagnosed with a critical illness, a lump sum payout is applicable as a term insurance benefit.</div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>Accidental Coverage<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">In case of death due to an accident, an additional payout will be applicable under the Accident Shield Benefit coverage option.</div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>Accidental Disability Support<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">Term life insurance offers a lump sum payout in case of a disability due to an accident (available under Disability Shield Benefit).</div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3 class="last">Long Term Security<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">Under the term policy�s Critical Illness Protector Benefit, regular monthly payouts will be made to meet expenses due to degenerative diseases like Alzheimer�s.</div>
+                                                </div>
+                                            </div>
+                                            <div class="boxParts loadmoreBlock">
+                                                <div class="accord">
+                                                    <h3>COVID-19 Death Coverage<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">Our Online Term Insurance offers coverage against death due to COVID-19.</div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>Premium Break Option<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">The policyholder is allowed to take a maximum of 3 Annual Premium breaks(holiday).</div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>Life Stage Benefit<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">Option to increase or decrease your life cover at specified life stages without any additional medical underwriting, by paying extra premiums.</div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>Premium Discount<span class="orangeLine"></span></h3>
+                                                    <div class="accordContent">Special First Year Discount: A discount of 5% will be applicable on first year premium for Regular Pay and 2% for Single Pay policies, sold through direct/ digital marketing.</div>
+                                                </div>
+                                            </div><a href="javascript:void(0)" class="loadBtn LoadMore">Load more</a><a href="javascript:void(0)" class="loadBtn LoadLess">Load less</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="knowFeatureWrap" style="margin-top: 8%;">
+                            <div id="features" class="featureSliderWrap" style="min-height:535px">
+                                <div class="bluebg">
+                                    <h2><span>know Features of  </span><span class="mobileStyle"> IndiaFirst life </span><br/>
+                                        Online Term Plan
+                                    </h2>
+                                    <!-- <p>IndiaFirst Online Term Plan is a term insurance plan which offers financial protection for your family with several customizable coverage options and features to suit your specific requirements. Buy Term Insurance online and get access to the below features: </p> -->
+                                    <p>IndiaFirst Life's Online Term Plan is a <a href="https://www.indiafirstlife.com/individual-life-insurance/term-insurance" target="_blank">term insurance </a>plan which offers financial protection for your family with several customizable coverage options and features to suit your specific requirements. Buy <a href="https://www.indiafirstlife.com/individual-life-insurance/term-insurance" target="_blank">term insurance </a>online and get access to these features: </p>
+                                </div>
+                                <div class="featureSliderSec loadmoreSec">
+                                    <ul class="featureSlider owl-carousel owl-theme">
+                                        <div class="item">
+                                            <li ng-class="{'boxCover':onMouse12}" ng-mouseleave="onMouse12=false" ng-mouseover="onMouse12=true"> 
+                                                <h3>Affordable Financial Protection: </h3>With our Online Term Plan, get affordable financial protection for yourself and for your family.
+                                            </li>
+                                            <li ng-class="{'boxCover':onMouse11}" ng-mouseleave="onMouse11=false" ng-mouseover="onMouse11=true">
+                                                <h3>Multiple Coverage Options: </h3>Buy Term Plan online and you can tailor your insurance policy to suit your safety needs as we offer a choice of 7 different coverage options.
+                                            </li>
+                                            <li ng-class="{'boxCover':onMouse10}" ng-mouseleave="onMouse10=false" ng-mouseover="onMouse10=true">
+                                                <h3>Flexibility in Receiving Death Benefits:  </h3>Our online Term Insurance policy offers the flexibility of receiving the death benefit either as a lump sum or as a monthly income (as per the selected coverage options).
+                                            </li>
+                                            <li ng-class="{'boxCover':onMouse9}" ng-mouseleave="onMouse9=false" ng-mouseover="onMouse9=true"> 
+                                                <h3>Tax Benefits: </h3>Depending on the prevailing tax laws, tax benefits can be received on the premiums paid. Buy term insurance online and tax benefits can be enjoyed in addition to protection.					
+                                            </li>
+                                            <!-- <li ng-class="{'boxCover':onMouse8}" ng-mouseleave="onMouse8=false" ng-mouseover="onMouse8=true"> 
+                                                <h3>Tax Benefits: </h3>Depending on the prevailing tax laws, tax benefits can be received on the premiums paid. Buy term insurance online and tax benefits can be enjoyed in addition to protection.					
+                                            </li> -->
+                                        </div>
+                                        <div class="item loadmoreBlock">
+                                            <li class="topSpace" ng-class="{'boxCover':onMouse7}" ng-mouseleave="onMouse7=false" ng-mouseover="onMouse7=true">
+                                                <h3>Option to Increase Your Sum Assured:  </h3>If you want to increase your Sum Assured, our term policy offers you this flexibility only in selected coverage options. You can increase your Sum Assured up to 100% of the initial Sum Assured at certain life events such as Marriage, Home Loan, and Child Birth or Adoption.
+                                            </li>
+                                            <li ng-class="{'boxCover':onMouse6}" ng-mouseleave="onMouse6=false" ng-mouseover="onMouse6=true">
+                                                <h3>Policy Return Option:  </h3> You can return the Online Term Plan policy within 30 days from the date of purchase and get the premium amount refunded (less the pro-rata risk premium for the time the policy was in force, any stamp duty paid, and any expenses incurred on medical examinations).
+                                            </li>
+                                            <li ng-class="{'boxCover':onMouse5}" ng-mouseleave="onMouse5=false" ng-mouseover="onMouse5=true">
+                                                <h3>Grace Period for Missed Premiums:  </h3>IndiaFirst provides a grace period of 30 days for yearly, half-yearly, and quarterly premium payment modes and 15 days for the monthly payment frequency.
+                                            </li>
+                                        </div>
+                                    </ul><span class="loadBtn LoadMore">Load more</span><span class="loadBtn LoadLess">Load less</span>
+                                    <div class="whiteBg">
+                                        <p>Want to enhance your Sum Assured? Online Term Plan provides you with the flexibility to do so on life stages like Marriage, taking a Home Loan, Child Birth (in selected coverage options). This enhanced Sum Assured would be available on payment of additional premium.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="howToBuyTermWrap">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h2><span>How to buy </span>term Insurance Plan</h2>
+                                        <div class="loadmoreSec readMoreSec">
+                                            <p>IndiaFirst Life Online Term Plan helps you to secure your financial future in the face of unfortunate and unforeseen events. <br/></p>
+                                            <div class="loadmoreBlock">
+                                                <div class="steps">
+                                                    <h3>Buy the term plan in just 3 steps:</h3>
+                                                </div>
+                                                <ul class="steps">
+                                                    <li> <span>1 </span>Fill in your basic details and get a quick quote</li>
+                                                    <li> <span>2 </span>Choose the benefits that you want: Life Benefit, Life Benefit with Voluntary Exit Advantage, Life Protect Benefit, Income Benefit, Accident Shield Benefit, Disability Shield Benefit, and Critical Illness Protector Benefit.</li>
+                                                    <li> <span>3</span>Make a payment and complete your application form.</li>
+                                                </ul>
+                                            </div><a href="javascript:void(0)" class="loadBtn LoadMore">Read more</a><a href="javascript:void(0)" class="loadBtn LoadLess">Read less</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="covrageOptiontext">Choose from various coverage options like:</p>
+                                        <div class="covrageBlockSec clearfix owl-carousel owl-theme mobileCarousal">
+                                            <li class="bottomborder"><span class="icon-Life-benefit-option"></span>
+                                                <p>Life Benefit</p>
+                                            </li>
+                                            <li class="bottomborder"><span class="icon-voluntary"></span>
+                                                <p class="text2">Life Benefit with Voluntary Exit Advantage Option</p>
+                                            </li>
+                                            <li class="bottomborder lifeProtectBlock">
+                                                <div class="oldOpt"><span class="icon-LifeProtect"></span>
+                                                    <p>Life Protect Benefit</p>
+                                                </div>
+                                                <div class="newOpt">
+                                                    <p class="text2">Increasing Cover</p>
+                                                    <div class="divider"> <span>or</span></div>
+                                                    <p class="text2">Decreasing Cover</p>
+                                                    <div class="divider"> <span>or</span></div>
+                                                    <p class="text2">Life Stage Balance Cover </p>
+                                                </div>
+                                            </li>
+                                            <li><span class="icon-Income_benefit-option"></span>
+                                                <p>Income Benefit</p>
+                                            </li>
+                                            <li><span class="icon-Accidental-shield_benefit-option"></span>
+                                                <p>Accidental Shield Benefit</p>
+                                            </li>
+                                            <li><span class="icon-Disability_shield-option"></span>
+                                                <p>Disability Shield <br> Benefit</p>
+                                            </li>
+                                            <li><span class="icon-Critical-illness_protector-option"></span>
+                                                <p>Critical Illness Protector Option</p>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div id="OnlinetermPopup" role="dialog" class="modal fade videoPopup">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="videoWrapper">
+                                        <!-- <iframe width="854" height="480" src="https://www.youtube.com/embed/n1xLC4oZ3t0" allowfullscreen></iframe> -->
+                                        <iframe width="854" height="480" allowfullscreen></iframe>
+                                        <!-- ng-src="{{trustSrc(youTubeUrl.src3)}}" -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="yourPerferredWrap clearfix">
+                            <div class="leftBlock"><img src="/assets/images/Video_image.png" alt="video" data-toggle="modal" data-target="#OnlinetermPopup" class="imgPosition"></div>
+                            <div class="rightBlock">
+                                <h2 class="fordeskop"><span>What Makes IndiaFirst Life </span>Your preferred Choice?</h2>
+                                <h2 class="forMobile"><span>What Makes IndiaFirst Life Your </span>preferred Choice?</h2><img src="/assets/images/Video_image.png" alt="video" data-toggle="modal" data-target="#OnlinetermPopup" class="imgPosition videoImg">
+                                <ul class="preferedChoiceList owl-carousel owl-theme mobileCarousal">
+                                    <li class="protect">
+                                        <h3>Excellent After-sales Service</h3>
+                                        <p>We offer high quality after-sales service to our customers.</p>
+                                    </li>
+                                    <li class="comfort">
+                                        <h3>Comfort and Ease</h3>
+                                        <p>You can buy Term Plan online and choose a premium payment option that suits your cash flow and your requirements.			</p>
+                                    </li>
+                                    <li class="claimservice">
+                                        <h3>Quick Service</h3>
+                                        <p>We are always happy to help and serve you at your convenience with any queries that you may have regarding your Online Term Insurance.</p>
+                                    </li>
+                                    <li class="orangeBlock"> 
+                                        <h3>Financially Protect <br>Your Family</h3>
+                                        <p>Buy Term Insurance and make sure your family is financially secure and has a high standard of living even in your absence.</p>
+                                    </li>
+                                    <li class="promoted">
+                                        <h3>Protection Unique<br>to Your Needs</h3>
+                                        <p>Our Online Term Plan can be tailored to suit the unique financial needs of your family. We understand that every household is different.</p>
+                                    </li>
+                                    <li class="taxbenefit">
+                                        <h3>Enjoy Tax Exemptions</h3>
+                                        <p>Buy Term Plan online and you can enjoy tax benefits and exemptions on payment of your policy premium under Section 80C and Section 10D of the Income Tax Act.</p>
+                                    </li>
+                                    <li class="goaloriented">
+                                        <h3>Goal-oriented Policies</h3>
+                                        <p>Our online term insurance is specially designed to help you meet your unique financial life goals.</p>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="testimonials" class="hearCustomersWrap clearfix">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 text-center"> 
+                                        <h2><span>Hear From Our </span>Customers</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="js-hearCustomers owl-carousel mobileCarousal">
+                                <div class="item">
+                                    <div class="customerSay">
+                                        <p>I got the exact information I wanted , I am satisfied.</p>
+                                        <div class="detailWrap"><span>Mr. Avinash </span><span class="loaction">(Maharashtra , 11th October 2021)</span></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="customerSay">
+                                        <p> I had concerns regarding my policy details and you explained the details properly. I have understood them well.</p>
+                                        <div class="detailWrap"><span>Mr. Bhika</span><span class="loaction">(Maharashtra, 26th October 2021)</span></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="customerSay">
+                                        <p>Thank You, you have given me the required information nicely.</p>
+                                        <div class="detailWrap"><span>Mr. Omkar</span><span class="loaction">(Uttar Pradesh, 22nd September 2021.)</span></div>
+                                    </div>
+                                </div>
+                                 <div class="item">
+                                    <div class="customerSay">
+                                        <p>Your customer service is very good, I had a very different experience with your executive. I didn&apos;t know anything about IndiaFirst Life, but a company&apos;s perception made out of the employees. I will invest my money in a company that is supportive and I see that in your customer service. Sandhya spoke to me with respect, she showed commitment towards me and solved my queries by arranging a callback. Your organization deserves a 10 out of 10 on Customer Satisfaction. No company earns recognition by turnover but by Customer Satisfaction. </p>
+                                        <div class="detailWrap"><span>Mr. Tiwari</span><span class="loaction">(Delhi, 16th May 2020)</span></div>
+                                    </div>
+                                </div>
+                                <!--<div class="item">
+                                    <div class="customerSay">
+                                        <p>Your customer service is very good, I had a very different experience with your executive. I didn&apos;t know anything about IndiaFirst Life, but a company&apos;s perception made out of the employees. I will invest my money in a company that is supportive and I see that in your customer service. Sandhya spoke to me with respect, she showed commitment towards me and solved my queries by arranging a callback. Your organization deserves a 10 out of 10 on Customer Satisfaction. No company earns recognition by turnover but by Customer Satisfaction. </p>
+                                        <div class="detailWrap"><span>Mr. Jitendra Pal</span><span class="loaction">(Surat, 12th May 2020) </span></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="customerSay">
+                                        <p>Your customer service is very good, I had a very different experience with your executive. I didn&apos;t know anything about IndiaFirst Life, but a company&apos;s perception made out of the employees. I will invest my money in a company that is supportive and I see that in your customer service. Sandhya spoke to me with respect, she showed commitment towards me and solved my queries by arranging a callback. Your organization deserves a 10 out of 10 on Customer Satisfaction. No company earns recognition by turnover but by Customer Satisfaction. </p>
+                                        <div class="detailWrap"><span>Ms. Vaishali Vijay Dhavse</span><span class="loaction">(Mumbai, 8th May 2020)</span></div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div id="Blogs" class="articlesForYouWrap">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h2><span>articles For Your</span>Knowledge (Blogs)</h2>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="js-knowledgeSlider owl-carousel">
+                                            <div class="articleCard">
+                                                <div class="cardTop"><img src="/assets/images/ArticleKnowImage1.jpg"></div>
+                                                <div class="cardMiddle">
+                                                    <h3>What Is Life Insurance?</h3>
+                                                    <div class="contentBlock"><span class="tags">In All about Insurance</span>
+                                                        <p>At its essence, a life insurance policy is a contract signed between the life insurance provider and a policy holder.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="cardBottom"><span class="date">Jan 02, 2020 </span><a href="https://www.indiafirstlife.com/life-insurance" target="_blank" class="blueLink">Explore </a></div>
+                                            </div>
+                                            <div class="articleCard">
+                                                <div class="cardTop"><img src="/assets/images/InsuranceBasics.jpg"></div>
+                                                <div class="cardMiddle">
+                                                    <h3>Insurance Basics</h3>
+                                                    <div class="contentBlock"><span class="tags">In All about Insurance</span>
+                                                        <p>All you need to know about Insurance Basics</p>
+                                                    </div>
+                                                </div>
+                                                <div class="cardBottom"><span class="date">Jan 02, 2020 </span><a href="https://www.indiafirstlife.com/knowledge-centre/insurance-basics" target="_blank" class="blueLink">Explore </a></div>
+                                            </div>
+                                            <div class="articleCard">
+                                                <div class="cardTop"><img src="/assets/images/InsuranceJargon.jpg"></div>
+                                                <div class="cardMiddle">
+                                                    <h3>Insurance Jargon</h3>
+                                                    <div class="contentBlock"><span class="tags">In All about Insurance</span>
+                                                        <p>Check out the details for most commonly used terms in Insurance.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="cardBottom"><span class="date">Jan 02, 2020 </span><a href="https://www.indiafirstlife.com/knowledge-centre/insurance-jargon" target="_blank" class="blueLink">Explore  </a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faqWrap" id="faqs">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h2><span>Answers for your queries</span>Frequently asked Questions</h2>
+                                        <div class="faqsContent mCustomScrollbar">
+                                            <div class="accord">
+                                                <h3>1. What are term insurance plans?</h3>
+                                                <div class="accordContent active">
+                                                    <p>Term Insurance Plan is a form of <a href="https://www.indiafirstlife.com/life-insurance">life insurance  </a> which provides coverage for a defined period of time. If the insured individual dies during the policy term, the death benefit is payable to the nominees of the term policy. Term Insurance Plans are designed to protect your family financially in case of death or other uncertainties. The Online Term Plan is a highly flexible policy which provides financial support for you and your family in case of Accidental Total Permanent Disability (ATPD), Critical Illness (CI), and Death and Accidental Death (ADB).</p>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>2. Why should you buy a term insurance plan?</h3>
+                                                <div class="accordContent">
+                                                    <ul>
+                                                        <li>Simplicity:
+                                                            <p> Term Insurance Plans are very simple and convenient. Once you buy Term Plan online and pay the premium, you are covered for the term you have chosen.</p>
+                                                        </li>
+                                                        <li>Affordability:
+                                                            <p>Term Insurance Plans have a highly competitive market making them easily comparable with each other on the basis of their prices. With our Online Term Plan, you can pay the premium either in a single go or monthly, quarterly, half-yearly, or on an annual basis. It is very flexible and affordable to buy Term Plan online.</p>
+                                                        </li>
+                                                        <li>Tax Benefits:
+                                                            <p>Under Section 80C, the premium paid is eligible for tax exemption as per the Income Tax Act 1961. According to the prevailing tax laws, even death benefits are exempted from taxation as per Section 10 (10D). Buy Term Insurance online for both financial protection as well as tax benefits! </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>3. What is the right amount of coverage for me?</h3>
+                                                <div class="accordContent">
+                                                    <ul>
+                                                        <li>Ensure that your policy fulfils your unique requirement! 
+                                                            <p>To help you figure out the suitable cover amount, let us assume that the cover amount should be 10 times your annual income. Multiplying the annual income by 10 is appropriate considering inflation and loss of income. If you are 30 years old and your annual income is INR 7 lakhs, your chosen Sum Assured should be INR 70 lakhs. The Sum Assured should also depend on other factors such as if you marry early or late, or when you have children. You should prepare a list of all your assets and liabilities, future goals etc., and finalize on an amount that you believe would work for you. </p>
+                                                        </li>
+                                                        <li>Be specific about the duration for which you want the coverage.
+                                                            <p>Your online Term Insurance policy must cover you till the age you wish to work. You must take into consideration the age at which you wish to retire. Ideally, you can take the difference between your assumed retirement age and your current age as your policy tenure.</p>
+                                                        </li>
+                                                        <li>Keep in mind Inflation! 
+                                                            <p>Since inflation causes a rise in prices, the purchasing power of your money today would reduce later on. Hence, a periodic increase in your Sum Assured would help assure you even against inflation.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>4. What documents do I need to buy the Online Term Plan?</h3>
+                                                <div class="accordContent">
+                                                    <h4>Standard Income Proof</h4>
+                                                    <p>The documents which are accepted as standard income proof to buy term insurance online are:</p>
+                                                    <ul>
+                                                        <li>Salary Slips of the last 3 months from Government, MNC, or Private Limited Companies.</li>
+                                                        <li>Income Tax Returns of the last 3 years along with computation of income.</li>
+                                                        <li>Bank Statements of the last 6 months with salary entries.</li>
+                                                        <li>Audited Business Account Statements of the last 3 years, including Balance Sheet and Profit & Loss Account Statements from the CA. It is mandatory to have the CA&apos;s stamp and membership number.</li>
+                                                        <li>Latest Form 16. </li>
+                                                    </ul>
+                                                    <h4>Address Proof</h4>
+                                                    <p>The following documents are accepted as proof of address to buy Online Term Plan:</p>
+                                                    <ul>
+                                                        <li>Leave & License agreement</li>
+                                                        <li>Bank Statement or Passbook with latest entries for 6 months</li>
+                                                        <li>Driving License with address mentioned</li>
+                                                        <li>Utility bill (Electricity, Telephone, Post-paid Mobile Phone, Pipe-line Gas, Water) from any service provider that should not be older than 2 months.</li>
+                                                        <li>Passport</li>
+                                                        <li>Voter ID card</li>
+                                                        <li>Aadhar Card</li>
+                                                        <li>Property or Municipal Tax Receipt</li>
+                                                        <li>Post Office Savings Account Statement</li>
+                                                    </ul>
+                                                    <h4>ID Proof</h4>
+                                                    <p>The following documents are accepted as ID proof:</p>
+                                                    <ul>
+                                                        <li>PAN Card</li>
+                                                        <li>Passport</li>
+                                                        <li>Aadhar Card</li>
+                                                        <li>Voter Id card</li>
+                                                    </ul>
+                                                    <h4> Age Proof</h4>
+                                                    <p>The following documents are accepted as proof of age to buy Term Plan online:</p>
+                                                    <ul>
+                                                        <li>PAN Card - acceptable only if date of issue is greater than 1 year</li>
+                                                        <li>Passport</li>
+                                                        <li>Aadhar Card - acceptable only if complete DOB is given. Aadhaar Cards with DOB given as YYYY, 01/01/YYYY, or as 01/07/YYYY formats are not acceptable DOB as age proof for our term insurance plan</li>
+                                                        <li>Municipal Birth Certificate</li>
+                                                        <li>Driver&apos;s License - acceptable only if date of issue is greater than 1 year</li>
+                                                        <li>Leaving Certificate from School or College</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>5.	What is Sum Assured?</h3>
+                                                <div class="accordContent">
+                                                    <p>The Sum Assured in any term insurance plan is the amount that the insurer agrees to pay the insured upon the occurrence of a stated contingency. While signing the life insurance contract, the insurer and the buyer agree on a certain amount that would be payable after the death of the insured to the nominee or the beneficiary. This amount is called the Sum Assured and is flexible in our Online Term Plan.</p>
+                                                </div>
+                                            </div>
+                                            <div class="displayHide">
+                                                <div class="accord">
+                                                    <h3>6. What is a Premium Paying Term?</h3>
+                                                    <div class="accordContent">
+                                                        <p>In a term insurance plan, a premium paying term is the period for which the buyer is committed to pay towards his/her insurance cover. In our Online Term Plan, we also have a grace period which is the time given for paying the premium from the premium due date during which the policy is supposed to be in force with the risk cover.</p>
+                                                        <p>About Single and Regular Premium Term Insurance Plan: In the Single Premium Option, you get to pay a lump sum for your term plan. In the Regular Premium Option, you can pay the premiums periodically i.e. monthly, quarterly, half yearly, or yearly</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>7. I am an NRI. Can I still buy the Online Term Plan from IndiaFirst Life?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Yes, the Online Term Plan can be bought by NRIs from standard countries. If applicable, medical tests will be conducted in India.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>8. How much life coverage should I buy in a term insurance plan?</h3>
+                                                    <div class="accordContent">
+                                                        <p>The coverage that you buy should be enough to pay all your debts and loans as well as replace your income, especially if you are the sole breadwinner of your family. Adding your annual income to your term plan would serve as an effective safeguard against inflation. Also bear in mind your future obligations such as your spouse&apos;s health and your children&apos;s education.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>9. At what age should I buy a term insurance plan?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Although there is no right age to buy a term insurance plan, you need to be at least 18 years old. It is wise to start preparing early. If you have a steady flow of income which allows you to pay your premiums on time, you are ready to invest in your future. Moreover, if you&apos;re already married, have children, or have parents who are dependent on you, you should definitely consider buying a term insurance plan. As you get older, the premium payable also increases. </p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>10. What should the tenure of my term insurance plan be?</h3>
+                                                    <div class="accordContent">
+                                                        <p>It is advisable to buy the maximum term available under the term plan in order to ensure maximum financial security for your loved ones.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>11. Will I get a maturity benefit if I survive the tenure of the term insurance plan? </h3>
+                                                    <div class="accordContent">
+                                                        <p>The Online Term Plan is purely a protection plan. There is no maturity benefit or payout at the end of the policy term in case of survival of the buyer.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3> 12.	Will my premium amount change during the tenure of the policy?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Your Online Term Plan premium amount shall remain the same during the entire duration of the term plan, subject only to service tax regulations as determined by the Government of India.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>13. I am an occasional smoker. Do I still need to declare myself as a tobacco user?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Yes. Even if you smoke occasionally, you must declare yourself as a tobacco user. When you buy term plan online, complete and accurate medical history is necessary to determine the right premium for your term insurance plan.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btnParent text-center">
+                                            <button class="moreAccord defaultBtn">Load More</button>
+                                        </div>
+                                        <div class="btnParent text-center loadLess">
+                                            <button class="defaultBtn">Load Less</button>
+                                        </div>
+                                        <p class="LoadMoretext" style="font-size: 1.3rem;">*For a Male Non Smoker Life aged 20 years for policy term of 40 years without applicable taxes (Only for Life Benefit Option of IndiaFirst Life e-Term Plus Plan UIN143N064V01)
+                                         < /br>**T&C Apply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    <div id="regModal" role="dialog" class="modal fade videoPopup">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="videoWrapper">
+                                        <!-- <iframe width="854" height="480" src="trustSrc(youTubeUrl.src2)" allowfullscreen id="closeVideo"></iframe> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div id="resumeApplModal" role="dialog" class="resumeApplBlock modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close" ng-click="clearData();"></button>
+                                    <h2 class="modal-title"><span>Continue your Application</span></h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="resumeFormWrap">
+                                      <form name="termForm1">
+                                        <div class="titleBlock">
+                                            <h3>Welcome Back!</h3>
+                                            <p>Please enter the below details to resume your application.</p>
+                                            <div class="row controlWrap">
+                                                <div class="col-sm-12">
+                                                    <div ng-class="{'errorBlock':((termForm.fieldReqd.$touched || termForm.showValidation  )&amp;&amp; termForm.fieldReqd.$error.required)}" class="inputEffect">
+                                                        <label class="effectLabel"><span data-content="Email ID / Mobile No/ Application No / Quote ID" class="placeHolder">Email ID / Mobile No / Application No / Quote ID</span></label>
+                                                        <input restrict-Special-Characters-Directive name="fieldReqd"  type="text" id="fieldReqd" ng-model="resumeApp.fieldReqd" required class="textBox">
+                                                        <div ng-show="((termForm.fieldReqd.$touched || termForm.showValidation  )&amp;&amp; termForm.fieldReqd.$error.required)" class="error">This field is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="onlineTermForm">
+                                                        <!--Date of birth directive-->
+                                                        <!-- <dob id="resumeAppDOB"></dob> -->
+                                                        <!-- <dob id="resumeAppDOB" validon-clk="validonClick1" dob="resumeApp.dob" selected-age="resumeApp.age" min="{{min}}" max="{{max}}" birth-date="resumeApp.date" birth-month="resumeApp.month" birth-year="resumeApp.year"></dob> -->
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="mobCenter">
+                                                    <button type="button" class="defaultBtn blueBtn submit" data-toggle="modal"  ng-click="resumeGetQuote(termForm)"><span>Proceed</span></button>
+                                                </div>
+                                                
+                                            </div> 
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            <!-- End footer-->
+            <!-- Start footerScripts-->
+            <div id="errorBlock1" role="dialog" class="resumeApplBlock modal fade">
+                        <div class="modal-dialog modal-lg" >
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close" ng-click="clearData();"></button>
+                                    
+                                </div>
+                                <div class="modal-body">
+                                IndiaFirst Life e-Term Plan has been Upgraded to IndiaFirst Life e-Term Plus Plan Now! Call Us on 8828840199 OR <a href="#" ng-click="ClosePopup()"style="font-weight: 600;color: #00aeef;">Click Here</a> to Generate A New Quote	
+                                </div>
+                                
+                        </div>
+                    </div>
+              </div> 
+              <div id="errorBlock2" role="dialog" class="resumeApplBlock modal fade">
+                        <div class="modal-dialog modal-lg" >
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close" ng-click="clearData();"></button>
+                                    
+                                </div>
+                                <div class="modal-body" style="font-size: 18px;">
+                                Your Quote has expired. Please generate new Quote.
+                                </div>
+                                
+                        </div>
+                    </div>
+              </div> 
+            <div id="quoteTable" role="dialog" class="modal fade">
+                        <div class="modal-dialog modal-lg" >
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close" ng-click="clearData();"></button>
+                                    <h2 class="modal-title"><span>Continue your Application</span></h2>
+                                </div>
+                                <div class="modal-body">
+                                
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-12" style="overflow-x:auto">
+                                                <table class="table table-bordered" style="width:50%;">
+                                                    <thead style="background-color: #f47920;color: white;">
+                                                        <tr>
+                                                            <th style="width:10%;">SR NO.</th>
+                                                            <th style="width:20%;">APPLICATION NO</th>
+                                                            <th style="width:20%;">QUOTE NO</th>
+                                                            <th style="width:25%">CREATED DATE</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- <tr ng-repeat="quoteData in quoteDataList">
+                                                            <td>{{$index+1}}</td>
+                                                            <td>
+                                                                <a ng-click="resumeAppForMulitpleQuote(quoteData);">{{quoteData.applicationRefNo}}</a>
+                                                            </td>
+                                                            <td>{{quoteData.quoteId}}</td>
+                                                            <td>{{quoteData.quoteCreatedDate | date:'yyyy-MM-dd'}}</td>
+                                                        </tr> -->
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                        </div>
+                    </div>
+              </div> 
+            <!-- <ng-include src="'../views/templates/footer.html'" />
+           <ng-include src="'../views/templates/help_section.html'" />  -->
+           <app-footer></app-footer>
+                <div id="loaderDiv" *ngIf="showLoader"> 
+                    <img src="/assets/images/loader.svg" class="ajax-loader"/>
+                    </div>
+            </form> 
+        </div> 
+              <script>
+                     setTimeout(function(){ 
+                         !function(f,b,e,v,n,t,s)
+                          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                          n.queue=[];t=b.createElement(e);t.async=!0;
+                          t.src=v;s=b.getElementsByTagName(e)[0];
+                          s.parentNode.insertBefore(t,s)}(window, document,'script',
+                          'https://connect.facebook.net/en_US/fbevents.js');
+                          fbq('init', '1069781983409805');
+                          fbq('track', 'PageView');
+                    }, 4000);
+                     $("#OnlinetermPopup").on('hidden.bs.modal', function (e) {
+                            $("#OnlinetermPopup iframe").attr("src", $("#OnlinetermPopup iframe").attr("src"));
+                        }); 
+                     $(document).ready(function() { 
+                            windowWidth = $(window).width();
+                            windowHeight = $(window).height();
+                            lifeIns();
+                            articleSlider();
+                            hearCustomersSlider();
+                            moreAccord();
+                            knowfeatureSlider();
+                            loadMore();
+                            scrollToActiveOnMenuClick();
+                        });
+    
+                        $(window).on('load', function() {
+                           /* $(".benefitsOfBuyingWrap .faqsContent").mCustomScrollbar('destroy');*/
+                            windowWidth = $(window).width();
+                            windowHeight = $(window).height();
+                            yourPreferedSlider();
+                            termspolicycover();
+                            covrageBlockSec();
+                            knowfeatureSlider();
+                            loadMore();
+                        });
+    
+                        $(window).on('resize', function() {
+    
+                            windowWidth = $(window).width();
+                            windowHeight = $(window).height();
+                            yourPreferedSlider();
+                            termspolicycover();
+                            covrageBlockSec();
+                            ReadMoreReadLess();
+                            loadMore();
+                            knowfeatureSlider();  
+                        }); 
+                        function lifeIns() {
+                            $(document).on('click', '.title', function(event) {
+                                if ($(this).hasClass('active')) {
+                                    $(this).removeClass('active');
+                                    $(this).parents(".accBox").find('.details').removeClass('active');
+    
+                                } else {
+                                    $(this).addClass('active');
+                                    $(this).parents(".accBox").find('.details').addClass('active');
+                                }
+    
+                            });
+                        }
+    
+                        function articleSlider() {
+                            var owl = $('.js-knowledgeSlider');
+                            owl.owlCarousel({
+                                loop: false,
+                                dots: true,
+                                margin: 10,
+                                nav: true,
+                                navText: ["", ""],
+                                autoplay: false,
+                                autoplayTimeout: 2500,
+                                responsive: {
+                                    0: {
+                                        dots: true,
+                                        items: 1
+                                    },
+                                    767: {
+                                        dots: true,
+                                        items: 2
+                                    },
+                                    991: {
+                                        dots: true,
+                                        items: 3
+                                    }
+                                }
+                            }); 
+                        }
+    
+                        function hearCustomersSlider() {
+                            var owl = $('.js-hearCustomers');
+    
+                            owl.owlCarousel({
+                                loop: true,
+                                center: true,
+                                items: 3,
+                                margin: 0,
+                                autoplay: false,
+                                dots: false,
+                                navText: ["", ""],
+                                nav: true,
+                                mouseDrag: true,
+                                autoplayTimeout: 8500,
+                                smartSpeed: 450,
+                                responsive: {
+                                    0: {
+                                        items: 1,
+                                        loop: false,
+                                    },
+                                    991: {
+                                        items: 1,
+                                    },
+                                    1170: {
+                                        items: 3,
+                                    }
+                                }
+                            });
+                        }
+    
+                        function knowfeatureSlider() {
+                            if (windowWidth > 991) {
+                                $(".featureSlider").owlCarousel({
+                                    loop: false,
+                                    autoplay: false,
+                                    items: 1,
+                                    nav: true,
+                                    navText: ["", ""],
+                                    dots: false,
+                                    mouseDrag: false,
+                                    autoplayHoverPause: false,
+                                    // slideTransition: 'fade',
+                                    animateOut: 'slideOutDown',
+                                    animateIn: 'slideInUp',
+                                    responsiveClass: true,
+                                    responsive: {
+                                        0: {
+                                            items: 2,
+                                            slideBy: 2
+                                        },
+                                        992: {
+                                            items: 1,
+                                            slideBy: 1
+                                        },
+                                        1000: {
+                                            items: 1,
+                                            slideBy: 1
+                                        }
+                                    }
+                                }); 
+                    var owl = $('.reviews-testimonial');
+                        owl.owlCarousel();
+    
+                        $('.next-review-btn').click(function() {
+                          // slider animation
+                          owl.trigger('next.owl.carousel');
+                        });
+    
+                        $('.prev-review-btn').click(function() {
+                          // slider animation
+                          owl.trigger('prev.owl.carousel');
+                        });
+                            } else {
+                                $('.featureSlider').owlCarousel('destroy');
+                            } 
+    
+                        }
+    
+                        function yourPreferedSlider() { 
+                            windowWidth = $(window).width();
+                            if (windowWidth < 767) { 
+                                $(".preferedChoiceList").owlCarousel({
+                                    loop: false,
+                                    autoplay: false,
+                                    items: 2,
+                                    margin: 10,
+                                    nav: true,
+                                    navText: ["", ""],
+                                    dots: false,
+                                    mouseDrag: false,
+                                    autoplayHoverPause: false,
+                                });
+                            } else {
+                                $('.preferedChoiceList').owlCarousel('destroy');
+                            }
+                        }
+    
+                        function termspolicycover() {
+    
+                            windowWidth = $(window).width();
+                            if (windowWidth < 767) {
+                                $(".iconsPlans").owlCarousel({
+                                    loop: false,
+                                    autoplay: false,
+                                    items: 2,
+                                    nav: true,
+                                    margin: 0,
+                                    stagePadding: 10,
+                                    navText: ["", ""],
+                                    dots: false,
+                                    mouseDrag: false,
+                                    autoplayHoverPause: false,
+                                });
+                            } else {
+                                $('.iconsPlans').owlCarousel('destroy');
+                            }
+                        } 
+    
+                        function covrageBlockSec() { 
+                            windowWidth = $(window).width(); 
+                            if (windowWidth < 767) {
+                                $(".covrageBlockSec").owlCarousel({
+                                    loop: false,
+                                    autoplay: false,
+                                    items: 1,
+                                    nav: true,
+                                    navText: '',
+                                    dots: false,
+                                    mouseDrag: false,
+                                    autoplayHoverPause: false,
+                                });
+                            } else {
+                                $('.covrageBlockSec').owlCarousel('destroy');
+                            }
+                        }
+    
+    
+                        function ReadMoreReadLess() { 
+                            windowWidth = $(window).width();
+                            if (windowWidth < 767) {
+                                $(document).on('click', '.readMore', function(e) {
+                                    var txt = $(this).parents(".readmoreSec").find(".moretext").is(':visible') ? 'Read More' : 'Read Less';
+                                    $(this).parents(".readmoreSec").find(".readMore").text(txt);
+                                    $(this).parents(".readmoreSec").find('.moretext').slideToggle(200);
+                                });
+                            } 
+                        }
+    
+    
+                        function loadMore() {
+                            windowWidth = $(window).width();
+                            if (windowWidth < 991) {
+                                $(document).on('click', '.LoadMore', function(e) {
+                                    $(this).parent(".loadmoreSec").find(".loadmoreBlock").fadeIn(1000);
+                                    $(this).parent(".loadmoreSec").find(".LoadMore").hide();
+                                    $(this).parent(".loadmoreSec").find(".LoadLess").show();
+                                    $(this).parent(".loadmoreSec").find(".LoadLess").css('display', 'inline-block')
+                                })
+    
+                                $(document).on('click', '.LoadLess', function(e) {
+                                    $(this).parent(".loadmoreSec").find(".loadmoreBlock").fadeOut(1000);
+                                    $(this).parent(".loadmoreSec").find(".LoadLess").hide();
+                                    $(this).parent(".loadmoreSec").find(".LoadMore").show();
+                                    $(this).parent(".loadmoreSec").find(".LoadMore").css('display', 'inline-block')
+    
+                                })
+    
+                            }
+                        }
+    
+    
+                        function moreAccord() {
+                            $(document).on('click', '.moreAccord', function(e) {
+                                $(".displayHide").fadeIn();
+                                $(".moreAccord").hide();
+                                $(".loadLess").show();
+    
+                            })
+    
+                            $(document).on('click', '.loadLess', function(e) {
+                                $(".displayHide").fadeOut();
+                                $(".moreAccord").show();
+                                $(".loadLess").hide();
+                            })
+                        }
+    
+                        // scroll to active section on menu click start
+                        function scrollToActiveOnMenuClick() {
+                            $(document).on('click', '.navWrap li', function(event) {
+                                event.preventDefault();
+                                var liClass = $(this).attr('class');
+                                if (liClass == "Calculatepremium") {
+                                   scrollToElement('.onlTermSectionWrap', 500, -80);
+                                }
+                                 else if(liClass == "Aboutus") {
+                                   scrollToElement('.aboutOnlinePlanWrap', 500, -80);
+                                }
+                                 else if (liClass == "benefits") {
+                                    scrollToElement('.benefitsOfBuyingWrap', 500, -80);
+                                } else if (liClass == "features") {
+                                    scrollToElement('.knowFeatureWrap', 500, -80);
+                                } else if (liClass == "testimonials") {
+                                    scrollToElement('.hearCustomersWrap', 500, -100);
+                                } else if (liClass == "Blogs") {
+                                    scrollToElement('.articlesForYouWrap', 500, -30);
+                                } else if (liClass == "faqs") {
+                                    scrollToElement('.faqWrap', 500, -30);
+                                }
+                                $('.navWrap li').removeClass('active');
+                                $('.navContent').removeClass('active');
+                                $(this).addClass('active');
+    
+                            });
+                        }
+                        // scroll to active section on menu click end
+    
+                                            
+                    </script>
+                
+                    <!-- <noscript><img height="1" width="1" style="display:none" alt="Facebook"
+                      ng-src="{{trustSrc(youTubeUrl.facebook1)}}"
+                    /></noscript> -->
+             
+        <img  src="youTubeUrl.apoxymedia" alt="apoxymedia" width="1" height="1" border="0" style="display:none" ng-if="apoxymedia"/>
+        
+           <!-- Offer Conversion: IndiafirstLife Insurance - CPL -->
+          <img src="youTubeUrl.yoadsmedia" alt="yoadsmedia" width="1" height="1" style="display:none" ng-if="yoadsmedia"/>
+          <!-- // End Offer Conversion -->
+    
+         <!-- <img src="https://www.mediascopy.com/track/conversion.php?id=605&transaction_id=TRANSACTION_ID" height="1" width="1" style="display:none" ng-if="mediascopy"/> -->
+    
+         <img src="youTubeUrl.intellectadz" height="1" width="1" style="display:none" ng-if="intellect"/>
+         
+         <!-- Offer Conversion: IndiafirstLife Insurance CPL -->
+          <iframe src="https://tracking.icubeswire.com/SL6w4?adv_sub=SUB_ID&adv_sub2=SUB_ID2" scrolling="no" frameborder="0" width="1" height="1" style="display:none" ng-if="icubeswire"> </iframe>
+         <!-- // End Offer Conversion -->
+     
+     

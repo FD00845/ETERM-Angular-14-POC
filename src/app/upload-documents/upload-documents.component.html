@@ -1,0 +1,194 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+          'event':'virtualPageView',
+          'page':{
+            'title':'upload documents page',
+            'url':'/upload-documents'
+          }
+        });
+    </script>
+    <div class="inside uploadDetail">
+                <!--.master-->
+                <header ng-init="init()">
+                    <div class="premiumHeader uploadDetail">
+                        <div class="container">
+                            <div class="logoContentWrap clearfix"><a href="javascript:void(0)" class="logo"><img src="/assets/images/indiaFirstLogo.png" alt="logo"></a></div>
+                            <div class="appLabel">
+                                <p>Application no. <span class="appId">{{quoteDetails.applicationRefNo}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            
+                <div class="wrapper-content">
+                    <div class="eTermPlanWrap">
+                        <div class="topCurve"></div>
+                        <div class="container">
+                            <div class="forCurveSpacing titleWrap">
+                                <div class="titleBlock">
+                                    <h1 [ngClass]="{'gppTitleFontTise': (quoteDetails.productID ==25)}">{{quoteDetails.planName}}</h1><span class="subTitle">Tell us about yourself to help us process your policy.</span>
+                                     
+                                    <div class="progressBlock">
+                                        <div data-percent="100" data-duration="1000" class="progress-bar position"><div class="background" style="background-color: rgb(234, 234, 234);"></div><div class="rotate" style="background-color: rgb(107, 198, 243); transition: transform 1000ms linear 0s; transform: rotate(360deg);"></div><div class="left" style="background-color: rgb(234, 234, 234); animation: toggle 500ms step-start 0s 1 normal none running; opacity: 0;"></div><div class="right" style="background-color: rgb(107, 198, 243); animation: toggle 500ms step-end 0s 1 normal none running; opacity: 1;"></div><div class=""><span>100%</span></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="termPlan formBgWrap">
+                                <form name="policyForm" method="post">
+                                    <div class="row"> 
+                                        <div class="col-md-3 noPadding"><span class="arrowCircle"><span class="topArrow icon-top-arrow"></span></span>
+                                            <div class="formWrap">
+                                                <ul class="clearfix leftNavList">
+                                                    <li class="completed"><span class="number">1</span><a href="javascript:void(0)">Personal details<span class="time">2 minutes</span></a></li>
+                                                    <li class="completed"><span class="number">2</span><a href="javascript:void(0)">Bank & other details<span class="time">2 minutes</span></a></li>
+                                                    <li class="completed"><span class="number">3</span><a href="javascript:void(0)">Health related questions<span class="time">2 minutes</span></a></li>
+                                                    <li class="completed"><span class="number">4</span><a href="javascript:void(0)">Review <span class="time">2 minutes</span></a></li>
+                                                    <li class="active"><span class="number">5</span><a href="javascript:void(0)">Upload documents</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 noPadding clearfix">
+                                            <div class="uploadWrap pt">
+                                                <h3 class="hightlightTitle">Kindly upload below documents for verification.</h3>
+                                                <p class="note">Note: <span>Documents size should not exceed 2 MB as per technical requirements. Document should be in PNG / JPEG / PDF format.</span></p>
+                                                <h3 *ngIf="secondaryLARequired" class="laHeading">For Primary Life Assured</h3>
+                                                <ul class="uploadDetailSec"> 
+                                                    <li id="PhotoidUpload" class="clearfix imgHolder">
+                                                        <div class="dcoumentSec">
+                                                            <div class="DocumentIcon"> <span class="icon-pancard"></span></div>
+                                                            <div class="documentCont">
+                                                                <div class="inputEffect active" style="width: 87% !important">
+                                                                    <div class="selectOption"> 
+                                                                        <select [(ngModel)]="idProofSelected" name="idProofSelected" (change)="onIDProofSelection(idProofSelected)">
+                                                                            <option  value="Select ID proof" disabled> Select ID proof</option> 
+                                                                            <!-- <option  value="Aadhar Card"> Aadhar Card</option> 
+                                                                            <option  value="Pan Card"> Pan Card</option>  -->
+                                                                            <option *ngFor="let data of idProofList" value="{{data.documentName}}">{{data.documentName}}</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="progressBarHolder clearfix" style="top: 20px;"> 
+                                                                <div id="upload" *ngFor="let d of uploadDocumentObj">
+                                                                    <h6 class="fileName" ><span class='uploadIcon'></span><p> 
+                                                                        <span class='imgName'><a href="javascript:void(0)" (click)="showImage(d)">
+                                                                             {{d.filename}}</a></span> <span class='imgSize'>({{d.fileSize}})</span></p></h6>
+                                                                    <div class="deleteFile" (click)="removeDocument(1,'idProof','#PhotoidUpload')"><span class="icon-close"></span></div>
+                                                                </div>
+                                                                    <div id="Photoidprogress" class="progress">
+                                                                        <!-- id="myProgress"-->
+                                                                        <div id="Photoidbar" class="bar"></div>
+                                                                        <!-- id="myBar"-->
+                                                                    </div>
+                                                                    <div style="clear:both;"></div>
+                                                                </div><span id="errIdentityProof1" style="display: none; text-align: left" class="error"></span>
+                                                                <div class="erroretext"><span>Please upload file in (PNG / JPEG / PDF) format.</span></div>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="chooseFile" [ngClass]="{'disabled':idProofSelected=='Select ID proof'}">
+                                                            <div class="uploadfileCont">
+                                                                <a href="javascript:void(0)" for="identityproofFile1" class="upldBtn">Upload</a>
+                                                                <input id="identityproofFile1" name="identityproofFile1" type="file" 
+                                                                (change)="UploadDocuments($event)" class="clsfile">
+                                                                <div id="photoidfilesize"></div>
+                                                            </div>
+                                                            <!-- <a href="javascript:void(0)" class="capt" data-toggle="modal" ng-click="captureImage('pan','PhotoidUpload')" >Capture</a> -->
+                                                            <!-- <a href="javascript:void(0)" for='ImageIdProof' class="capt" data-toggle="modal"  onclick="document.getElementById('ImageIdProof').click();" >Capture</a> -->
+                                                            <input style='display: contents;' class="uploadfile" type="file" id="ImageIdProof" 
+                                                            accept="image/*" capture="camera" (change)="UploadDocuments($event)" />
+                                                        </div>
+                                                        <div style="border-radius:none;box-shadow:none;margin-left:640px;margin-top:-10px;" class="chooseFile"  [ngClass]="{'disabled':idProofSelected=='Select ID proof'}">
+                                                                <div class="uploadfileCont"><a href="javascript:void(0)" for="identityproofFile1" style="border-radius:none;font-size:20px;">+</a>
+                                                                <input id="identityproofFile1" name="identityproofFile1" type="file"
+                                                                (change)="UploadDocuments($event)" class="clsfile">
+                                                                <div id="photoidfilesize"></div>
+                                                            </div>
+                                                            <input style='display: contents;' class="uploadfile" type="file" id="ImageIdProof"
+                                                             accept="image/*" capture="camera"
+                                                             (change)="UploadDocuments($event)"  />
+                                                            
+                                                        </div>
+                                                    </li> 																						
+                                                </ul> 
+                                                
+                                                <!-- SECONDARY LA END -->
+                                                
+                                                <div class="bottomText" ng-if='showSkipLink'>
+                                                    <p>Don&rsquo;t have your documents handy? </p><a href="javascript:void(0)" data-toggle="modal" data-target="#documentHandy">Click here to know how you can send your documents later.</a>
+                                                </div><button  class="defaultBtn blueBtn" style="margin-top: 10px;" ng-click="submitAppl()">Submit Application<span></span></button>
+                                                 
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="documentHandy" role="dialog" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                                    <h2 class="modal-title incomeBheader"><span class="popupHeader">Don&rsquo;t have the documents handy? We got your back</span></h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="criticalContent">
+                                        <div class="sumAssured">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-xs-12 lumsumLeft">
+                                                    <h5>Mail the documents on <a href="javascript:void(0)">online.req@indiafirstlife.com </a>with your application ID within 15 days.</h5>
+                                                    <div class="dvdOR"><span>OR</span></div>
+                                                </div>
+                                                <div class="col-sm-6 col-xs-12"> 
+                                                    <h5>You will be receiving a mail with a link, you can click on the link to upload your documents.</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="buttonwithAmt"><a href="javascript:void(0)" data-pop="6" class="defaultBtn blueBtn addBt" ng-click="submitApplication();"  data-dismiss="modal"><span>Submit Application</span></a></div>
+                                            <p>Your application will be processed post receipt of the documents.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="showImage" role="dialog" class="resumeApplBlock modal fade">
+                        <div class="modal-dialog imgres">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                                    <h2 class="modal-title"><span>Selected Image</span></h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="resumeFormWrap">
+                                        <div class="titleBlock">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div >
+                                                            <img  src="data:image/png;base64, {{base64Image}}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="row">
+                                                <div class="mobCenter">
+                                                    <button type="button" class="defaultBtn blueBtn" ng-click="makeSnapshot()"><span>Capture</span></button>
+                                                    <button type="button" class="defaultBtn blueBtn" ng-click="upload()"><span>Upload</span></button>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div> 
+                <!-- Start footer-->
+                <app-footer></app-footer>
+                <div id="loaderDiv" *ngIf="showLoader"> 
+                    <img src="/assets/images/loader.svg" class="ajax-loader"/>
+                    </div>
+                <!-- End footer--> 
+                <!-- End footerScripts-->
+            </div>
+    

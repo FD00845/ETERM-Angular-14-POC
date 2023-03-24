@@ -1,0 +1,743 @@
+.dobWrap .blankDOB{
+	text-align: left;
+    color: red;
+}
+.eTermInner .etermCol .errorTxt.pt {
+       bottom: inherit;
+    top: -85px;
+}
+.visibility-hide{
+	visibility:hidden ;
+}
+.selected .visibility-hide{
+	    visibility: visible;
+}
+.errorMsg {
+   
+    color: #ed1c24; line-height: 1.2rem;
+}
+.selectEffect  .error {
+    position: absolute;
+    top: 103%;
+    left: 0;
+    padding-left: 1.5rem;
+    color: #ed1c24;
+    line-height: 1.2rem;
+}
+.jointVenture ul{
+    margin-top: 0px;
+    text-align: center;
+    }
+.jointVenture ul li img{
+	    height: 60px;
+}
+
+.webcam {
+	text-align:center;
+}
+.showForceFully{
+	display:block !important;
+}
+
+#loaderDiv {  
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: grey;
+    opacity: .8;
+ }
+
+.ajax-loader {
+      position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
+    display: block;
+    height: 100px;
+    width: 100px;   
+}
+
+.disableAnchor {
+	pointer-events: none;
+}
+
+.alupload{
+position: relative;
+    top: 25px;
+    color: #00aeef;
+    font-weight: 400;
+    
+}
+
+select#medicalQueQ12Country,#medicalQueCity{
+	
+	display:block !important;
+	
+}
+
+.resumeApplBlock .imgres{
+	width:25%;
+}
+
+.helpBlock {
+    top: 45% !important;
+    }
+    
+    
+@media screen and (max-width: 992px) {
+	.resumeApplBlock .imgres{
+	width:55%;
+	}
+}
+
+#snapshot{
+	width:108px;
+}
+
+.resumeApplBlock .capimg{
+	overflow-x:auto;
+}
+
+.summulerr{
+	position: absolute;
+    bottom: -5%;
+	
+}
+
+.premAmnt .errorMsg{
+	line-height:1.3;
+}
+.addbenefitsMsg.sho{
+	display:block !important;
+}
+
+.lifeStyleBox.showLifestyle{
+	display:block !important;
+}
+
+ .adharDetailBlock.personalDetail{
+	display : none !important;
+}  
+
+.adharDetailBlock .adharBoxWrap .message{
+	font-size : 13.8px !important;
+	margin-top : 2px !important;
+}
+
+.premAmnt .noticeMsg {
+    color: #828282;
+    font-weight: bold;
+}
+.summulerrMob{
+	
+	display:none;
+	}
+@media screen and (max-width: 480px) {
+	.summulerr{
+	position: relative;
+	left: 6%;
+	bottom: 274px;
+	clear: both;
+	display:none;
+	}
+	.summulerrMob{
+	position: relative;
+	left: -3%;
+	/*bottom: 274px; */
+	clear: both;
+	display:block;
+	}
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px){
+	.summulerr{
+	position: absolute;
+	bottom:-20px;
+	}
+}
+
+.policyDetailBlock .policyInfoBlock .policyInfo ul li>span:first-child{
+	width: 147px !important;
+}
+.blk{
+	margin-top:12%;
+	
+}
+
+.amtTxt .buttonwithAmt{
+max-width: 27.7rem !important;
+}
+.amtTxt .amount{
+width: 15rem !important;
+}
+
+/* .insuranceBlock .progressBlock{
+	    top: 70px;
+} */
+ 
+.modal-dialog .buttonwithAmt{
+max-width: 28.5rem !important;
+}
+.modal-dialog  .amount{
+ width: 70% !important;
+}
+.disableBenefit{
+	background: rgba(255,255,255,0.9);
+	
+}
+.benefitabove-cr-PT-dsb,.benefitabove-cr-PT-ib,.benefitabove-cr-PT-ipb,.benefitabove-cr-PT-irb,.benefitabove-cr-PT-cb,.benefitabove-cr-PT-dsb,.benefitabove-cr-PT-asb,.benefitabove-cr-PT-cipb{
+	padding: 28px; 
+    font-weight: bold;
+}
+.disableBenefit span{
+	    font-weight: 800;
+}
+
+.controlWrap{
+	padding: 2rem 0 !important;
+}
+.policyDetailBlock .policyInfoBlock {
+padding: 2.7rem 1rem 1.3rem 1.5rem !important;
+}
+.policyDetailBlock .quoteDiv {
+padding: 2.3rem 1rem 1.7rem 1.5rem !important;
+}
+
+.inputEffect.errorToBtm .error {
+    top: 144%;
+    padding-left:1.5rem;
+}
+
+.eTermInner .premAmnt.eTerm .select .bootstrap-select .dropdown-menu{
+	    height: 130px;
+}
+
+a.removeMember {
+    margin-left: 4px;
+    color: #00aeef;
+    font-family: Whitney-Medium;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+}
+span.icon-minus {
+    margin-right: 4px;
+    
+}
+
+p.monthlyNotice {
+    font-size: 15px;
+    font-family: Whitney-Book;
+    color: #818181;
+    margin-top: 10px;
+}
+
+.policyBtn button {
+    background: none;
+    border: none;
+}
+
+.helpBlock .assistanceWrap .connectOption ul li span{
+	cursor:pointer;
+}
+
+header .logoContentWrap .logo{
+	cursor:default;
+}
+
+input#ifsccd {
+    text-transform: uppercase;
+}
+
+.ifl-contentMaster.ifl-grey-bg {
+    padding: 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  
+ .webSection {
+      display:none;
+  }
+   .mobSection {
+     display:block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  
+  .webSection {
+   display:block;
+  }
+   .mobSection {
+     display:none;
+  }
+}
+
+@media only screen and (max-width: 1199px){
+.policyDetailBlock {
+    right: 2rem !important;
+}
+}
+
+.requiredField .dropdwn{
+	width: 50%;
+    display: inline-block;
+}
+.inptstyle{
+	margin-left: 3%;
+    margin-top: 2%;
+}
+
+.details.ng-binding {
+    font-size: 13px;
+}
+span.labelName{
+	font-size:15px !important
+}
+
+span.details.coverdSum.ng-binding {
+    font-size: 13px !important;
+}
+
+.feedbackWrap .congratulationBox {
+    padding: 1.8rem;
+    margin-top: 5.8rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.feedbackWrap .congratulationBox .applicantInfo {
+    margin: 0 2rem 2.5rem;
+    padding-bottom: 2.5rem;
+    
+}
+
+.feedbackWrap .congratulationBox .applicantInfo p {
+    font-size: 1.6rem;
+    font-family: Whitney-Medium;
+    text-align: center;
+    color: #2a2a2a;
+}
+
+.feedbackWrap .congratulationBox .applicantInfo p span {
+    font-family: Whitney-Book;
+    display: block;
+    padding-top: 1rem;
+}
+
+.feedbackWrap .congratulationBox .applicantInfo h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.6rem;
+    font-family: Whitney-Medium;
+    text-transform: capitalize;
+    text-align: center;
+    color: #00aeef;
+}
+
+.experienceWrapper .experienceBlog {
+    background-color: #fdfdfd;
+    padding: 0 0 3.5rem 0;
+    margin-top: 5.8rem;
+    background: #f3f7f9 url(../images/bg_thankYou.png) top right no-repeat;
+    
+}
+
+span.icon-call{top: -8px;}
+
+/*chat css */
+
+    .etermLiveChat #myChatLinkContainer {
+        background: #444;
+        color: #fff;
+    }
+
+    .etermLiveChat .center {
+        margin: auto;
+        width: 50%;
+        padding: auto;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+   .etermLiveChat .bottom-right {
+        position: fixed;
+        height: auto;
+        width: auto;
+        bottom: 50px;
+        left: 50px;
+    }
+
+    .etermLiveChat .bottom-left {
+        text-align: center;
+        position: fixed;
+        height: auto;
+        width: auto;
+        bottom: 50px;
+        left: 50px;
+    }
+
+    .etermLiveChat .bottom0 {
+        bottom: 0;
+    }
+
+    .etermLiveChat #reactive-chat-toggle {
+        height: auto;
+        width: 350px;
+        border: 1px solid;
+    }
+
+    .etermLiveChat #chatWindow {
+        height: 500px;
+        width: 350px;
+        -webkit-box-shadow: 2px 0px 62px -8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 2px 0px 62px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: 2px 0px 62px -8px rgba(0, 0, 0, 0.75);
+        z-index: 100;
+  		background: #fff;
+    }
+
+    #iframeContainer {
+        height: 500px;
+    }
+
+    .etermLiveChat #reactiveChatWindow {
+        height: 350px;
+    }
+
+    .etermLiveChat #chatWindowMinimized{
+      height: 30px;
+      width: 350px;
+      background-color: #eee;
+      color: #000;
+     /*  border: 1px solid blue; */
+      display: none;
+      color: #0094de;
+      font-family: 'Whitney-Medium';
+      padding: 5px;
+      z-index:100;
+    }
+
+   .etermLiveChat .wrapContainer {
+        padding-bottom: 0px;
+    }
+    
+    /*end chat css */
+
+@media only screen and (max-width: 480px){
+.requiredField .dropdwn{
+	width: 88%;
+    display: inline-block;
+    margin-left: 4%;
+    margin-top: -4%;
+}
+.inptstyle{
+	margin-top: 4%;
+}
+}
+.inreplacementerr{
+    margin-top: 12px;
+    position: static !important;
+    margin-left: 20px;
+}
+.reviewApplicationWrap .titleDiv  a{
+	cursor:pointer;
+}
+.reviewApplicationWrap .titleDiv  a.disableAnchor{
+	cursor:default;
+}
+.noticeMsgPB{
+    color: #828282;
+    font-weight: bold;
+    font-size: 12px;
+}
+.activeTab .nomineeDetailsWrap .accordContent{
+	display:block !important;
+}
+.activeTab .employmentDetailWrap .accordContent{
+	display:block !important;
+}
+.activeTab .basicDetailWrap .accordContent{
+	display:block !important;
+}
+
+.activeTab .bankDetailWrap .accordContent{
+	display:block !important;
+}
+.activeTab .fatcaTabWrap .accordContent{
+	display:block !important;
+}
+.activeTab .healthDetailWrap .accordContent{
+	display:block !important;
+}
+.activeTab .medicalHistoryWrap .accordContent{
+	display:block !important;
+}
+.activeTab .lifestyleQuestionsWrap .accordContent{
+	display:block !important;
+}
+.paygateway{
+	text-align:left !important;
+	color:#00aeef;
+	padding:15px 25px 0px 25px !important;
+	text-transform: capitalize;
+	margin-bottom: 1rem !important;
+}
+.paybox{
+	padding: 0 0 0.5rem 0 !important;
+}
+.paygatewayform{
+	text-align:left !important;
+	padding:10px 25px !important
+}
+.paylabel{
+	color: #00aeef;
+    
+}
+.paybleSize{
+	font-size: 20px;
+}
+.paylabelspacing{
+	padding-left:10%;
+}
+.paygatewayform input[type="radio"]:checked:before {
+	background:#00aeef;
+}
+.paybtn{
+	    border-radius: 0px !important;
+	    padding: 5px 15px !important;
+}
+.payformbtn{
+	padding: 20px 5px;
+}
+.paygatewayform input[type="radio"]:checked:before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 6px;
+    left: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background:#00aeef;
+    
+}
+.radiosize{
+	width: 25px;
+    height: 25px;
+}
+.radioname{
+	position: relative;
+    left: 15px;
+    top: 5px;
+}
+.errorOnPopup {
+    color: red;
+    padding-top: 5px;
+}
+
+/***CSS for Search application page**/
+#customers {
+  
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #f47920;
+  color: white;
+}
+.searchapplication .resumeFormWrap{
+	width: 50%;
+    left: 30%;
+    position: relative;
+}
+.searchapplication .topCurve{
+	top:-20px;
+}
+.searchapplication .finalAge{
+   left: 0;
+    float: left;
+    position: inherit !important;
+}
+
+/***CSS for SP authorization page **/
+
+.Authline{	
+	color: black !important;
+    border: .2px solid !important;
+}
+
+
+.spwelcome{
+    padding-bottom: 35px;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.spAggrement{
+	font-size: 16px;
+    font-weight: 600;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.spAuthorizationTitle
+{
+	border-bottom: 0.2px solid black !important; 
+	padding-bottom: 35px !important;
+}
+
+/***BOB page CSS**/
+.bobPage .paddBob
+{
+padding-top: 25px;
+    padding-bottom: 10px;
+}
+.bobPage .mrgn-top10{
+	margin-top: 10px;
+}
+.bobPage .branchLabel {
+	font-size: 18px !important;
+    font-weight: 500;
+}
+.bobPage .logoContentWrapRight{
+	float:right;
+     max-width: 20rem;
+   }
+.sticky .logoContentWrapRight img {
+    max-width: 15rem;
+}
+@media screen and (max-width: 767px) {
+   .bobPage .col-sm-3{
+     width:35%;
+   }
+   .bobPage .col-sm-6{
+    width:65%;
+   }
+   .bobPage .logoContentWrapRight{
+     max-width: 15rem;
+   }
+   
+  .webSection,.breadcrumb {
+      display:none;
+  }
+   .mobSection {
+     display:block;
+  }
+}
+
+.rating > label:before { 
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.checkedStar{
+	color: #FFD700;
+}
+
+.onlineTermLink{
+	font-weight: 600;
+}
+
+.breadcrumb {background:transparent}
+.breadcrumb li a {color:#717172;font-family: Whitney-Bold;}
+.breadcrumb>li+li:before {color:#717172;content:"\003e"; font-weight:bold}
+.breadcrumb>.active{color:#717172;}
+.onlinetermSection .breadcrumb {
+    padding: 8px 15px 8px 0;
+    margin-bottom: -60px;
+    z-index: 99;
+    position: relative; font-size:12px
+}
+
+.helpBlock .assistanceWrap .connectOption ul li span{
+	cursor:pointer;
+}
+
+.independentPageRadio{
+	width: 4%;
+    height: 25px;
+}
+
+.emailSms{
+	font-size:48px;
+	color:#154d83;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+}
+
+.faqTemInsurance{
+	color: #58ad58;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.BiTnc{
+	font-family: Whitney-Medium;
+}
+.BiTnc .optionHeader{
+    font-size: 1.6rem;;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+.BiTnc .optionTncList{
+	padding-left:20px
+}
+.BiTnc .optionTncList li{
+	margin-bottom:10px
+}
+.BiTncStandalonePage{
+	margin-left: 15%;
+	margin-right: 15%;
+	border: 1px solid #ccc;
+    padding: 6rem !important;
+    border-radius: 15px;
+}
+.BiTncStandalonePage .BiTnc .biTncHeader{
+	padding-left:0px;
+	font-size: 2.5rem;
+	margin-top:0px;
+}
+.BiTnc .biTncHeader{
+	margin-bottom: 20px;
+    margin-top: 15px;
+	padding-left:20px;
+	font-size: 2.0rem;
+	color:#409fd5;
+}
+.BiTnc .BiTncOuterDiv{
+	border-radius: 10px;
+    overflow: hidden;
+	border: 1px solid #ccc;
+}
+.BiTnc .BiTncOuterDiv .BiTncInnerDiv{
+	height: 19rem;
+    overflow-x: auto;
+    background-color: white;
+}    
+.disabledlbvea {
+  cursor: not-allowed;
+}

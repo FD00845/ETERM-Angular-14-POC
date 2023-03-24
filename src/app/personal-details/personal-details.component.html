@@ -1,0 +1,314 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+          'event':'virtualPageView',
+          'page':{
+            'title':'Basic detail page',
+            'url':'/personal-details'
+          }
+        });
+    </script>
+    <div class="inside personalDetails">
+                <!--.master-->
+                <header>
+                    <div class="premiumHeader personalDetails">
+                        <div class="container">
+                            <div class="logoContentWrap clearfix"><a href="javascript:void(0)" class="logo"><img src="/assets/images/indiaFirstLogo.png" alt="logo"></a></div>
+                            <div class="appLabel">
+                                <p>Application no. <span class="appId">{{quoteDetails.applicationRefNo}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="wrapper-content personalDetailPage">
+                    <div class="eTermPlanWrap">
+                        <div class="topCurve"></div>
+                        <div class="container">
+                            <div class="forCurveSpacing titleWrap">
+                                <div class="titleBlock">
+                                    <h1 [ngClass]="{'gppTitleFontTise':quoteDetails.productID ==25}">{{quoteDetails.planName}}</h1><span class="subTitle">Tell us about yourself to help us process your policy.</span>
+    
+                                    <!-- <div class="progressBlock">
+                                        <div data-percent="40" data-duration="1000" class="progress-bar position"></div>
+                                    </div> -->
+                                    <div class="progressBlock">
+                                        <div data-percent="40" data-duration="1000" class="progress-bar position"><div class="background" style="background-color: rgb(234, 234, 234);"></div><div class="rotate" style="background-color: rgb(107, 198, 243); transition: transform 1000ms linear 0s; transform: rotate(144deg);"></div><div class="left" style="background-color: rgb(234, 234, 234);"></div><div class="right" style="background-color: rgb(107, 198, 243);"></div><div class=""><span>40%</span></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="termPlan formBgWrap">
+                                
+                                    <div class="row"> 
+                                        <div class="col-md-3 noPadding sc"><span class="arrowCircle"><span class="topArrow icon-top-arrow"></span></span>
+                                            <div class="formWrap">
+                                                <ul class="clearfix leftNavList">
+                                                    <li class="active"><span class="number">1</span><a href="javascript:void(0)">Personal details<span class="time">2 minutes</span></a></li>
+                                                    <li class="disabled"><span class="number">2</span><a href="javascript:void(0)">Bank &amp; other details<span class="time">2 minutes</span></a></li>
+                                                    <li class="disabled"><span class="number">3</span><a href="javascript:void(0)">Health related questions<span class="time">2 minutes</span></a></li>
+                                                    <li class="disabled"><span class="number">4</span><a href="javascript:void(0)">Review <span class="time">2 minutes</span></a></li>
+                                                    <li class="disabled"><span class="number">5</span><a href="javascript:void(0)">Upload documents		</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 noPadding clearfix">
+                                            <p class="subTitle" style="padding: 0px 0px 20px 10px;font-size: 18px;" *ngIf="quoteDetails.productID ==25" >Please keep the <a class="listRequiredDoc" (click)="getRequiredDocList()">list of required documents</a> handy to complete your application</p>
+                                            <div class="formDetailsWrap">
+                                                <div class="detailWrapper">
+                                                    <ul class="detailList"> 
+                                                        <li class="basicD" [ngClass]="{'activeTab':currentTab =='Basic'}" (click)="basicDetailsClick('tab');"><a >Basic Details</a></li>
+                                                        <li class="employmentD" [ngClass]="{'activeTab':currentTab =='Employment'}" (click)="employmentDetailsClick('tab');"><a >Employment Details</a></li>
+                                                        <li class="nomieeD" ng-if="!secondaryLARequired"  [ngClass]="{'activeTab':currentTab =='Nominee'}" (click)="nomineeDetailsClick('tab');"><a >Nominee Details</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="personalDetailsWrapper detailsWrapper">
+                                                    <div class="content" [ngClass]="{'activeTab':currentTab =='Basic'}">
+                                                      
+                                                        <div class="basicDetailWrap accordBody">
+                                                            <h2 class="mbasicD activeAccord">Basic Details</h2>
+                                                            <div class="accordContent activeAccord">
+                                                              <form [formGroup]="eKycForm">
+                                                                <div class="adharDetailBlock personalDetail">
+                                                                    <div class="adharBoxWrap adharBox hightlightFormBox clearfix">
+                                                                        <h3 class="hightlightTitle">We have got a shortcut for you!<span>E-verify now and speed up your application process.</span></h3>
+                                                                        <p class="checkBox">
+                                                                            <input id="authorize" type="checkbox" [disabled]="isEKycFlow" ng-model="checkAadhar" autocomplete="off">
+                                                                            <label for="authorize">I authorize IndiaFirst Life to access my Aadhaar card information.</label>
+                                                                        </p>
+                                                                        <div class="clearfix">
+                                                                            <div class="verifyBlock adharInput">	
+                                                                                <div [ngClass]="{'errorBlock':eKyc.aadharVerify && eKyc.aadharVerify.touched && eKyc.aadharVerify.valid}" class="inputEffect">
+                                                                                    <label class="effectLabel"><span data-content="Aadhaar Number" class="placeHolder">Aadhaar Number</span></label>
+                                                                                    <input type="tel" appOnlynumber name="aadharVerify" [disabled]="isEKycFlow" id="adhrV"  formControlName="aadharVerify" required minlength="12" maxlength="12"
+                                                                                    (focus)="clickfnctn('adhrV')" (blur)="clickfnctn('not')" (keydown)="keyfnctn('adhrV')" class="textBox">
+                                                                                    <div *ngIf="eKyc.aadharVerify.touched && eKyc.aadharVerify.invalid && (eKyc.aadharVerify.hasError('required') || eKyc.aadharVerify.hasError('minlength')) && test !='adhrV'" class="error">Please enter your Aadhaar No.</div>
+                                                                                    <div id="aadharVerifyonly" *ngIf="eKyc.aadharVerify.dirty && test =='adhrV'" class="error"></div>																				
+                                                                                </div><button class="defaultBtn blueBtn policyBtn"  [ngClass]="isEKycFlow?'disableAnchor':''" (click)="sendOTP();"> <span>Send OTP</span></button>
+                                                                            </div>
+                                                                            <div class="verifyBlock otpInput">
+                                                                                <div [ngClass]="{'errorBlock':eKyc.otp.touched && eKyc.otp.invalid}" class="inputEffect errorToBtm">
+                                                                                    <label class="effectLabel"><span data-content="Enter OTP" class="placeHolder">Enter OTP</span></label>
+                                                                                    <input name="otp" appOnlynumber type="tel" id="otp" [disabled]="!enableEVerify || isEKycFlow" required formControlName="otp"  minlength="6" maxlength="6" 
+                                                                                    (focus)="clickfnctn('otp')" (blur)="clickfnctn('not')" (keydown)="keyfnctn('otp')" class="textBox">
+                                                                                    <div *ngIf="eKyc.otp.touched && eKyc.otp.invalid && (eKyc.otp.hasError('required') || eKyc.otp.hasError('minlength')) && test !='otp'" class="error">Please enter OTP</div>
+                                                                                    <div id="otp" *ngIf="eKyc.otp.dirty && test =='otp'" class="error"></div>
+                                                                                </div><button (click)="verifyOTP();" [disabled]="!enableEVerify" [ngClass]="isEKycFlow?'disableAnchor':''" class="defaultBtn whiteBtn policyBtn on-eVerify"><span>E-Verify</span></button><span class="message defaultMsg">OTP will be sent to Aadhaar-linked mobile no.</span><span class="message orangeText whenSent">OTP sent to Aadhar-linked mobile no.</span>
+                                                                            </div>
+                                                                            <div class="otpMessage"><a href="javascript:void(0)" [ngClass]="isEKycFlow?'disableAnchor':''" (click)="eKyc.aadharVerify.invalid?'':sendOTP();">Resend OTP</a><span>(in 60 Sec) </span></div>
+                                                                        </div>
+                                                                        <p class="adhrNote">For your convenience we have introduced an online verification through your Aadhaar number (UID). Policy will be issued faster as no separate documentation is required for Address and Identity proofs by clicking  e-Verify button, you authorize IndiaFirst Life to procure all and any information required by it in connection with the verification of the Aadhaar Card.</p>
+                                                                    </div>
+                                                                </div>
+                                                              </form>	
+                                                                <div class="infoEditBar" >
+                                                                <!-- <p class="withAdhr" style="padding-bottom:2%">Fill up the form manually in case you don&rsquo;t have above details.</p>	 -->															
+                                                                <!-- 	<p class="whenAdhr" ng-if="iseKYCDetailsEdit">We have populated your data basis your Aadhaar card<a class="settoRight on-edit" (click)="editeKyc();"><span class="icon-edit"></span>Edit</a></p>
+                                                                    <p class="onEdit" ng-if="!iseKYCDetailsEdit">By editing the data you have opted to reverse your e-verification. You will have to submit additional documents to support your changes.<a class="settoRight on-cancel" (click)="canceleKyc();">Cancel</a></p> -->
+                                                                </div> 
+                                                            <div>
+                                                               <form [formGroup]="policyForm">
+                                                                <div>
+                                                                    <div class="row" *ngIf="Showaddrlabel" style="margin-left: 5px;">
+                                                                        <label style="font-size: medium;margin-bottom: 15px;">Life Assured Address Details</label>
+                                                                    </div>
+                                                                    <div class="row controlWrap widthHundred">
+                                                                        <div class="col-sm-4"> 
+                                                                            <div [ngClass]="{'errorBlock':submitted && Policy.add1.hasError('required'),'active': !Policy.add1.hasError('required')}" class="inputEffect active">
+                                                                                <label class="effectLabel star"><span data-content="Address line 1"  class="placeHolder star">Address line 1</span></label>
+                                                                                <input name="add1" type="text" alpha-numeric-withspace ekyc-compliance id="add1"
+                                                                                formControlName="add1" required autocomplete="off" minlength="3"  maxlength="30" class="textBox">
+                                                                                <div *ngIf="submitted && Policy.add1.hasError('required')" class="error">Please enter Address</div>
+                                                                                <div *ngIf="submitted && Policy.add1.hasError('minlength')" class="error">Address length should be minimum 3</div>
+                                                                                <div *ngIf="submitted && (Policy.add1.hasError('pattern') && !Policy.add1.hasError('minlength'))" class="error">Please enter valid Address line 1 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 topPadding">
+                                                                            <div [ngClass]="{'active': !Policy.add2.hasError('required')}" class="inputEffect">
+                                                                                <label class="effectLabel"><span data-content="Address line 2" class="placeHolder">Address line 2</span></label>
+                                                                                <input name="add2" type="text" id="add2" alpha-numeric-withspace ekyc-compliance 
+                                                                                formControlName="add2" autocomplete="off" minlength="3"  maxlength="30" class="textBox">
+                                                                                <div class="error"></div>
+                                                                                <div *ngIf="submitted && Policy.add2.touched && Policy.add2.hasError('minlength')" class="error">Address length should be minimum 3</div>
+                                                                                <div *ngIf="submitted && (Policy.add2.touched && Policy.add2.hasError('pattern') && !Policy.add2.hasError('minlength')) " class="error">Please enter valid Address line 2 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 topPadding">
+                                                                            <div [ngClass]="{'active': Policy.add3 && Policy.add3.hasError('pattern') || !Policy.add3.hasError('required')}" class="inputEffect">
+                                                                                <label class="effectLabel"><span data-content="Address line 3" class="placeHolder">Address line 3</span></label>
+                                                                                <input name="add3" type="text" alpha-numeric-withspace id="add3" ekyc-compliance 
+                                                                                formControlName="add3" autocomplete="off" maxlength="30" class="textBox">
+                                                                                <div class="error"></div>
+                                                                                <div *ngIf="(Policy.add3.touched && Policy.add3.invalid) && Policy.add3.hasError('pattern')" class="error">Please enter valid Address line 3 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                <div class="row controlWrap"> 
+                                                                    <div class="col-sm-4">
+                                                                        <div [ngClass]="{'errorBlock':submitted && Policy.pincode.hasError('required'),'active': !Policy.pincode.hasError('required')}" class="inputEffect">
+                                                                            <label class="effectLabel star"><span data-content="Pin Code" class="placeHolder star">Pin Code</span></label>
+                                                                            <input type="tel" appOnlynumber name="pincode"  id="pin" formControlName="pincode"
+                                                                             required minlength="6" maxlength="6" (focus)="clickfnctn('pin')" (blur)="changeCityState(Policy.pincode.value)" (keydown)="keyfnctn('pin')" class="textBox">
+                                                                            <div *ngIf="submitted && (Policy.pincode.hasError('required') || Policy.pincode.hasError('minlength')) && test !='pin'" class="error">Please enter Pincode</div>
+                                                                            <div id="pinonly" *ngIf="Policy.pincode.dirty && test =='pin'" class="error"></div>
+                                                                            <div class="error forWrongPincode"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4 topPadding">
+                                                                        <div class="inputEffect active" [ngClass]="{'errorBlock':submitted && Policy.contactCommState.hasError('required'),'active': !Policy.contactCommState.hasError('required')}">
+                                                                            <label class="effectLabel star"><span data-content="State" class="placeHolder">State</span></label>
+                                                                            <div class="selectOption">
+                                                                                <select  required name="state" select formControlName="contactCommState">
+                                                                                       <!-- <option value="">Select State</option> -->
+                                                                                       <option value="Maharashtra">Maharashtra</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div *ngIf="submitted && Policy.contactCommState.hasError('required')" class="error">Please choose state</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4 topPadding">
+                                                                        <div class="inputEffect active" [ngClass]="{'errorBlock':submitted && Policy.contactCommCity.hasError('required'),'active': !Policy.contactCommCity.hasError('required')}">
+                                                                            <label class="effectLabel star"><span data-content="City" class="placeHolder">City</span></label>
+                                                                            <div class="selectOption">
+                                                                                    <select  required name="city" select formControlName="contactCommCity">
+                                                                                       <!-- <option value="">Select City</option> -->
+                                                                                       <option value="Pune">Pune</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div *ngIf="submitted && Policy.contactCommCity.hasError('required')" class="error">Please choose city</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                                <div class="row controlWrap">
+                                                                    <!-- <div class="col-sm-4">
+                                                                        <div [ngClass]="{'errorBlock':(policyForm.aadhar.$touched || policyForm.showFormValidation) && policyForm.aadhar.$error.required,'active': !policyForm.aadhar.$error.required}" class="inputEffect">
+                                                                            <label class="effectLabel"><span data-content="Aadhaar Number" class="placeHolder star">Aadhaar Number</span></label>
+                                                                            <input type="tel" appOnlynumber name="aadhar" id="adhr" [disabled]="isAadharDisabled" ng-model="basicDetails.laAadharNumber" minlength="12" maxlength="12" ng-focus="clickfnctn('adhr')" ng-blur="clickfnctn('not')" ng-keydown="keyfnctn('adhr')" class="textBox">
+                                                                            <div *ngIf="(policyForm.aadhar.$touched || policyForm.showFormValidation) && policyForm.aadhar.$invalid && (policyForm.aadhar.$error.required || policyForm.aadhar.$error.minlength) && test !='adhr'" class="error">Please enter Aadhaar No.</div>
+                                                                            <div id="aadharonly" *ngIf="policyForm.aadhar.$dirty && test =='adhr'" class="error"></div>
+                                                                        </div>
+                                                                    </div> -->
+                                                                    <div class="col-sm-4 topPadding">
+                                                                        <div [ngClass]="{'errorBlock':submitted && Policy.panid.hasError('required'),'active': !Policy.panid.hasError('required') }"  class="inputEffect">
+                                                                                <label class="effectLabel star"><span data-content="PAN"  class="placeHolder star">PAN</span></label>
+                                                                                <input name="panid" type="text" alpha-numeric capitalize id="panid" 
+                                                                                 formControlName="panid"
+                                                                                 [disabled]="quoteDetails.isLAPANVerified" maxlength="10" (keydown)="keyfnctn('panid')"
+                                                                                 (focus)="clickfnctn('panid')" (blur)="checkPanValidOrNot(Policy.panid.value,'LA')"  class="textBox">
+                                                                                 <div *ngIf="submitted && (Policy.panid.hasError('required') || Policy.panid.hasError('pattern'))" 
+                                                                                 class="error">Please enter valid PAN Number</div>
+                                                                                 <!-- <div *ngIf="submitted && Policy.panid.errors" class="invalid-feedback">
+                                                                                    <div *ngIf="Policy.panid.errors['required']">PAN is required</div>
+                                                                                    <div *ngIf="Policy.panid.errors['pattern']">Please enter valid PAN Number</div>
+                                                                                </div> -->
+                                                                               </div>
+                                                                    </div> 
+                                                                </div>
+                                                                <div class="row controlWrap">
+                                                                    <div class="col-sm-4">
+                                                                        <div class="inputEffect active">
+                                                                            <label class="effectLabel star"><span data-content="Marital Status" class="placeHolder star">Marital Status</span></label>
+                                                                            <div class="selectOption">
+                                                                                    <select  required name="maritalStatus" select
+                                                                                     formControlName="maritalStatus">
+                                                                                       <option value="">Select Marital Status</option>
+                                                                                       <option label="Divorced" value="249">Divorced</option>
+                                                                                       <option label="Widow(er)" value="250">Widow(er)</option>
+                                                                                       <option label="Unmarried" value="251">Unmarried</option>
+                                                                                       <option label="Married" value="252">Married</option>
+                                                                                    </select>
+                                                                                    <div class="error" *ngIf="submitted && Policy.maritalStatus.hasError('required')" >
+                                                                                      Please select Marital Status</div> 
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-3 topPadding">
+                                                                        <div class="inputEffect active">
+                                                                            <label class="effectLabel star"><span data-content="Nationality" class="placeHolder star">Nationality</span></label>
+                                                                            <div class="toggleBt withoutIcon toggleBtnBig active"><span class="chckCondition label1"
+                                                                                 [ngClass]="Policy.Nationality.value =='253'? 'white':''"><span class="spcfy1"></span>Indian</span>
+                                                                                <label class="switch">
+                                                                                    <input type="checkbox" autocomplete="off"
+                                                                                    formControlName="Nationality" ng-true-value="254" ng-false-value="253" ng-checked="checkbox == 253"
+                                                                                     ng-change="changeNationality(basicDetails.Nationality);">
+                                                                                    <div class="slider round"></div>
+                                                                                </label><span class="chckCondition label2" [ngClass]="Policy.Nationality.value=='254'? 'white':''"><span class="spcfy2"></span>Non-Indian</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div> 
+                                                                    <div class="col-sm-4 topPadding">
+                                                                        <div class="inputEffect active withTooltip">
+                                                                            <span data-toggle="tooltip" title="Residential status is required to know if you have tax liabilities in India." class="toolTip"></span>
+                                                                            <label class="effectLabel star"><span data-content="Residential Status" class="placeHolder">Residential Status</span></label>																		
+                                                                            <div class="selectOption">
+                                                                                    <select  required name="residentStatus" select 
+                                                                                    formControlName="residentStatus"> 
+                                                                                        <option value="">Select Resident Status</option>
+                                                                                        <option value="Resident">Resident</option>
+                                                                                        <option value="NRI">NRI</option>
+                                                                                        <option value="PIO">PIO</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="error" *ngIf="submitted && Policy.residentStatus.hasError('required')" >
+                                                                               Please select Resident Status</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> 
+                                                                 
+                                                                                                                            
+                                                                <div class="row controlWrap">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="btnWrap">
+                                                                            <div class="leftDiv"><a href="javascript:void(0)" class="defaultBtn blueBtn" 
+                                                                                (click)="next(policyForm,'completeSave');"> <span>Next </span></a></div> 
+                                                                            <div class="rightDiv"><a href="javascript:void(0)" class="fillLater">Choose to fill the form later?</a><a href="javascript:void(0)" (click)="next(policyForm,'tempSave');" class="save">Save</a></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </form>	
+                                                              </div>
+                                                            </div>
+                                                        </div>
+                                                     
+                                                    </div>
+                                                  <!-- Tabs -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="coverModal" role="dialog" class="modal fade" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close icon-close">
+                                        </button>
+                                        <div class="coverContent">
+                                            <p>
+                                                 You are modifying eKYC data, You need to submit the alternate document/proof with respect to the changes made and We are considering this 
+                                                 Case as eKYC Failed Case. Do you want to proceed?
+                                            </p>
+                                            <button class="defaultBtn blueBtn"
+                                                (click)="ekycComplianceOk()" data-dismiss="modal">
+                                                <span>Yes</span>
+                                            </button>
+                                            <button (click)="editeKyc()"
+                                                data-dismiss="modal" class="defaultBtn greyBtn">
+                                                <span>No</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                </div>
+                <!-- Start footer-->
+                <app-footer></app-footer>
+                <div id="loaderDiv" *ngIf="showLoader"> 
+                    <img src="/assets/images/loader.svg" class="ajax-loader"/>
+                    </div>
+                <!-- End footer-->			
+            </div>

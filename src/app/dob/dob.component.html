@@ -1,0 +1,32 @@
+<form #termForm="ngForm" name="{{formname}}" id="{{formid}}"> 
+    <div class="dobWrap">
+        <h6>Date of Birth<span style="color:red; margin-left: 1px;">*</span></h6> 
+        <ul class="dobList clearfix">
+            <li> 
+                <input type="tel" appOnlynumber name="bdate" id="bdate" [(ngModel)]="assuredDOB.day"
+                required maxlength="2"  [min]="1" [max]="31"  placeholder="DD" (blur)="checkdate(assuredDOB.day,'day');"
+                [ngClass]="(termForm.controls['bdate'] && (termForm.controls['bdate'].touched && termForm.controls['bdate'].invalid) || (validonclick && termForm.controls['bdate'].untouched))?'error':''"
+                class="birthDay dobTerm"> 
+                <span *ngIf="termForm.controls['bdate'] && (termForm.controls['bdate'].touched && termForm.controls['bdate'].invalid)"
+                class="errorTxt">Please, enter days  between 1 to 31</span>
+            </li>
+            <li>
+                <input type="tel" [(ngModel)]="assuredDOB.month" placeholder="MM" required
+                maxlength="2" id="bmonth" name="bmonth" [min]="1" [max]="12" appOnlynumber
+                [ngClass]="(termForm.controls['bmonth'] && (termForm.controls['bmonth'].touched && termForm.controls['bmonth'].invalid) || (validonclick && termForm.controls['bmonth'].untouched))?'error':''"
+                class="birthMonth dobTerm" (blur)="checkdate(assuredDOB.month,'month');">
+                <span *ngIf="termForm.controls['bmonth'] && (termForm.controls['bmonth'].touched && termForm.controls['bmonth'].invalid)"
+                class="errorTxt">Please, enter months in between 1 to 12</span>
+            </li>
+            <li>
+                <input type="tel" [(ngModel)]="assuredDOB.year" placeholder="YYYY" minlength="4" maxlength="4" required
+                name="byear" id="byear" min="1967" max="2005" class="birthYear dobTerm" appOnlynumber
+                [ngClass]="(termForm.controls['byear'] && (termForm.controls['byear'].touched && termForm.controls['byear'].invalid) || (validonclick && termForm.controls['byear'].untouched)) ?'error':''"
+                (blur)="checkdate(assuredDOB.year,'year');"> 
+                <span *ngIf="termForm.controls['byear'] && (termForm.controls['byear'].touched && termForm.controls['byear'].invalid)"
+                class="errorTxt">Please, enter years in between 1967 to 2005 </span>
+            </li>
+        </ul> 
+        <span *ngIf="validonclick" class="finalError ng-binding">Please enter valid date of birth</span>
+    </div> 
+</form>

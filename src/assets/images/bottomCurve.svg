@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="1366" height="54" viewBox="0 0 1366 54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #6f767b;
+        stroke-linejoin: round;
+        stroke-opacity: 0.2;
+        stroke-width: 1px;
+        filter: url(#drop-shadow-1);
+      }
+    </style>
+
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dy="-3" in="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.828" result="dropBlur"/>
+      <feFlood flood-opacity="0.15"/>
+      <feComposite operator="in" in2="dropBlur" result="dropShadowComp"/>
+      <feComposite in="SourceGraphic" result="shadowed"/>
+    </filter>
+  </defs>
+  <g style="fill: #fff; filter: url(#drop-shadow-1)">
+    <ellipse cx="681.5" cy="284.5" rx="1249.5" ry="278.5" id="ellipse-1" style="stroke: inherit; filter: none; fill: inherit" class="cls-1"/>
+  </g>
+  <use xlink:href="#ellipse-1" style="stroke: #6f767b; filter: none; fill: none"/>
+</svg>

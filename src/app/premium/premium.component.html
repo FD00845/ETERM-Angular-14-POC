@@ -1,0 +1,1689 @@
+ 
+
+<!-- <ng-include src="'../views/templates/header.html'" /> -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+          'event':'virtualPageView',
+          'page':{
+            'title':'Premium page',
+            'url':'/premium'
+          }
+        });
+        console.log('window.datalayer',window.dataLayer);
+    </script>
+    
+    <header class="premiumHeader premium">
+        <div class="container">
+            <div class="logoContentWrap clearfix">
+                <a href="javascript:void(0)" class="logo">
+                <img
+                    src="/assets/images/indiaFirstLogo.png" alt="logo"></a>
+            </div>
+            <div class="hamburgerMenu jsMenu topNav">
+                <div class="navTrigger">
+                    <span></span><span></span><span></span>
+                                </div>
+            </div>
+            <div class="navContent">
+                <div class="back">
+                    <a href="" class="navBack icon-close"> </a>
+                </div>
+                <div class="navWrap">
+                    <ul>
+                         <li class="active onlineTerm"><a href="#onlinetermWrapper">online
+                                term plan</a></li> 
+                        <li class="faqs"><a href="javascript:void(0)" type="button"
+                            data-toggle="modal" data-target="#faqsModal">FAQ<span>s</span></a></li>
+                    </ul>
+                </div>
+                <div class="profileInfo profilMob">
+                    <ul>
+                        <li><span>{{quoteDetails.gender}}</span></li>
+                        <li><span>{{quoteDetails.age}} yrs old</span></li>
+                        <li><span>{{quoteDetails.isSmoke?"Smoker":"Non Smoker"}}</span></li>
+                        <li><a href="javascript:void(0)" type="button"
+                            data-toggle="modal" data-target="#profModal" class="editBt">Edit
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Proficon preCalProfile">
+                <span class="icon-edit_profile"></span>
+            </div>
+        </div>
+    </header>
+        <!-- <ng-include src="'../views/templates/FAQ.html'" /> -->
+    <div id="faqsModal" role="dialog" class="modal fade popupModal" ng-init="init()">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                                <h4 class="modal-title">Frequently Asked Questions</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="faqsContent mCustomScrollbar">
+                                            <div class="accord">
+                                                <h3>1. What are term insurance plans?</h3>
+                                                <div class="accordContent active">
+                                                    <p>Term Insurance Plan is a form of life insurance which provides coverage for a defined period of time. If the insured individual dies during the policy term, the death benefit is payable to the nominees of the term policy. Term Insurance Plans are designed to protect your family financially in case of death or other uncertainties. The Online Term Plan is a highly flexible policy which provides financial support for you and your family in case of Accidental Total Permanent Disability (ATPD), Critical Illness (CI), and Death and Accidental Death (ADB).</p>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>2. Why should you buy a term insurance plan?</h3>
+                                                <div class="accordContent">
+                                                    <ul>
+                                                        <li>Simplicity:
+                                                            <p> Term Insurance Plans are very simple and convenient. Once you buy Term Plan online and pay the premium, you are covered for the term you have chosen.</p>
+                                                        </li>
+                                                        <li>Affordability:
+                                                            <p>Term Insurance Plans have a highly competitive market making them easily comparable with each other on the basis of their prices. With our Online Term Plan, you can pay the premium either in a single go or monthly, quarterly, half-yearly, or on an annual basis. It is very flexible and affordable to buy Term Plan online.</p>
+                                                        </li>
+                                                        <li>Tax Benefits:
+                                                            <p>Under Section 80C, the premium paid is eligible for tax exemption as per the Income Tax Act 1961. According to the prevailing tax laws, even death benefits are exempted from taxation as per Section 10 (10D). Buy Term Insurance online for both financial protection as well as tax benefits! </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>3. What is the right amount of coverage for me?</h3>
+                                                <div class="accordContent">
+                                                    <ul>
+                                                        <li>Ensure that your policy fulfils your unique requirement! 
+                                                            <p>To help you figure out the suitable cover amount, let us assume that the cover amount should be 10 times your annual income. Multiplying the annual income by 10 is appropriate considering inflation and loss of income. If you are 30 years old and your annual income is INR 7 lakhs, your chosen Sum Assured should be INR 70 lakhs. The Sum Assured should also depend on other factors such as if you marry early or late, or when you have children. You should prepare a list of all your assets and liabilities, future goals etc., and finalize on an amount that you believe would work for you. </p>
+                                                        </li>
+                                                        <li>Be specific about the duration for which you want the coverage.
+                                                            <p>Your online Term Insurance policy must cover you till the age you wish to work. You must take into consideration the age at which you wish to retire. Ideally, you can take the difference between your assumed retirement age and your current age as your policy tenure.</p>
+                                                        </li>
+                                                        <li>Keep in mind Inflation! 
+                                                            <p>Since inflation causes a rise in prices, the purchasing power of your money today would reduce later on. Hence, a periodic increase in your Sum Assured would help assure you even against inflation.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>4. What documents do I need to buy the Online Term Plan?</h3>
+                                                <div class="accordContent">
+                                                    <h4>Standard Income Proof</h4>
+                                                    <p>The documents which are accepted as standard income proof to buy term insurance online are:</p>
+                                                    <ul>
+                                                        <li>Salary Slips of the last 3 months from Government, MNC, or Private Limited Companies.</li>
+                                                        <li>Income Tax Returns of the last 3 years along with computation of income.</li>
+                                                        <li>Bank Statements of the last 6 months with salary entries.</li>
+                                                        <li>Audited Business Account Statements of the last 3 years, including Balance Sheet and Profit & Loss Account Statements from the CA. It is mandatory to have the CA&apos;s stamp and membership number.</li>
+                                                        <li>Latest Form 16. </li>
+                                                    </ul>
+                                                    <h4>Address Proof</h4>
+                                                    <p>The following documents are accepted as proof of address to buy Online Term Plan:</p>
+                                                    <ul>
+                                                        <li>Leave & License agreement</li>
+                                                        <li>Bank Statement or Passbook with latest entries for 6 months</li>
+                                                        <li>Driving License with address mentioned</li>
+                                                        <li>Utility bill (Electricity, Telephone, Post-paid Mobile Phone, Pipe-line Gas, Water) from any service provider that should not be older than 2 months.</li>
+                                                        <li>Passport</li>
+                                                        <li>Voter ID card</li>
+                                                        <li>Aadhar Card</li>
+                                                        <li>Property or Municipal Tax Receipt</li>
+                                                        <li>Post Office Savings Account Statement</li>
+                                                    </ul>
+                                                    <h4>ID Proof</h4>
+                                                    <p>The following documents are accepted as ID proof:</p>
+                                                    <ul>
+                                                        <li>PAN Card</li>
+                                                        <li>Passport</li>
+                                                        <li>Aadhar Card</li>
+                                                        <li>Voter Id card</li>
+                                                    </ul>
+                                                    <h4> Age Proof</h4>
+                                                    <p>The following documents are accepted as proof of age to buy Term Plan online:</p>
+                                                    <ul>
+                                                        <li>PAN Card - acceptable only if date of issue is greater than 1 year</li>
+                                                        <li>Passport</li>
+                                                        <li>Aadhar Card - acceptable only if complete DOB is given. Aadhaar Cards with DOB given as YYYY, 01/01/YYYY, or as 01/07/YYYY formats are not acceptable DOB as age proof for our term insurance plan</li>
+                                                        <li>Municipal Birth Certificate</li>
+                                                        <li>Driver&apos;s License - acceptable only if date of issue is greater than 1 year</li>
+                                                        <li>Leaving Certificate from School or College</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="accord">
+                                                <h3>5.	What is Sum Assured?</h3>
+                                                <div class="accordContent">
+                                                    <p>The Sum Assured in any term insurance plan is the amount that the insurer agrees to pay the insured upon the occurrence of a stated contingency. While signing the life insurance contract, the insurer and the buyer agree on a certain amount that would be payable after the death of the insured to the nominee or the beneficiary. This amount is called the Sum Assured and is flexible in our Online Term Plan.</p>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="displayHide"> -->
+                                                <div class="accord">
+                                                    <h3>6. What is a Premium Paying Term?</h3>
+                                                    <div class="accordContent">
+                                                        <p>In a term insurance plan, a premium paying term is the period for which the buyer is committed to pay towards his/her insurance cover. In our Online Term Plan, we also have a grace period which is the time given for paying the premium from the premium due date during which the policy is supposed to be in force with the risk cover.</p>
+                                                        <p>About Single and Regular Premium Term Insurance Plan: In the Single Premium Option, you get to pay a lump sum for your term plan. In the Regular Premium Option, you can pay the premiums periodically i.e. monthly, quarterly, half yearly, or yearly</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>7. I am an NRI. Can I still buy the Online Term Plan from IndiaFirst Life?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Yes, the Online Term Plan can be bought by NRIs from standard countries. If applicable, medical tests will be conducted in India.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>8. How much life coverage should I buy in a term insurance plan?</h3>
+                                                    <div class="accordContent">
+                                                        <p>The coverage that you buy should be enough to pay all your debts and loans as well as replace your income, especially if you are the sole breadwinner of your family. Adding your annual income to your term plan would serve as an effective safeguard against inflation. Also bear in mind your future obligations such as your spouse&apos;s health and your children&apos;s education.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>9. At what age should I buy a term insurance plan?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Although there is no right age to buy a term insurance plan, you need to be at least 18 years old. It is wise to start preparing early. If you have a steady flow of income which allows you to pay your premiums on time, you are ready to invest in your future. Moreover, if you&apos;re already married, have children, or have parents who are dependent on you, you should definitely consider buying a term insurance plan. As you get older, the premium payable also increases. </p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>10. What should the tenure of my term insurance plan be?</h3>
+                                                    <div class="accordContent">
+                                                        <p>It is advisable to buy the maximum term available under the term plan in order to ensure maximum financial security for your loved ones.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>11. Will I get a maturity benefit if I survive the tenure of the term insurance plan? </h3>
+                                                    <div class="accordContent">
+                                                        <p>The Online Term Plan is purely a protection plan. There is no maturity benefit or payout at the end of the policy term in case of survival of the buyer.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3> 12.	Will my premium amount change during the tenure of the policy?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Your Online Term Plan premium amount shall remain the same during the entire duration of the term plan, subject only to service tax regulations as determined by the Government of India.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accord">
+                                                    <h3>13. I am an occasional smoker. Do I still need to declare myself as a tobacco user?</h3>
+                                                    <div class="accordContent">
+                                                        <p>Yes. Even if you smoke occasionally, you must declare yourself as a tobacco user. When you buy term plan online, complete and accurate medical history is necessary to determine the right premium for your term insurance plan.</p>
+                                                    </div>
+                                                </div>
+                                            <!-- </div> -->
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="profModal" role="dialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                    <h2 class="modal-title">
+                        <span>Profile</span>
+                    </h2>
+                </div>
+                <div class="modal-body calculatorData">
+                    <div class="onlineTermForm">
+                        <div class="row">
+                            <div class="col-md-7 col-sm-7" *ngIf="quoteDetails.productID==26">
+                                  <!-- <dob id="termPlanDOB" validon-clk="validonClick"
+                                    selected-age="profileDetails.age" min="18" max="55"
+                                    dob="profileDetails.dob" birth-date="profileDetails.date"
+                                    birth-month="profileDetails.month" birth-year="profileDetails.year"></dob> -->
+
+                                    <div class="dobWrap">
+                                        <h6>Date of Birth<span style="color:red; margin-left: 1px;">*</span></h6> 
+                                        <ul class="dobList clearfix">
+                                            <li>
+                                                <input type="tel" [(ngModel)]="profileDetails.day" placeholder="DD"
+                                                 maxlength="2" name="bdate" appOnlynumber 
+                                                  min="1" max="31" (blur)="checkdate(profileDetails.day,'day');" [ngClass]="validonClk?'error':''" 
+                                                 class="birthDay dobTerm">
+                                                 <span hidden="" class="errorTxt">Please, enter days  between 1 to 31</span>
+                                            </li>
+                                            <li>
+                                                <input type="tel" [(ngModel)]="profileDetails.month" placeholder="MM"
+                                                 maxlength="2" name="bmonth"  min="1" max="12" appOnlynumber
+                                                 (blur)="checkdate(profileDetails.month,'month');" [ngClass]="validonClk?'error':''"
+                                                 class="birthMonth dobTerm">
+                                                 <span hidden="" class="errorTxt">Please, enter months in between 1 to 12</span>
+                                            </li>
+                                            <li>
+                                                <input type="tel" [(ngModel)]="profileDetails.year" placeholder="YYYY" maxlength="4" name="byear"
+                                                (blur)="checkdate(profileDetails.year,'year');" [ngClass]="validonClk?'error':''" 
+                                                 min="1967" max="2005" class="birthYear dobTerm" appOnlynumber>
+                                                <span hidden="" class="errorTxt ng-binding">Please, enter years in between 1967 to 2005 </span>
+                                            </li>
+                                        </ul> 
+                                        <span *ngIf="validonClk" class="finalError ng-binding">Please enter valid date of birth</span>
+                                    </div> 
+                            </div>
+                            <div class="col-md-7 col-sm-7" *ngIf="quoteDetails.productID==7">
+                                <div class="dobWrap">
+                                    <h6>Date of Birth<span style="color:red; margin-left: 1px;">*</span></h6> 
+                                    <ul class="dobList clearfix">
+                                        <li>
+                                            <input type="tel" [(ngModel)]="assuredDOB.day" placeholder="DD"
+                                             maxlength="2" name="bdate" appOnlynumber 
+                                              min="1" max="31" (blur)="checkdate(assuredDOB.day,'day');" [ngClass]="validonClk?'error':''" 
+                                             class="birthDay dobTerm">
+                                             <span hidden="" class="errorTxt">Please, enter days  between 1 to 31</span>
+                                        </li>
+                                        <li>
+                                            <input type="tel" [(ngModel)]="assuredDOB.month" placeholder="MM"
+                                             maxlength="2" name="bmonth"  min="1" max="12" appOnlynumber
+                                             (blur)="checkdate(assuredDOB.month,'month');" [ngClass]="validonClk?'error':''"
+                                             class="birthMonth dobTerm">
+                                             <span hidden="" class="errorTxt">Please, enter months in between 1 to 12</span>
+                                        </li>
+                                        <li>
+                                            <input type="tel" [(ngModel)]="assuredDOB.year" placeholder="YYYY" maxlength="4" name="byear"
+                                            (blur)="checkdate(assuredDOB.year,'year');" [ngClass]="validonClk?'error':''" 
+                                             min="1967" max="2005" class="birthYear dobTerm" appOnlynumber>
+                                            <span hidden="" class="errorTxt ng-binding">Please, enter years in between 1967 to 2005 </span>
+                                        </li>
+                                    </ul> 
+                                    <span *ngIf="validonClk" class="finalError ng-binding">Please enter valid date of birth</span>
+                                </div> 
+                            </div>
+                            <div class="col-md-5 col-sm-5">
+                                <h6>
+                                    Smoking Habits<span class="icon-no-smoking"></span>
+                                </h6>
+                                <div class="toggleBt active">
+                                    <span class="chckCondition  label1"
+                                        ng-class="{'white':!profileDetails.isSmoke}"><span
+                                        class="spcfy1 icon-no-smoking"></span>No</span> <label class="switch">
+                                        <input type="checkbox" ng-model="profileDetails.isSmoke">
+                                        <div class="slider round"></div>
+                                    </label><span class="chckCondition label2"><span
+                                        class="spcfy2 icon-smoking"></span>Yes</span>
+                                </div>
+                                <p>Say no if you haven&apos;t smoked in last 12 months</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 col-sm-7">
+                                <h6>Gender</h6>
+                                <ul class="clearfix">
+                                    <li> 
+                                        <label class="radioBt" [ngClass]="profileDetails.gender=='M'?'active':''"><span class="radioText"><span class="radioIcon icon-male"> </span>Male</span>
+                                            <input type="radio" name="gender" value="M" [(ngModel)]="profileDetails.gender">
+                                        </label>
+                                    </li>
+                                    <li> 
+                                        <label class="radioBt" [ngClass]="profileDetails.gender=='F'?'active':''"><span class="radioText"><span class="radioIcon icon-female"></span>Female</span>
+                                            <input type="radio" name="gender" value="F" [(ngModel)]="profileDetails.gender">
+                                        </label>
+                                    </li>
+                                    <li> 
+                                        <label class="radioBt" [ngClass]="profileDetails.gender=='O'?'active':''"><span class="radioText"><span class="radioIcon icon-others"></span>Other</span>
+                                            <input type="radio" name="gender" value="O" [(ngModel)]="profileDetails.gender">
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 col-sm-5">
+                                <div class="mobCenter">
+                                    <button type="button" class="defaultBtn blueBtn submit"
+                                        (click)="updateQuoteDetails(profileDetails)">
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="wrapper-content premiumPage">
+        <div class="eTermWrapper">
+            <div class="topCurve"></div>
+            <div class="onlinetermWrapper">
+                <div class="bird1">
+                    <img src="/assets/images/Bird.svg" alt="bird">
+                </div>
+                <div class="bird2">
+                    <img src="/assets/images/Bird.svg" alt="bird">
+                </div>
+                <div class="cloud1">
+                    <img src="/assets/images/Cloud.svg" alt="cloud">
+                </div>
+                <div class="cloud2">
+                    <img src="/assets/images/Cloud.svg" alt="cloud">
+                </div>
+                <div class="container">
+                <!-- <form name="premiumForm"> -->
+                    <div class="eTermInner forCurveSpacing clearfix">
+                        <h1 *ngIf="!anyTimePlan">
+                            <span>your insurance plan</span>IndiaFirst Life <label
+                                class="dynamicTlt">E-term</label> Plus Plan
+                        </h1>
+                        <h1 *ngIf="anyTimePlan">
+                            <span>your insurance plan</span>IndiaFirst Life <label
+                                class="dynamicTlt">AnyTime</label> Plan
+                        </h1>
+                        <div class="wrapCol clearfix">
+                            <div class="etermCol">
+                                <div class="sumInsured">
+                                    <h6 *ngIf="!anyTimePlan">
+                                        Sum Assured with <span data-toggle="tooltip"
+                                            title="Sum Assured is the total amount for which a person is insured and is paid to beneficiaries in times of difficulty."
+                                            class="toolTip"></span>
+                                        <p class="dynamicBenefitTlt">life benefit</p>  
+                                    </h6>
+                                    <h6 *ngIf="anyTimePlan">Sum Assured</h6>
+                                    <div class="inputData">
+                                        <!-- <stepper id="premiumStepper"
+                                            min="defaultValues.minSumAssured"
+                                            value="{{defaultValues.input}}"
+                                            selected-value="quoteDetails.sumAssured" 
+                                            risk-coveroption="quoteDetails.riskCoverOption"
+                                            iseditable="false"
+                                            max="defaultValues.maxSumAssured"
+                                            stepcount="{{defaultValues.stepcount}}"
+                                            blur-sumassured="blurFromSumAssured"
+                                            classname="selectStepper"
+                                            age="{{quoteDetails.age}}"
+                                            issa-error = "issaError"
+                                            change-action="benefitDisable(quoteDetails,false,'fromSAChange')">
+                                        </stepper> -->
+                                        <div class="selectStepper">
+                                            <span class="minusIndicator" ng-class="{disableController:disableDecrement}" 
+                                            (click)="decreseVal($event)"></span>
+                                            <input (change)="changeSumassured()" (blur)="onChange(input);"
+                                             ng-focus="onFocus($event)" [(ngModel)]="input" type="string" name="points" min="1000000"
+                                              max="999999999" step="500000" maxlength="9" class="" />
+                                              <span class="plusIndicator" [ngClass]="{'disableController': disableIncrement}" 
+                                              (click)="increaseVal($event)"></span>
+                                        </div>
+                                    </div> 
+                                    <span hidden class="errorTxt errorClass">Sample Text.</span>
+                                    <p class="numberWord">{{words_string}}</p>																
+                                </div>
+                                <div class="summulerrMob">
+                                    <span class="errorMsg"  *ngIf="sumAMultipleof1000Error">
+                                        Please enter sum assured multiple of 100000
+                                    </span>
+                                </div> 
+                                <div *ngIf="isIncomeSelected">
+                                    <span style="color:#f47920" >
+                                        Your Sum Assured will be determined basis the annual income declared by you and would decrease every year.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="etermCol">
+                                <h6>
+                                    For policy term
+                                    <p class="policyTerm">Covers you till {{quoteDetails.coverAge}} yrs of age</p>
+                                </h6>
+                                      <span style="display:none;"> {{premiumTermMaster}}</span>
+                                <div [ngClass]="isError?'errorBlock':''" class="inputEffect  active"> 
+                                    <!-- <select select
+                                        ng-options="master.masterKey as master.masterKey for master in premiumTermMaster | filter:{masterType:'eTerm-Policy-term'}"
+                                        ng-change="generateQuoteService(quoteDetails,'save')"
+                                        ng-disabled="quoteDetails.riskCoverOption==4"
+                                        ng-model="quoteDetails.planTerm"> 
+                                    </select>ng-disabled="quoteDetails.riskCoverOption==4" -->
+                                    <input type="tel" name="planTerm" id="planTerm"
+                                                         (change)="checkPlanTerm(quoteDetails)" 
+                                                        [(ngModel)]="quoteDetails.planTerm" 
+                                                        maxlength="2"   
+                                                        placeholder="Please enter Policy term"
+                                                        class="textBox numberOnly"> 	
+                                    <span class="errorTxt errorClass pt" *ngIf="isError">{{errorMsg}}</span>
+                                </div> 
+                            </div>
+                            <div class="etermCol">
+                                <h6>
+                                    Premium amount
+                                    <p>(Premium incl. of applicable taxes)</p>
+                                </h6> 
+                                <div class="premAmnt" [ngClass]="{'eTerm': !isETerm}">
+                                    <span class="amntSpan"><span class="rupee"></span><span>{{quoteDetails.installmentPremiumAfterTax | number}}</span></span>
+                                    <div class="select">
+                                        <!-- <select class="selectpicker show-tick">
+                                                        <option>Annually</option>
+                                                        <option>Half yearly</option>
+                                                        <option>Quarterly</option>
+                                                        <option>Monthly</option>
+                                                        <option>One time</option>
+                                                    </select> --> 
+                                        <select id="premiumType" select name="premiumType"
+                                            class="selectpicker show-tick" 
+                                            (change)="setUnit(quoteDetails,quoteDetails.premiumTypeId);" 
+                                            [(ngModel)]="quoteDetails.premiumTypeId">
+                                            <!-- ng-options="master.genericMasterId as master.masterKey for master in frequenyMaster | filter:{masterType:'premium-frequency'}" -->
+                                            <!--  <option value="">Select Death Benefit</option> -->
+                                            <option>Annually</option>
+                                            <option>Half yearly</option>
+                                            <option>Quarterly</option>
+                                            <option>Monthly</option>
+                                            <option>One time</option>
+                                        </select>
+                                    </div>
+                                    <!-- <div class="noticeMsg" ng-if="quoteDetails.premiumTypeId == 384">
+                                    The Initial premium will be collected for 3 months. {{quoteDetails.installmentPremiumAfterTax | number}} * 3 = i.e. ₹ {{quoteDetails.installmentPremiumAfterTax * 3}}</div> -->
+                                    <div class="errorMsg" *ngIf="invalidAmount">{{invalidPremium}}</div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="summulerr">
+                            <span class="errorMsg" *ngIf="sumAMultipleof1000Error">
+                                Please enter sum assured multiple of 100000
+                            </span></div>
+                            
+                            <div class="addbenefitsMsg sho"  ng-bind-html="to_trusted(addtionalSumAssuredMsg)">
+                                <!-- Additional sum assured of <span class="rupee">` {{addtionalSumAssured}} </span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                </div>
+                <div class="bottomCurve"></div>
+            </div>
+        </div>
+        <div class="peoplewhoboughtSlide">
+            <div class="container">
+                <div class="dwldBrochurewrap">
+                    <div class="dwldBrochurecon">
+                        <div class="dwldbIcon">
+                            <a href="javascript:void(0)" class="trt">Download</a>
+                            <div class="dldtrRight"></div>
+                        </div>
+                        <a href="javascript:void(0)" class="brochureLink"
+                            ng-click="downloadPDF('broucher')">Brochure</a><a
+                            href="javascript:void(0)" class="policyLink"
+                            ng-click="downloadPDF('policy-document')">Sample draft</a>
+                            
+                    </div>
+                </div>
+                <!-- <div style="display:flex;">
+                <h2 class="">People who bought this also considered</h2>
+                <h2 class="" style="margin-left: 40%">ADD-ON YOU CAN OPT FOR</h2>
+                </div> -->
+                <!-- -this benefits are for male -->
+                <!-- ng-show="quoteDetails.gender=='Male' || quoteDetails.gender=='Other'" -->
+                <div class="row">
+                    <div class="col-md-9">
+                    <h2 class="text-left">People who bought this also considered</h2>
+                <div class="js-peoplewhoboughtSlide arrowPos owl-carousel" >
+                    <div class="benefitCard">
+                        <div data-target="#lifeModal" class="carouselCard benefit1" data-pop="1"  >
+                            <h3>Life Benefit</h3>
+                            <p class="readmore">Avail a lump sum benefit to secure your
+                                family financially.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                    </div>
+                    <!-- Eterm plus added new cover option -->
+                    <div class="benefitCard">
+                        <div data-target="#lifeBenifiteVoluntaryExistAdvantage" class="carouselCard benefit2" data-pop="2" >
+                            <h3>Life Benefit with Voluntary Exit Advantage</h3>
+                            <p class="readmore">Get an exit value equal to Total.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit benefitage-check">
+                            <span>{{benefitage_check_lbvea_age}}</span>
+                                
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        <div class="disableBenefit  benefitabove-cr-PT-lbvea" style="display: block;padding: 28px;font-weight: bold;"></div>
+                    </div>
+                    <div class="benefitCard">
+                        <div data-target="#lifeProtectBenefit" class="carouselCard benefit3" data-pop="3" >
+                            <h3>Life Protect Benefit</h3>
+                            <p class="readmore">Choose between increasing or decreasing your Sum Assured as per your goals.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        <div class="disableBenefit  benefitabove-cr-PT-lpb" style="display: block;padding: 28px;font-weight: bold;"></div>
+                    </div>
+                    <!--End  -->
+                    <div class="benefitCard">
+                        <div data-target="#incomeBModal" class="carouselCard benefit4" data-pop="4" >
+                        
+                            <h3>Income Benefit</h3>
+                            <p class="readmore">Take care of your family&rsquo;s living expenses
+                                with a monthly income</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        
+                        <div class="disableBenefit  benefitabove-cr-PT-ib">
+                            <!-- <div>{{errorMsgBenefit}}</div>		 -->	
+                        </div>
+                    </div>
+                    
+                    <div class="benefitCard">
+                        <div data-target="#accidentalModal" class="carouselCard benefit5" data-pop="5" >
+                            <h3>Accident Shield Benefit</h3>
+                            <p class="readmore">Financially protect your family in case of
+                                an unfortunate event.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit benefitage-check-temp">
+                            <span>{{benefitage_check_AccedentialDIsabilityCritical_age}}</span>
+                                
+                        </div> 
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        <div class="disableBenefit  benefitabove-cr-PT-asb"></div>
+                    </div>
+                    <div class="benefitCard">
+                        <div data-target="#disabilityModal" class="carouselCard benefit6" data-pop="6" >
+                            <h3>Disability Shield Benefit</h3>
+                            <p class="readmore">Secure your family&rsquo;s financial future even
+                                in an uncertainty like accidental disability.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit benefitage-check-temp">
+                            <span>{{benefitage_check_AccedentialDIsabilityCritical_age}}</span>
+                                
+                        </div> 
+                        <div class="disableBenefit benefitabove-cr ">
+                            <span>To avail this benefit, please take sum assured below
+                                or equal to 1 Crore and greater than or equal to 50 lac.</span>
+                                
+                                
+                        </div>
+                        
+                        <div class="disableBenefit  benefitabove-cr-PT-dsb">
+                            <!-- <div>{{errorMsgBenefit}}</div>		 -->	
+                        </div>
+                                        
+                    </div> 
+                                
+                    <div class="benefitCard">
+                        <div data-target="#criticalBModal" class="carouselCard benefit7" data-pop="7" >
+                            <h3>Critical Illness Protector Benefit</h3>
+                            <p class="readmore">Ensure that critical illnesses don&rsquo;t get
+                                in the way of your family&rsquo;s happiness and security.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit benefitabove-cr">
+                            <span>To avail this benefit, please take sum assured below
+                                or equal to 1 Crore and greater than or equal to 50 lac.</span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit benefitage-check-temp">
+                            <span>{{benefitage_check_AccedentialDIsabilityCritical_age}}</span>
+                                
+                        </div> 
+                        <div class="disableBenefit  benefitabove-cr-PT-cipb"></div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <h2 class="text-left addonOptTitle">Add on you can opt for</h2>
+                    <div class="benefitCard" >
+                        <div data-target="#premieumBreakOpt" class="carouselCard benefit9" style="margin-top: 35px;" data-pop="9">
+                            <h3 style="font-weight: 600;"> Premium Break Option</h3>
+                            <p class="readmore">Enjoy a maximum of 3 Annual Premium Breaks.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <!-- <div class="disableBenefit disableotherBenefit"></div> -->
+                        <div class="disableBenefit disableotherBenefit benefitpbo-check">
+                            <span>{{premieumBreakErrMSg}}</span>
+                                
+                        </div>
+                        <div class="disableBenefit  benefitabove-cr-PT-pbo"></div>
+                    </div>
+                
+                </div>
+            </div>
+                
+                
+                <!-- -this benefits are for female -->
+                
+                <!-- <div class="js-peoplewhoboughtSlide owl-carousel" ng-show="quoteDetails.gender=='Female'">
+                    <div class="benefitCard">
+                        <div data-target="#lifeModal" class="carouselCard benefit1" data-pop="1"  >
+                            <h3>Life Benefit</h3>
+                            <p class="readmore">Avail a lump sum benefit to secure your
+                                family financially.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                    </div>
+                    
+                    <div class="benefitCard">
+                        <div data-target="#criticalBModal" class="carouselCard benefit7" data-pop="7" >
+                            <h3>Critical Illness Protector Benefit</h3>
+                            <p class="readmore">Ensure that critical illnesses don&rsquo;t get
+                                in the way of your family&rsquo;s happiness and security.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit benefitabove-cr">
+                            <span>To avail this benefit, please take sum assured below
+                                or equal to 1 Crore and greater than or equal to 50 lac.</span>
+                        </div>
+                        <div class="disableBenefit  benefitabove-cr-PT-cipb"></div>
+                    </div>
+                    
+                     <div class="benefitCard">
+                        <div data-target="#accidentalModal" class="carouselCard benefit5" data-pop="5" >
+                            <h3>Accident Shield Benefit</h3>
+                            <p class="readmore">Financially protect your family in case of
+                                an unfortunate event.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        <div class="disableBenefit  benefitabove-cr-PT-asb"></div>
+                    </div> 
+                    
+                    <div class="benefitCard" ng-show="(quoteDetails.age>=18 && quoteDetails.age<=45)">
+                        <div data-target="#incomeBModal" class="carouselCard benefit6" data-pop="6" >
+                        
+                            <h3>Income Benefit</h3>
+                            <p class="readmore">Take care of your family&rsquo;s living expenses
+                                with a monthly income</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        <div class="disableBenefit  benefitabove-cr-PT-ib"></div>
+                    </div>
+                    <div class="benefitCard" ng-show="(quoteDetails.age>=46 && quoteDetails.age<=55)">
+                        <div data-target="#disabilityModal" class="carouselCard benefit4" data-pop="4" >
+                            <h3>Disability Shield Benefit</h3>
+                            <p class="readmore">Secure your family&rsquo;s financial future even
+                                in an uncertainty like accidental disability.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit benefitabove-cr">
+                            <span>To avail this benefit, please take sum assured below
+                                or equal to 1 Crore and greater than or equal to 50 lac.</span>
+                        </div>
+                        <div class="disableBenefit  benefitabove-cr-PT-dsb"></div>
+                    </div>
+                    
+                    <div class="benefitCard">
+                        <div data-target="#incomebPlusModal" class="carouselCard benefit3" data-pop="3" >
+                            <h3>Income Plus Benefit</h3>
+                            <p class="readmore">Additional Sum Assured to ease the burden
+                                of monthly expenses for your loved ones.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        <div class="disableBenefit  benefitabove-cr-PT-ipb"></div>
+                    </div>
+                    <div class="benefitCard">
+                        <div data-target="#incbReplaceModal" class="carouselCard benefit4"  data-pop="4" >
+                            <h3>Income Replacement Benefit</h3>
+                            <p class="readmore">Provide your family a replacement of
+                                monthly income</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit benefitage-check">
+                            <span>To avail this benefit, min age should be 20 and max
+                                age should be 50 </span>
+                        </div>
+                        <div class="disableBenefit  benefitabove-cr-PT-irb"></div>
+                    </div>
+                    
+                    <div class="benefitCard" ng-show="(quoteDetails.age>=46 && quoteDetails.age<=55)">
+                        <div data-target="#incomeBModal" class="carouselCard benefit6" data-pop="6" >
+                        
+                            <h3>Income Benefit</h3>
+                            <p class="readmore">Take care of your family&rsquo;s living expenses
+                                with a monthly income</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit disableotherBenefit"></div>
+                        <div class="disableBenefit  benefitabove-cr-PT-ib"></div>
+                    </div>
+                    
+                    <div class="benefitCard" ng-show="(quoteDetails.age>=18 && quoteDetails.age<=45)">
+                        <div data-target="#disabilityModal" class="carouselCard benefit4" data-pop="4" >
+                            <h3>Disability Shield Benefit</h3>
+                            <p class="readmore">Secure your family&rsquo;s financial future even
+                                in an uncertainty like accidental disability.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit benefitabove-cr">
+                            <span>To avail this benefit, please take sum assured below
+                                or equal to 1 Crore and greater than or equal to 50 lac.</span>
+                        </div>
+                        <div class="disableBenefit  benefitabove-cr-PT-dsb"></div>
+                    </div>
+                    
+                    <div class="benefitCard" ng-init="initilize()">
+                        <div data-target="#comprehensivehModel"
+                            class="carouselCard benefit8" data-pop="8" >
+                            <h3>Comprehensive Benefit</h3>
+                            <p class="readmore">Assure near-360-degree financial
+                                protection to your family members under any unfortunate event.</p>
+                            <a href="javascript:void(0)" class="morelink">Read more</a>
+                            <p class="amount visibility-hide">
+                                <span class="rupee">` </span><span class="number">{{quoteDetails.installmentPremiumAfterTax}}/</span>{{unit}}
+                            </p>
+                            <a href="javascript:void(0)" class="add">Add<span
+                                class="plus icon-plus"></span></a><a href="javascript:void(0)"
+                                class="icon-icon_remove delate"></a><span class="tick icon-right"></span>
+                        </div>
+                        <div class="disableBenefit benefitabove-cr">
+                            <span>To avail this benefit, please take sum assured below
+                                or equal to 1 Crore and greater than or equal to 50 lac.</span>
+                        </div>
+                        <div class="disableBenefit  benefitabove-cr-PT-cb"></div>
+                    </div>
+                    
+                
+                </div> -->
+                
+                <div class="text-center amtTxt">
+                    <div class="buttonwithAmt">
+                        <div class="amount">
+                            <span class="rupee">`</span><span class="rupeeAmt">{{quoteDetails.installmentPremiumAfterTax}}</span>
+                        </div>
+                        <a href="javascript:void(0)" class="defaultBtn blueBtn" (click)="!sumAMultipleof1000Error && !isError && !invalidAmount && goToInsurance()"><span>Buy
+                                policy now</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="coverModal" role="dialog" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" ng-click="sumAssuredAction('continue')" class="close icon-close">
+                        </button>
+                        <div class="coverContent">
+                            <p>
+                                Hey! Taking a Sum Assured above <span class="rupee">` </span>50
+                                lakhs will give you certain vital benefits that can secure your
+                                loved ones better.
+                            </p>
+                            <button class="defaultBtn blueBtn"
+                                ng-click="sumAssuredAction('increase')" data-dismiss="modal">
+                                <span>Increase my cover</span>
+                            </button>
+                            <button ng-click="sumAssuredAction('continue')"
+                                data-dismiss="modal" class="defaultBtn greyBtn">
+                                <span>Continue with existing cover</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="criticalBModal" role="dialog" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Critical Illness Protector
+                                Benefit</span><span class="popupsubHeader">Ensure that critical
+                                illnesses don&rsquo;t get in the way of your family&rsquo;s happiness and
+                                security.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="criticalContent">
+                                <div class="modalPadding incomeBContent">
+                                    <div class="benefitPoints">
+                                        <ul>
+                                            <li><span>100% </span>Sum Assured will be paid to take
+                                                care of your family in your absence</li>
+                                            <li>However, if unfortunately, you are diagnosed with a
+                                                critical illness covered in the policy (Refer to the product
+                                                brochure), the Sum Assured will be paid in fixed monthly
+                                                instalments instead.</li>
+                                            <li>The policy is terminated if either one of these
+                                                events occur and the Sum Assured is paid.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5>Select how your nominee would want to receive the Sum
+                                    Assured.</h5>
+                                <div class="sumAssured">
+                                    <div class="row">
+                                        <div class="col-xs-6 lumsumLeft">
+                                            <label class="radioBt active"><span
+                                                class="radioText icon-money_bag"></span><span class="tick"></span>
+                                                <input type="radio" name="sumAssured" ng-model="sumAssured"
+                                                value="1" checked> </label>
+                                            <h6 class="sumassureTitle">Lump Sum</h6>
+                                            <div ng-show="isShown('1')" class="lumsumeInfo">
+                                                <p>
+                                                    Nominee will get <span class="rupee">`</span><span>{{quoteDetails.sumAssured}}
+                                                    </span><span class="lInfobrk">lump sum at once</span>
+                                                </p>
+                                            </div>
+                                            <div class="dvdOR">
+                                                <span>OR</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label class="radioBt"><span
+                                                class="radioText icon-Wallet"></span><span class="tick"></span>
+                                                <input type="radio" name="sumAssured" ng-model="sumAssured"
+                                                value="2"> </label>
+                                            <h6 class="sumassureTitle">Income</h6>
+                                            <div ng-show="isShown('2')" class="selincTermfield">
+                                                <input id="incCri5" type="radio" name="skills" value="5"
+                                                ng-model="defaultValuesBenefits.benefit7_incomeTerm"
+                                                ng-checked="defaultValuesBenefits.benefit7_incomeTerm == 5"
+                                                    checked> <label for="incCri5">5yrs</label> 
+                                                    <!-- <input
+                                                    ng-model="defaultValuesBenefits.benefit7_incomeTerm"
+                                                    id="incCri10" type="radio" name="skills" value="10">
+                                                <label for="incCri10">10yrs</label> <input id="incCri15"
+                                                ng-model="defaultValuesBenefits.benefit7_incomeTerm"
+                                                    type="radio" name="skills" value="15"> <label
+                                                    for="incCri15">15yrs</label> <input id="incCri20"
+                                                    ng-model="defaultValuesBenefits.benefit7_incomeTerm"
+                                                    type="radio" name="skills" value="20"> <label
+                                                    for="incCri20">20yrs</label> -->
+                                                <div class="sumAssuredInfo">
+                                                    <p class="criassureInfo">
+                                                        Your nominee will get monthly income for <span class="yrs">5
+                                                        </span> years.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                <div ng-show="isError" class="errorOnPopup" style="padding-top:25px;"> {{errorMsg}}
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="buttonwithAmt">
+                                        <div class="amount ">
+                                            <span class="rupee ">`</span><span class="rupeeAmt">{{premiumAmount}}</span>
+                                        </div>
+                                        <a href="javascript:void(0)" data-pop="7"
+                                            class="defaultBtn blueBtn addBt" ng-click="addBenefit('7')"><span>Add Benefit</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div>
+            <div id="incomeBModal" role="dialog" class="modal fade" >
+                <div class="modal-dialog">
+                    <div class="modal-content incomeBpopup">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal"
+                                class="close icon-close"></button>
+                            <h2 class="modal-title incomeBheader">
+                                <span class="popupHeader">Income Benefit</span><span
+                                    class="popupsubHeader">Take care of your family&rsquo;s living
+                                    expenses with a monthly income.</span>
+                            </h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="popupContentWrap mCustomScrollbar">
+                                <div class="modalPadding incomeBContent">
+                                    <div class="benefitPoints">
+                                        <ul>
+                                            <li><span>10% </span>of the Sum Assured will be paid to
+                                                your family in case of an unfortunate event.</li>
+                                            <li>The remaining <span>90% </span>will be paid as a
+                                                level monthly instalment.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="selincTerm">
+                                        <h4>Select the Income term for your monthly instalment</h4>
+                                        <div class="selincTermfield">
+                                             <input id="inc5yr"
+                                                ng-model="defaultValuesBenefits.benefit2_incomeTerm"
+                                                type="radio" name="incbenefit" value="5"
+                                                 ng-checked="defaultValuesBenefits.benefit2_incomeTerm == 5"> <label
+                                                for="inc5yr">5yrs</label> 
+                                                <!-- <input id="inc10yr" type="radio"
+                                                    ng-model="defaultValuesBenefits.benefit2_incomeTerm"
+                                                name="incbenefit" value="10"> <label for="inc10yr">10yrs</label>
+                                            <input id="inc15yr" type="radio" name="incbenefit" 
+                                                ng-model="defaultValuesBenefits.benefit2_incomeTerm"
+                                            value="15">
+                                            <label for="inc15yr">15yrs</label> <input id="inc20yr"
+                                                ng-model="defaultValuesBenefits.benefit2_incomeTerm"
+                                                type="radio" name="incbenefit" value="20"> <label
+                                                for="inc20yr">20yrs</label> -->
+                                        </div>
+                                        <span> Your nominee will get monthly income for <span
+                                            class="yrs">5 </span> years.
+                                        </span>
+                                        
+                                       <div ng-show="isError" class="errorOnPopup" > {{errorMsg}}
+                                    </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="buttonwithAmt">
+                                            <div class="amount ">
+                                                <span class="rupee ">`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                            </div>
+                                            <a href="javascript:void(0)" data-pop="4"
+                                                class="defaultBtn blueBtn addBt" ng-click="addBenefit('4')"><span>Add Benefit</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="incomebPlusModal" role="dialog" class="modal fade" >
+            <div class="modal-dialog">
+                <div class="modal-content incomeBpopup">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Income Plus Benefit</span><span
+                                class="popupsubHeader">Additional Sum Assured to ease the
+                                burden of monthly expenses for your loved ones.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="modalPadding incomeBContent">
+                                <div class="benefitPoints">
+                                    <ul>
+                                        <li><span>100% </span>of Sum Assured will be paid as Lump
+                                            Sum to your family in case of an unfortunate event.</li>
+                                        <li>An additional <span>100% </span>of Sum Assured will be
+                                            paid in fixed monthly instalments as well.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="selincTerm">
+                                    <h4>Select the Income term for your monthly instalment</h4>
+                                    <div class="selincTermfield">
+                                        <input id="incPlus5" type="radio" name="plusbenefit" value="5" 
+                                         ng-checked="defaultValuesBenefits.benefit3_incomeTerm == 5"
+                                          ng-model="defaultValuesBenefits.benefit3_incomeTerm"
+                                            > <label for="incPlus5">5yrs</label>
+                                            <!--  <input
+                                            id="incPlus10" type="radio" name="plusbenefit" value="10">
+                                        <label for="incPlus10">10yrs</label> <input id="incPlus15"
+                                        ng-model="defaultValuesBenefits.benefit3_incomeTerm"
+                                        ng-model="defaultValuesBenefits.benefit3_incomeTerm"
+                                            type="radio" name="plusbenefit" value="15"> <label
+                                            for="incPlus15">15yrs</label> <input id="incPlus20"
+                                            ng-model="defaultValuesBenefits.benefit3_incomeTerm"
+                                            type="radio" name="plusbenefit" value="20"> <label
+                                            for="incPlus20">20yrs</label> -->
+                                    </div>
+                                    <span> Your nominee will get monthly income for <span
+                                        class="yrs">5 </span> years.
+                                    </span>
+                                
+                                    <div ng-show="isError" class="errorOnPopup"> {{errorMsg}}
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="buttonwithAmt">
+                                        <div class="amount ">
+                                            <span class="rupee">`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                        </div>
+                                        <a href="javascript:void(0)" data-pop="3"
+                                            class="defaultBtn blueBtn addBt" ng-click="addBenefit('3')"><span>Add Benefit</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="incbReplaceModal" role="dialog" class="modal fade" >
+            <div class="modal-dialog">
+                <div class="modal-content incomeBpopup incbReplacepopup">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Income Replacement Benefit</span><span
+                                class="popupsubHeader">Provide your family a replacement
+                                of monthly income.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="modalPadding incomeBContent">
+                                <div class="benefitPoints">
+                                    <ul>
+                                        <li>In case of an unfortunate event, monthly income (equal
+                                            to your Annual Income as declared during policy creation
+                                            divided by 12) will be paid till the Life Assured attains 60
+                                            years of age subject to a minimum term of 2 years.</li>
+                                    </ul>
+                                </div>
+                                <div class="selincTerm">
+                                <form name="policyForm" method="post">
+                                    <div class="annualIncpop">
+                                        
+                                        <div class="requiredField">
+                                            
+                                                <div ng-class="{'errorBlock': irbErrClass}" class="anuall col-sm-6">
+                                                <h5 class="annualincHead">Annual Income</h5>
+                                                    <input type="tel" name="fieldReqd" id="fReqd"
+                                                         required
+                                                        ng-model="defaultValuesBenefits.benefit4_totalPremium"
+                                                        maxlength="30"  ng-change="minAmnt(defaultValuesBenefits.benefit4_totalPremium)"
+                                                        placeholder="Please enter your annual income"
+                                                        class="textBox numberOnly">
+                                                        
+                                                </div>
+                                                
+                                                <h5 class="annualincHead">Policy Term</h5>
+                                                
+                                                
+                                                    <div ng-class="{'errorBlock':isError}"	class="active">
+                                    
+                                                        <!-- <select select
+                                                            ng-options="master.masterKey as master.masterKey for master in premiumTermMaster | filter:{masterType:'eTerm-Policy-term'}"
+                                                            ng-change="checkMaturiyAgeOnReplacement()"
+                                                            ng-model="defaultValuesBenefits.planTerm">
+                                                            
+                                                        </select> -->
+                                                        
+                                                        <input type="tel" name="planTerm" id="planTerm"
+                                                         
+                                                        ng-change="checkMaturiyAgeOnReplacement()"
+                                                        
+                                                        ng-model="defaultValuesBenefits.planTerm"
+                                                        maxlength="2"  
+                                                        ng-disabled="true"
+                                                        placeholder="Please enter Policy term"
+                                                        class="textBox numberOnly">
+                                                     
+                                                    </div>
+                                                    <div class="error inreplacementerr" ng-if="defaultValuesBenefits.benefit4_totalPremium<220000">{{irbIncomeErr}}</div>
+                                                    <div class="error inreplacementerr" ng-if="Inreplacementerr">{{errorMsgIR}}</div>
+                                               
+                                                <div class="inreplacementerr" ><h5 class="annualincHead">Sum assured</h5></div>
+                                                
+                                                <div ng-class="{'errorBlock': planValidation}" class="anuall">
+                                                
+                                                    <input type="tel" name="fieldReqd" id="fReqd"
+                                                         required
+                                                        ng-model="defaultValuesBenefits.sumassured"
+                                                        readonly
+                                                        placeholder="Sum assured"
+                                                        class="textBox numberOnly inptstyle">
+                                                </div>
+                                                <div class="error inreplacementerr" ng-if="planValidation">{{errorMsgPlan}}</div>
+                                               
+                                            <!-- </form> -->
+                                        </div>
+                                        <!-- <p class="sumAssure">Your sum assured will be based on your
+                                            annual income</p> -->
+                                      </div>
+                                    </form>
+                                    
+                                
+                                <div ng-show="isError" class="errorOnPopup" > {{errorMsg}}
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <a href="javascript:void(0)" data-pop="4"
+                                        class="defaultBtn blueBtn addBt" ng-click="!irbErrClass && !Inreplacementerr && !planValidation?addBenefit('4'):null"><span>Calculate</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accidentalModal" role="dialog" class="modal fade" >
+            <div class="modal-dialog">
+                <div class="modal-content incomeBpopup">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Accident Shield Benefit</span><span
+                                class="popupsubHeader">Financially protect your family in
+                                case of an unfortunate event.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="modalPadding incomeBContent accdntShield">
+                                <div class="benefitPoints">
+                                    <ul>
+                                        <li>The policy terminates once any one of the above events
+                                            takes place and the Sum Assured is paid.</li>
+                                        <li><span>100% </span>Sum Assured will be paid to take
+                                            care of your family in your absence.</li>
+                                        <li>In case of an unfortunate event that is caused due to
+                                            an accident, an <span class="boldOnly">additional Sum
+                                                Assured </span>chosen for Accidental death will be paid.
+                                        </li>
+                                        <li>Maximum Accidental Death Benefit is capped at INR 1 Crore. Please read the product brochure for more details</li>
+                                    </ul>
+                                    
+                                <div ng-show="isError" class="errorOnPopup" style="padding-top:25px;"> {{errorMsg}}
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="buttonwithAmt">
+                                        <div class="amount ">
+                                            <span class="rupee ">`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                        </div>
+                                        <a href="javascript:void(0)" data-pop="5"
+                                            class="defaultBtn blueBtn addBt" ng-click="addBenefit('5')"><span>Add Benefit</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Eterm plus changes -->
+        <div id="lifeBenifiteVoluntaryExistAdvantage" role="dialog" class="modal fade" >
+            <div class="modal-dialog">
+                <div class="modal-content incomeBpopup">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Life Benefit with Voluntary Exit Advantage</span><span
+                                class="popupsubHeader">Get an exit value equal to Total premiums paid, if you wish to exit the policy.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="modalPadding incomeBContent accdntShield">
+                                <div class="benefitPoints">
+                                    <ul>
+                                        <li>Get<span class="boldOnly"> 100%</span> Sum Assured upon death of the Life Assured</li>
+                                        <li>The nominee has an option to receive the sum assured either as lumpsum or in level monthly instalments over a period of 5/10/15/20 years.</li>
+                                        <li>In case all due premiums are paid, an exit value equal to total premiums paid will be payable to the policyholder on exercising the option of voluntary exit from policy. 
+                                        </li>
+                                        <li>The policyholder can exercise exit value option any time after:
+                                        <div style="padding: 1rem 2rem;">
+                                            <ul>
+                                            <li>Attained age of 65 years (age last birthday), or</li>
+                                            <li>After Paying 25 full year premiums, whichever is earlier</li>
+                                            </ul>
+                                        </div>
+                                        </li>
+                                        <li>Policy will be terminated, once exit value is paid out or death claim is settled</li>
+                                    </ul>
+                                    
+                             <div ng-show="isError" class="errorOnPopup" style="padding-top:25px;"> {{errorMsg}}
+                                    </div>
+                                    <div ng-show="quoteDetails.planTerm<35" class="errorOnPopup" style="padding-top:25px;"> Please increase policy term greater than or equal to 35
+                                    </div> 
+                                </div>
+                                <div class="text-center">
+                                    <div class="buttonwithAmt">
+                                        <div class="amount ">
+                                            <span class="rupee ">`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                        </div>
+                                        <a href="javascript:void(0)" data-pop="2"
+                                            class="defaultBtn blueBtn addBt" ng-click="addBenefit('2')" ><span>Add Benefit</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lifeProtectBenefit" role="dialog" class="modal fade" >
+            <div class="modal-dialog">
+                <div class="modal-content incomeBpopup">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Life Protect Benefit</span><span
+                                class="popupsubHeader">Choose between increasing or decreasing your Sum Assured as per your goals.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="modalPadding incomeBContent">
+                                <div class="selincTerm">
+                                    <h4>There are 3 variants available under this option. You
+                                        can choose any one of the variants for your policy:</h4>
+                                    <div class="">
+                                        <ul>
+                                            <li style="display: flex;"><input
+                                                ng-model="lifeProtectedBenefitOpt"
+                                                id="111" type="radio" name="lifeProtectedBenefitOpt" value="3a" ng-change="lifeProtectBenefitValueChange(lifeProtectedBenefitOpt)">
+                                                <label style="padding-left: 0.8rem; font-weight: 100 !important;font-size: 1.6rem !important;"for="1">Increasing Cover Option: Sum
+                                                    Assured increases by 5% p.a. simple rate from the 2nd year
+                                                    onwards, subject to maximum increase of 100% of Base Sum
+                                                    Assured</label></li>
+                                            <li style="display: flex;"><input id="222" type="radio"
+                                                ng-model="lifeProtectedBenefitOpt" ng-change="lifeProtectBenefitValueChange(lifeProtectedBenefitOpt)"
+                                                name="lifeProtectedBenefitOpt" value="3b"> <label style="padding-left: 0.8rem;font-weight: 100 !important;font-size: 1.6rem !important;" for="222">Decreasing
+                                                    Cover Option: Sum Assured reduces by 5% p.a. simple rate
+                                                    from the 2nd year onwards, subject to maximum reduction of
+                                                    50% of Base Sum Assured</label></li>
+                                            <li style="display: flex;"><!--ng-checked="defaultValuesBenefits.benefit8_incomeTerm == 20"  -->
+                                            <input id="333"
+                                                ng-model="lifeProtectedBenefitOpt" ng-change="lifeProtectBenefitValueChange(lifeProtectedBenefitOpt)"
+                                                type="radio" name="lifeProtectedBenefitOpt" value="3c">
+                                                <label style="padding-left: 0.8rem;font-weight: 100 !important;font-size: 1.6rem !important;" for="333">Life Stage Balance Cover Option:
+                                                    Sum Assured increases by 5% p.a. simple rate from the start
+                                                    of 2nd policy year onwards till 10th/15th/20th policy year
+                                                    for policy term 20, 30, & 40 years respectively, subject to
+                                                    a maximum increase of 100% of Base Sum Assured.</label></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <span> Your nominee will get monthly income for <span
+                                        class="yrs">5 </span>years.
+                                    </span> -->
+    
+                                     <div ng-show="checkLifeBenOpt" class="errorOnPopup">{{lifeBenOptErrorMSg}}
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="buttonwithAmt">
+                                        <div class="amount ">
+                                            <span class="rupee " >`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                        </div>
+                                        <a href="javascript:void(0)" data-pop="8"
+                                            class="defaultBtn blueBtn addBt" ng-click="addBenefit('3')"><span>Add Benefit</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="premieumBreakOpt" role="dialog" class="modal fade" >
+                <div class="modal-dialog">
+                    <div class="modal-content incomeBpopup">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal"
+                                class="close icon-close"></button>
+                            <h2 class="modal-title incomeBheader">
+                                <span class="popupHeader">Premium Break Option</span><span
+                                    class="popupsubHeader">Enjoy a maximum of 3 Annual Premium Breaks.</span>
+                            </h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="popupContentWrap mCustomScrollbar">
+                                <div class="modalPadding incomeBContent">
+                                    <div class="benefitPoints">
+                                        <ul>
+                                            <li>The policyholder can take a maximum of 3 Annual Premium breaks(holiday).</li>
+                                            <li>Premium Break Options</li>
+                                            <div style="padding: 0rem 4rem 2rem;" class="roman">
+                                            <ul>
+                                            <li style="padding-left:1rem;padding-bottom:2rem;">1st Premium Break for Policy Terms 11 to 21</li>
+                                            <li style="padding-left:1rem;padding-bottom:2rem;">2nd Premium Break for Policy Terms 22 to 33</li>
+                                            <li style="padding-left:1rem;padding-bottom:1rem;">3rd Premium Break for Policy Terms 34 to 40</li>
+                                            </ul>
+                                        </div>
+                                        <li>First/Second/Third Premium break can be availed any time after completion of First 10/21/33 policy years respectively, provided the policy is in-force</li>
+                                        <li>In case premium breaks are not availed by the policyholder, the accumulated premium breaks would be adjusted against the premiums payable in the last few years, as applicable.</li>
+                                        <li>1 Premium break is equal to 1 annual/2 half yearly/4 Quarterly/12 Monthly premiums</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <div class="buttonwithAmt">
+                                            <div class="amount ">
+                                                <span class="rupee ">`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                            </div>
+                                            <a href="javascript:void(0)" data-pop="9"
+                                                class="defaultBtn blueBtn addBt" ng-click="addAddons('9')"><span>Add Benefit</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End  -->
+        <div id="comprehensivehModel" role="dialog" class="modal fade" >
+            <div class="modal-dialog">
+                <div class="modal-content incomeBpopup">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Comprehensive Benefit</span><span
+                                class="popupsubHeader">Assure near-360-degree financial
+                                protection to your family members under any unfortunate event.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="modalPadding incomeBContent">
+                                <div class="benefitPoints">
+                                    <ul>
+                                        <li><span>100% </span>of the Sum Assured will be paid to
+                                            the family as a lump sum in case of an unfortunate event
+                                            during the policy term.</li>
+                                        <li>In case the unfortunate event is caused due to an
+                                            accident, an additional Sum Assured chosen for Accidental
+                                            death will be paid.</li>
+                                        <li>Upon Accidental and Total Permanent Disability of the
+                                            life assured, the Sum assured will be paid in fixed monthly
+                                            instalments.</li>
+                                        <li>If you are diagnosed with any critical illness covered
+                                            in the policy, the Sum Assured will be paid in fixed monthly
+                                            instalments.</li>
+                                        <li>The policy terminates once any one of the above events
+                                            takes place and the Sum Assured is paid.</li>
+                                    </ul>
+                                </div>
+                                <div class="selincTerm">
+                                    <h4>Select income term for your monthly payouts for the
+                                        accidental shield benefit which is a part of comprehensive plan
+                                        that you selected.</h4>
+                                    <div class="selincTermfield">
+                                        <input id="5yr" type="radio" name="comprbenefit" value="5"
+                                        ng-model="defaultValuesBenefits.benefit8_incomeTerm"
+                                         ng-checked="defaultValuesBenefits.benefit8_incomeTerm == 5"
+                                            checked> <label for="5yr">5yrs</label>
+                                             <!-- <input
+                                             ng-model="defaultValuesBenefits.benefit8_incomeTerm"
+                                             ng-checked="defaultValuesBenefits.benefit8_incomeTerm == 10"
+                                            id="10yr" type="radio" name="comprbenefit" value="10">
+                                        <label for="10yr">10yrs</label> 
+                                        <input id="15yr" type="radio" 
+                                        ng-checked="defaultValuesBenefits.benefit8_incomeTerm == 15"
+                                        ng-model="defaultValuesBenefits.benefit8_incomeTerm"
+                                            name="comprbenefit" value="15"> <label for="15yr">15yrs</label>
+                                        <input id="20yr" ng-model="defaultValuesBenefits.benefit8_incomeTerm" type="radio" name="comprbenefit" value="20"
+                                        ng-checked="defaultValuesBenefits.benefit8_incomeTerm == 20">
+                                        <label for="20yr">20yrs</label> -->
+                                    </div>
+                                    <span> Your nominee will get monthly income for <span
+                                        class="yrs">5 </span>years.
+                                    </span>
+                                    
+                                <div ng-show="isError" class="errorOnPopup" > {{errorMsg}}
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="buttonwithAmt">
+                                        <div class="amount ">
+                                            <span class="rupee " >`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                        </div>
+                                        <a href="javascript:void(0)" data-pop="8"
+                                            class="defaultBtn blueBtn addBt" ng-click="addBenefit('8')"><span>Add Benefit</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="disabilityModal" role="dialog" class="modal fade" >
+            <div class="modal-dialog">
+                <div class="modal-content incomeBpopup">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Disability Shield Benefit</span><span
+                                class="popupsubHeader">Secure your family&rsquo;s financial
+                                future even in an uncertainty like accidental disability.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="modalPadding incomeBContent">
+                                <div class="benefitPoints">
+                                    <ul>
+                                        <li><span>100% </span>Sum Assured will be paid to take
+                                            care of your family in your absence.</li>
+                                        <li>However, upon Accidental Total and Permanent
+                                            Disability of the life assured, the Sum assured will be paid
+                                            in fixed monthly instalments instead.</li>
+                                        <li>The policy is terminated if either one of these events
+                                            occur and the Sum Assured is paid.</li>
+                                    </ul>
+                                </div>
+                                <div class="selincTerm">
+                                    <h4>Select the Income term for your monthly instalment</h4>
+                                    <div class="selincTermfield">
+                                        <input id="dis5yr" type="radio" name="disablebenefit" value="5"
+                                        ng-model="defaultValuesBenefits.benefit6_incomeTerm"
+                                        ng-checked="defaultValuesBenefits.benefit6_incomeTerm == 5"
+                                            checked> <label for="dis5yr">5yrs</label>
+                                            <!--  <input
+                                            ng-model="defaultValuesBenefits.benefit6_incomeTerm"
+                                            id="dis10yr" type="radio" name="disablebenefit" value="10">
+                                        <label for="dis10yr">10yrs</label> <input id="dis15yr"
+                                        ng-model="defaultValuesBenefits.benefit6_incomeTerm"
+                                            type="radio" name="disablebenefit" value="15"> <label
+                                            for="dis15yr">15yrs</label> <input id="dis20yr" type="radio"
+                                            ng-model="defaultValuesBenefits.benefit6_incomeTerm"
+                                            name="disablebenefit" value="20"> <label for="dis20yr">20yrs</label> -->
+                                    </div>
+                                    <span> Your nominee will get monthly income for <span
+                                        class="yrs">5 </span> years.
+                                    </span>
+                                    
+                                    <div ng-show="isError" class="errorOnPopup"> {{errorMsg}}
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="buttonwithAmt">
+                                        <div class="amount ">
+                                            <span class="rupee ">`</span><span class="rupeeAmt">{{premiumAmount}}</span>/{{unit}}
+                                        </div>
+                                        <a href="javascript:void(0)" data-pop="6"
+                                            class="defaultBtn blueBtn addBt" ng-click="addBenefit('6')"><span>Add Benefit</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="smokerPopup" role="dialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content incomeBpopup">
+    
+                <div class="modal-body">
+                    <div>
+                        <div class="modalPadding incomeBContent">
+                            <div class="selincTerm">
+                                <h4>You have declared yourself as a non-smoker. Please note
+                                    that you need to mark your self as a smoker even if you smoke
+                                    occasionally. Declaring yourself as a smoker at a later stage
+                                    could increase your premium amount and you will be required to
+                                    pay the balance amount at a later stage.</h4>
+                            </div>
+                            <div class="text-center">
+                                <button class="defaultBtn blueBtn submit"
+                                    ng-click="goToInsurance(true)">Yes, I accept</button>
+                                <button class="defaultBtn blueBtn submit"
+                                    ng-click="changeSmoker()">No, I would like to change</button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="lifeModal" role="dialog" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                        <h2 class="modal-title incomeBheader">
+                            <span class="popupHeader">Life Benefit</span><span
+                                class="popupsubHeader">Avail a lump sum benefit to secure
+                                your family financially.</span>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popupContentWrap mCustomScrollbar">
+                            <div class="criticalContent">
+                                <div class="modalPadding incomeBContent">
+                                    <div class="benefitPoints">
+                                        <ul>
+                                            <li><span>100% </span>of the Sum Assured will be paid to
+                                                the family as Lump Sum in case of an unfortunate event during
+                                                the policy term.</li>
+                                        </ul>
+                                    </div>
+                                
+                                <div ng-show="isError" class="errorOnPopup" > {{errorMsg}}
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <a href="javascript:void(0)" data-pop="1"
+                                        class="defaultBtn blueBtn addBt" ng-click="addBenefit('1')"><span>Add Benefit</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+    <!-- <ng-include src="'../views/templates/footer.html'" />
+    <ng-include src="'../views/templates/help_section.html'" /> -->
+    <!-- <div class="overlay"></div>
+    <div class="loaderOverlay"></div> -->
+    <div id="loaderDiv" *ngIf="showLoader"> 
+        <img src="/assets/images/loader.svg" class="ajax-loader"/>
+        </div>
+    
+        <!-- <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+    
+        var config = {
+    
+        apiKey: "AIzaSyCLLfVveJTaKScTahpR82UgOz_-CdJk39w",
+    
+        authDomain: "ifl-push-project.firebaseapp.com",
+    
+        databaseURL: "https://ifl-push-project.firebaseio.com",
+    
+        projectId: "ifl-push-project",
+    
+        storageBucket: "ifl-push-project.appspot.com",
+    
+        messagingSenderId: "1013272750698"
+    
+        };
+    
+        firebase.initializeApp(config);
+    
+        </script> -->
+    
+    <!--  <ng-include src="'../views/templates/footer.html'" /> -->
+    

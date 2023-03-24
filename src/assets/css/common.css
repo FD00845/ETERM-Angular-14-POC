@@ -1,0 +1,83 @@
+/* html { font-size: 62.5%; }
+body { font-family: arial; color: #939393; }
+* { margin: 0; padding: 0; line-height: 1; list-style: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); border: none; -webkit-border-radius: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -ms-text-size-adjust: 100%; 2 -webkit-font-smoothing: antialiased; } */
+.etermLiveChat a { text-decoration: none; outline: none; color: #0062a8; }
+.etermLiveChat .yesFirst a { color: inherit; }
+.etermLiveChat a.selected { color: #333; cursor: default; }
+.etermLiveChat a:hover.selected { text-decoration: none; }
+.etermLiveChat img { border: none; }
+/* html { width: 100%; height: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; } */
+/* .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; width: 100%; }
+* html .clearfix { height: 1%; }
+.clear { font-size: 1%; height: 0; line-height: 0; width: 0; float: none; clear: both; }
+html[xmlns] .clearfix {display: block; } */
+.etermLiveChat input, textarea { outline: none }
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, section, summary, mark { float: left; width: 100%; clear: both; }
+.fl { float: left; }
+.fr { float: right; }
+input[type=submit], input[type=button] { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+ .textBoxinput::-ms-clear, .textBoxarea::-ms-clear {display: none;}
+ 
+/*Web Fonts*/
+
+@font-face { font-family: 'Whitney-Book'; src: url("../fonts/Whitney-Book.eot"); src: url("../fonts/Whitney-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/Whitney-Book.woff2") format("woff2"), url("../fonts/Whitney-Book.woff") format("woff"), url("../fonts/Whitney-Book.ttf") format("truetype"), url("../fonts/Whitney-Book.svg#Whitney-Book") format("svg"); font-weight: 500; font-style: normal;font-display: swap; }
+@font-face { font-family: 'icomoon'; src: url("../fonts/icomoon.ttf?bro1wp") format("truetype"), url("../fonts/icomoon.woff?bro1wp") format("woff"), url("../fonts/icomoon.svg?bro1wp#icomoon") format("svg"); font-weight: normal; font-style: normal;font-display: swap;}
+@font-face {font-family: 'Whitney-Medium'; src: url("../fonts/Whitney-Medium.eot"); src: url("../fonts/Whitney-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Whitney-Medium.woff2") format("woff2"), url("../fonts/Whitney-Medium.woff") format("woff"), url("../fonts/Whitney-Medium.ttf") format("truetype"), url("../fonts/Whitney-Medium.svg#Whitney-Medium") format("svg"); font-weight: 500; font-style: normal; }
+/*Web Fonts*/
+
+.msgWindow.relativePos{bottom:20px;}
+.etermLiveChat .wrapper { width: 100%; margin: 0px auto; }
+.etermLiveChat .wrapContainer { width: 100%; float: left; padding: 27px; }
+.etermLiveChat .formContainer, .inputfieldDiv, .header, .searchAgentdiv, .closechatdiv, .chatdiv, .agentNamediv, .chatRow, .msgWindow { width: 100%; float: left; }
+.etermLiveChat .header { border-bottom: 3px solid #0094de; padding: 0 0 10px; position: relative; }
+.etermLiveChat .headerIcon { width: 92px; float: left; }
+.etermLiveChat .headerIcon img { width: 100%; }
+.etermLiveChat .headerTxt { width: 65%; float: left; text-transform: uppercase; padding: 0 0 0 15px; }
+.etermLiveChat .headerTxt h1 { color: #0094de; font-family: 'Whitney-Medium'; font-size: 2.2em; width: 100%; float: left; line-height: 28px; }
+.etermLiveChat .headerTxt span { color: #003869; font-family: 'Whitney-Book';   font-size: 1em !important; }
+.etermLiveChat .liveHelpclose { width: 10px; height: 10px; position: absolute; right: 0; background: url("../images/live-help-sprite.png") no-repeat 0 -18px; cursor: pointer; }
+.etermLiveChat .formContainer { padding: 15px 0; }
+.etermLiveChat .inputfieldDiv { padding: 10px 0; }
+.etermLiveChat .textBoxinput { background: none; border-bottom: 1px dashed #c4c4c4; height: 30px; width: 100%; font-family: 'Whitney-Book'; font-size: 1.2em; color: #939393; line-height: 30px; padding: 0;}
+.etermLiveChat .errorMsg { font-family: 'Whitney-Book'; font-size: 1.1em; color: #f00; padding: 5px 0 0; width: 100%; float: left; }
+.etermLiveChat .relativePos { position: relative; }
+/*.submitBtn::after { content: ""; display: inline-block; font-family: "icomoon"; margin: 0; position: absolute; right: 15px;top: 50%; transform: translateY(-50%); font-size: 1.4em; }*/
+.etermLiveChat .submitBtn { background: #003869; clear: both; color: #fff; float: left; font-size: 1.4em; /*padding: 10px 40px 10px 20px;*/padding: 0px 40px 0px 20px; height: 40px; line-height: 40px;  position: relative; text-transform: uppercase; z-index: 1; }
+.etermLiveChat .submitBtn::after { content: ""; display: inline-block; font-family: "icomoon"; margin: 0; position: absolute; right: 15px; font-size: 1.4em; }
+.etermLiveChat .searchAgentdiv { padding: 50px 0; }
+.etermLiveChat .searchAgentwrap, .closechatwrap { margin: 0 auto; max-width: 234px; text-align: center; width: 100%; }
+.etermLiveChat .agentIcon { width: 29px; height: 36px; background: url("../images/live-help-sprite.png") no-repeat 0 -37px; margin: 0px auto; display: block; }
+.etermLiveChat .searchAgentwrap p { font-family: 'Whitney-Book'; font-size: 2.2em; color: #003869; line-height: 25px; padding: 10px 0 15px; text-transform: uppercase; }
+.etermLiveChat .loader { width: 45px; margin: 0px auto; display: block; }
+.etermLiveChat .loader img{width: 100%;}
+.etermLiveChat .closechatdiv { padding: 80px 0; }
+.etermLiveChat .closechatwrap p { color: #0094de; font-family: 'Whitney-Medium'; font-size: 2.5em; width: 100%; float: left; line-height: 28px; }
+.etermLiveChat .closechatwrap .closechatLinksdiv{max-width: 100px; width: 100%; margin: 0 auto;}
+.etermLiveChat .closechatwrap .closechatLinks { width: 50%; float: left; font-family: 'Whitney-Book'; font-size: 2.0em; color: #003869; text-transform: uppercase; padding: 30px 0 0; }
+.etermLiveChat .agentNamediv { padding: 15px 0; }
+.etermLiveChat .agentNamediv span.agentnameIcon { width: 57px; height: 57px; border: 1px solid #cccccc; float: left; background: url("../images/live-help-sprite.png") no-repeat 0 -150px; margin: 0 25px 0 0; }
+.etermLiveChat .agentNamediv h2 { color: #0094de; font-family: 'Whitney-Medium'; font-size: 2.5em; width: auto; line-height: 28px; float: left;}
+.etermLiveChat .agentNamediv h2 span { color: #003869; font-family: 'Whitney-Book'; font-size: 0.6em; width: 100%; display: block; font-weight: normal; }
+.etermLiveChat .chatRow { color: #717171; padding: 0 0 25px 0; }
+.etermLiveChat .chatRow .chatNameagent,.chatRow .chatNamevisitor  { font-family: "Whitney-Medium"; font-size: 1.3em; font-weight: bold; }
+.etermLiveChat .chatRow .chatMsg { font-family: 'Whitney-Book'; font-size: 1.5em; }
+.etermLiveChat .chatRowvisitor { color: #0094de; }
+.etermLiveChat .msgWindow { border: 1px solid #c4c4c4; padding:5px 10px; }
+.etermLiveChat .msgInput { color: #717171; width: 98%; font-style: italic; font-family: 'Whitney-Book'; font-size: 1.3em; line-height: 26px; height: 26px;}
+.etermLiveChat .msgAttachicon { width: 11px; height: 12px; background: url("../images/live-help-sprite.png") no-repeat 0 -117px; position: absolute; right: 10px; top: 12px; }
+
+/*Media Starts*/
+@media only screen and (max-width: 1024px) {
+}
+ @media only screen and (max-width: 767px) {
+}
+ @media only screen and (max-width: 640px) {
+ 	.etermLiveChat .textBoxinput,.msgInput{font-size: 1.4em;}
+}
+ @media only screen and (max-width: 480px) {
+}
+ @media only screen and (max-width: 479px) {
+.etermLiveChat .searchAgentwrap, .closechatwrap { max-width: 100%; }
+
+}

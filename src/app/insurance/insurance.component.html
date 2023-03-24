@@ -1,0 +1,483 @@
+ 
+<div class="inside">
+    <script>
+    /* window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+          'event':'virtualPageView',
+          'page':{
+            'title':'Insurance page',
+            'url':'/insurance'
+          }
+        }); */
+    </script>
+    <header>
+                    <div class="premiumHeader insuranceDetails">
+                        <div class="container">
+                            <div class="logoContentWrap clearfix"><a href="javascript:void(0)" class="logo"><img src="/assets/images/indiaFirstLogo.png" alt="logo"></a></div>
+                            <div class="navContent">
+                                <div class="back"><a href="" class="navBack icon-close"> </a></div>
+                                <div class="navWrap"> 
+                                </div>
+                                <div class="profileInfo profilMob2">
+                                    <ul>
+                                        <li> <span>{{quoteDetails.gender}}</span></li>
+                                        <li><span>{{quoteDetails.age}} yrs old</span></li>
+                                        <li><span>{{quoteDetails.isSmoke?"Smoker":"Non Smoker"}}</span></li>
+                                        <li><a   href="javascript:void(0)" type="button" data-toggle="modal" data-target="#profModal" class="editBt">Edit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="Proficon preCalProfile"><span class="icon-edit_profile"></span></div>
+                        </div>
+                    </div>
+                </header>
+            
+                <div id="profModal" role="dialog" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close icon-close"></button>
+                                <h2 class="modal-title"><span>Profile</span></h2>
+                            </div>
+                            <div  class="modal-body calculatorData">
+                                <div class="onlineTermForm">
+                                    <div class="row">
+                                        <div class="col-md-7 col-sm-7">
+                                           
+                                    <div class="dobWrap">
+                                        <h6>Date of Birth<span style="color:red; margin-left: 1px;">*</span></h6> 
+                                        <ul class="dobList clearfix">
+                                            <li>
+                                                <input type="tel" [(ngModel)]="assuredDOB.day" placeholder="DD"
+                                                 maxlength="2" name="bdate" appOnlynumber 
+                                                  min="1" max="31" 
+                                                 class="birthDay dobTerm">
+                                                 <span hidden="" class="errorTxt">Please, enter days  between 1 to 31</span>
+                                            </li>
+                                            <li>
+                                                <input type="tel" [(ngModel)]="assuredDOB.month" placeholder="MM"
+                                                 maxlength="2" name="bmonth"  min="1" max="12" appOnlynumber
+                                                 class="birthMonth dobTerm">
+                                                 <span hidden="" class="errorTxt">Please, enter months in between 1 to 12</span>
+                                            </li>
+                                            <li>
+                                                <input type="tel" [(ngModel)]="assuredDOB.year" placeholder="YYYY" maxlength="4" name="byear" 
+                                                 min="1967" max="2005" class="birthYear dobTerm" appOnlynumber>
+                                                <span hidden="" class="errorTxt ng-binding">Please, enter years in between 1967 to 2005 </span>
+                                            </li>
+                                        </ul> 
+                                    </div> 
+                                        </div>
+                                        <div class="col-md-5 col-sm-5"> 
+                                            <h6>Smoking Habits<span class="icon-no-smoking"></span></h6>
+                                
+                                            <div class="toggleBt active">
+                                                <span class="chckCondition  label1"
+                                                    ng-class="{'white':!profileDetails.isSmoke}"><span
+                                                    class="spcfy1 icon-no-smoking"></span>No</span> <label class="switch">
+                                                    <input type="checkbox" ng-model="profileDetails.isSmoke">
+                                                    <div class="slider round"></div>
+                                                </label><span class="chckCondition label2"><span
+                                                    class="spcfy2 icon-smoking"></span>Yes</span>
+                                            </div>
+                                    <p>Say no if you haven&rsquo;t smoked in last 12 months</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                <div class="col-md-7 col-sm-7">
+                                    <h6>Gender</h6>
+                                    <ul class="clearfix">
+                                        <li><label class="radioBt "
+                                            ng-class="{'active':quoteDetails.gender=='Male'}"><span
+                                                class="radioText"><span class="radioIcon icon-male">
+                                                </span>Male</span> <input type="radio" name="gender" value="Male"
+                                                ng-model="quoteDetails.gender"> </label></li>
+                                        <li><label class="radioBt"
+                                            ng-class="{'active':quoteDetails.gender=='Female'}"><span
+                                                class="radioText"><span class="radioIcon icon-female"></span>Female</span>
+                                                <input type="radio" name="gender" value="Female"
+                                                ng-model="quoteDetails.gender"> </label></li>
+                                        <li><label class="radioBt"
+                                            ng-class="{'active':quoteDetails.gender=='Other'}"><span
+                                                class="radioText"><span class="radioIcon icon-others"></span>Other</span>
+                                                <input type="radio" name="gender" value="Other"
+                                                ng-model="quoteDetails.gender"> </label></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 col-sm-5">
+                                            <div class="mobCenter">
+                                                <button type="button" class="defaultBtn blueBtn submit" ng-click="updateQuoteDetails(quoteDetails)"><span>Get Quote</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper-content">
+                    <div class="insurancemWrapper">
+                        <div class="topCurve"></div>
+                        <div class="container">
+                            <div class="insuranceBlock forCurveSpacing titleWrap">
+                                <div class="titleBlock">
+                                    <h1>{{planName}}</h1><span class="subTitle">Tell us about yourself to help us process your policy.</span>
+                                   
+                                    <div class="progressBlock">
+                                        <div data-percent="15" data-duration="1000" class="progress-bar position"><div class="background" style="background-color: rgb(234, 234, 234);"></div><div class="rotate" style="background-color: rgb(107, 198, 243); transition: transform 1000ms linear 0s; transform: rotate(54deg);"></div><div class="left" style="background-color: rgb(234, 234, 234);"></div><div class="right" style="background-color: rgb(107, 198, 243);"></div><div class=""><span>15%</span></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div  class="insuDetailBlock">
+                                <div class="row">
+                                    <div class="col-md-4 right">
+                                        <div class="policyDetailBlock">
+                                            <div class="quoteDiv">
+                                             <div *ngIf="showDiscountMsg">
+                                                <h2 class="congo-hd" style="color: #f47920;font-size: 2rem;line-height: 3.3rem;font-family: Whitney-Bold;text-transform: capitalize;">Congratulations!!
+                                                <span *ngIf="quoteDetails.premiumTypeId!=385" style="font-family: Whitney-Medium;font-size: 1.6rem;line-height: 1.8rem;color: #00aeef;text-transform: none;">A special discount of 5% is applied on your first year premium!</span>
+                                                <span *ngIf="quoteDetails.premiumTypeId==385" style="font-family: Whitney-Medium;font-size: 1.6rem;line-height: 1.8rem;color: #00aeef;text-transform: none;">A special discount of 1% is applied on your premium!</span></h2>
+                                             </div> 
+                                            <span class="quoteId">Quote ID <span>{{quoteId}}</span></span>
+                                                <div class="premiumAmount">
+                                                    <p><span class="amt"><span class="rupee">`</span>{{installmentPremiumAfterTax}}<span class="grayColor">{{mode}}</span></span>(Premium incl. taxes & GST)</p>
+                                                </div> 
+                                            </div>
+                                            <div class="policyInfoBlock">
+                                                <div class="drawerArrow"></div>
+                                                <div class="policyInfo">
+                                                    <h4>{{planName}}</h4>
+                                                    <ul>
+                                                        <li><span class="labelName">Sum Assured Covered</span><span class="details coverdSum"><span class="rupee">`</span>{{sumAssured | number}}</span></li>
+                                                        <li><span class="labelName">Plan Option</span><div class="details"><div class="benefitdots">{{benefitsAdded}}</div></div></li>
+                                                        <li><span class="labelName">Policy Term</span><span class="details">{{termPlan}} Years</span></li>
+                                                        <li><span class="labelName">Proposal Date</span><span class="details">{{Proposaldate | date:'dd MMM yyyy'}}</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 left"> 
+                                            <div class="dwldBrochurewrap">
+                                                <div class="dwldBrochurecon">
+                                                    <div class="dwldbIcon"> <a href="#" class="trt">Download</a>
+                                                        <div class="dldtrRight"></div>
+                                                    </div><a href="javascript:void(0)"  class="brochureLink" ng-click="downloadPDF('broucher')">Brochure</a><a href="javascript:void(0)" class="policyLink" ng-click="downloadPDF('policy-document')">Policy Document</a>
+                                                </div>
+                                            </div>
+                                        <form #policyForm="ngForm" method="post" novalidate>
+                                            <div class="policyHolder">
+                                               <div class="row "> 
+                                                    <div class="col-sm-6 topPadding">
+                                                        <div [ngClass]="{'errorBlock': policyForm.controls['currentOrganization'] && policyForm.controls['currentOrganization'].touched && policyForm.controls['currentOrganization'].invalid}" class="inputEffect active">
+                                                            <label class="effectLabel">
+                                                             </label>
+                                                            <div class="selectOption">
+                                                            <select  required name="currentOrganization" select 
+                                                             [(ngModel)]="quoteDetails.eTermEmpType" (change)="setMinAnnual(quoteDetails.eTermEmpType)">
+                                                               <option value="" disabled="disabled">Select current organization</option>  
+                                                               <!-- ng-options="master.masterId as master.masterKey for master in masters | filter:{masterType:'eTerm-employee-type'}" -->
+                                                            </select>
+                                                            </div>
+                                                            <div *ngIf="(policyForm.controls['currentOrganization'] && policyForm.controls['currentOrganization'].touched) && (policyForm.controls['currentOrganization'].valid)" class="error">Please select current organization</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row controlWrap"> 
+                                                    <div class="col-sm-6 topPadding" >
+                                                    <div [ngClass]="{'errorBlock':policyForm.controls['annlInc'] && (policyForm.controls['annlInc'].touched) 
+                                                    && policyForm.controls['annlInc'].valid,'active': quoteDetails.annualIncome 
+                                                    || quoteDetails.annualIncome  == 0 || ((policyForm.controls['annlInc'] && policyForm.controls['annlInc'].touched) && quoteDetails.annualIncome < minAnnual)}" class="inputEffect">
+                                                      <label class="effectLabel star labelFocus"><span data-content="Approx annual income" class="placeHolder star">Approx annual income</span></label>
+                                                      <input  type="tel" appOnlynumber name="annlInc" id="annlInc" 
+                                                       (change)="setMinAnnual(quoteDetails.eTermEmpType)" [(ngModel)]="quoteDetails.annualIncome"
+                                                        required minlength="1" maxlength="15" class="textBox">
+                                                      <div *ngIf="policyForm.controls['annlInc'] && (policyForm.controls['annlInc'].touched) && policyForm.controls['annlInc'].invalid && (policyForm.controls['annlInc'].valid) && test !='annlInc'" class="error">Please enter approx annual income</div>
+                                                      <div id="annlInconly" *ngIf="policyForm.controls['annlInc'] && policyForm.controls['annlInc'].dirty && test =='annlInc'" class="error"></div>
+                                                      <div *ngIf="policyForm.controls['annlInc'] && (policyForm.controls['annlInc'].touched) && quoteDetails.annualIncome< minAnnual" class="error">
+                                                                          <span *ngIf="minAnnual==300000">
+                                                                          For salaried/professional customers, the minimum income limit is 3,00,000</span>
+                                                                          <span *ngIf="minAnnual==400000">
+                                                                          For businessman/self-employed, the minimum income limit is 4,00,000</span>
+                                                      </div>
+                                                                    
+                                                    </div>
+                                                    </div>
+                                                    
+                                              </div>
+                                              
+                                                <div class="existingCustomer">
+                                                    <p>Are you an existing customer of IndiaFirst Life</p>
+                                                   
+                                            <div class="toggleBt withoutIcon toggleBtnSmall active">
+                                                <span class="chckCondition label1" [ngClass]="{'white': !quoteDetails.checked}">
+                                                <span class="spcfy1"></span>No</span> 
+                                                <label class="switch">
+                                                 <input  type="checkbox" (change) ="ExistingMember?resetData():null" 
+                                                 [(ngModel)]="quoteDetails.checked"  (click)="ExistingCustomer(quoteDetails.checked)">
+                                                    <div class="slider round"></div>
+                                                </label><span class="chckCondition label2 " [ngClass]="{'white': !quoteDetails.checked}"><span
+                                                    class="spcfy2"></span>Yes</span>
+                                            </div>
+                                        </div>
+                                                <div *ngIf="ViewMember" class="controlWrap">
+                                                    <!-- [ngClass]="{'errorBlock':policyForm.controls['PolicyNo'].touched && policyForm.controls['PolicyNo'].invalid}" -->
+                                                    <div class="welcomeBlock">
+                                                        <h3>Welcome back! Skip the form by verifying yourself.</h3>
+                                                        
+                                                        <div class="row controlWrap">
+                                                        <div class=" topPadding">
+                                                        <div class="inputEffect active">
+                                                            <label class="effectLabel">Select Policy number or Client ID</label>
+                                                            <div class="selectOption">
+                                                            <select [(ngModel)]="quoteDetails1.policyOrClient"  name="policyOrClient" >
+                                                             <option value="" disabled >Select</option>
+                                                             <option value="PolicyNumber">Policy number</option> 
+                                                             <option value="ClientID">Client ID</option> 
+                                                               
+                                                            </select>
+                                                            <div *ngIf="policyForm.controls['policyOrClient'] && (policyForm.controls['policyOrClient'].touched) && (policyForm.controls['policyOrClient'].valid)" class="error">Policy number or Client ID</div>
+                                                        </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                        
+                                                        <div class=" verifyBlock blk">
+                                                            <div class="inputEffect bgGray">
+                                                                <label class="effectLabel">
+                                                                <span data-content="Enter Policy number or Client ID" class="placeHolder">Enter Policy number or Client ID</span></label>
+                                                                <input appOnlynumber maxlength="8" ng-required="!ExistingMember" name="PolicyNo" type="text" id="polno"
+                                                                [(ngModel)]="quoteDetails1.policyNumber" (focus)="clickfnctn('PolicyNo')" (blur)="clickfnctn('not')" (keydown)="keyfnctn('polno')"  class="textBox">
+                                                                <div *ngIf="policyForm.controls['PolicyNo'] && (policyForm.controls['PolicyNo'].touched) && (policyForm.controls['PolicyNo'].valid)" class="error">Policy enter Policy number or Client ID</div>
+                                                                <div *ngIf="policyForm.controls['PolicyNo'] && policyForm.controls['PolicyNo'].dirty && test =='PolicyNo'" id="alphanumeric" class="error"></div>
+                                                                <div *ngIf="policyForm.controls['PolicyNo'] && policyForm.controls['PolicyNo'].touched"
+                                                                            class="error">Maximum 8 numbers are allowed</div>
+                                                            </div> 
+                                                            <a  href="javascript:void(0)" class="defaultBtn blueBtn policyBtn"> <button ng-disabled="!quoteDetails1.policyNumber || !quoteDetails1.policyOrClient"
+                                                                (click)="getExistingCustomerData(quoteDetails1)">Get my data </button></a>
+                                                        </div> 
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="formWrapper">
+                                                <div class="row controlWrap">
+                                                    <div class="col-sm-6">
+                                                        <div [ngClass]="{'errorBlock': policyForm.controls['fullname'] && policyForm.controls['fullname'].touched && policyForm.controls['fullname'].invalid ,'active': !policyForm.controls['fullname']}" class="inputEffect">
+                                                            <label class="effectLabel star labelFocus">
+                                                                <span data-content="Full Name (First Last)" class="placeHolder">Full Name (First Last)</span>
+                                                            </label>
+                                                            <input name="fullname" (change)="setFirstAndLastName(quoteDetails.fullname);"
+                                                             nominee-full-name type="text" id="fname" [(ngModel)]="quoteDetails.fullname"
+                                                              required maxlength="50" minlength="3" (focus)="clickfnctn('fullname')"
+                                                               (blur)="clickfnctn('not')" (keydown)="keyfnctn('fname')" class="textBox">
+                                                                
+                                                                <div *ngIf="policyForm.controls['fullname'] && (policyForm.controls['fullname'].touched) && !policyForm.controls['fullname'].valid"
+                                                                            class="error">Please enter valid name</div>
+                                                                <div *ngIf="policyForm.controls['fullname'] && policyForm.controls['fullname'].touched" class="error"></div> 
+                                                           <div *ngIf="policyForm.controls['fullname'] && (policyForm.controls['fullname'].touched && !policyForm.controls['fullname'].valid)"
+                                                                            class="error">Please enter minimum 3 and maximum 50 characters to proceed</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row controlWrap">
+                                                    <div class="col-sm-5">
+                                                        <div [ngClass]="{'errorBlock':policyForm.controls['mobile'] && policyForm.controls['mobile'].touched && policyForm.controls['mobile'].invalid,'active': !policyForm.controls['mobile']}" class="inputEffect mob">
+                                                            <label class="effectLabel star labelFocus"><span data-content="Mobile number" class="placeHolder">Mobile number</span></label><span class="defaultNo">+91</span>
+                                                            <input type="tel" appOnlynumber name="mobile" id="mobno" [(ngModel)]="quoteDetails.mobile"
+                                                             required minlength="10" maxlength="10" ng-pattern="/^[6-9][0-9]{9}$/" 
+                                                             (keydown)="keyfnctn('mobno')"
+                                                             (focus)="clickfnctn('mobileno')" (blur)="clickfnctn('not')" class="textBox">
+                                                            <div *ngIf="policyForm.controls['mobile'] && (policyForm.controls['mobile'].touched) && !policyForm.controls['mobile'].valid && test !='mobileno' " class="error">Please enter valid Mobile Number</div>
+                                                            <div id="numonly" *ngIf="policyForm.controls['mobile'] && policyForm.controls['mobile'].dirty && test =='mobileno'" class="error"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5 topPadding">
+                                                        <div [ngClass]="{'errorBlock':policyForm.controls['email'] && policyForm.controls['email'].touched && policyForm.controls['email'].invalid, 'active': !policyForm.controls['email'] }" class="inputEffect">
+                                                            <label class="effectLabel star labelFocus"><span data-content="Email ID" class="placeHolder">Email ID</span></label>
+                                                            <input minlength="3" maxlength="50" name="email" valid-email type="email"
+                                                             [(ngModel)]="quoteDetails.email" required (focus)="clickfnctn('email')"
+                                                             (blur)="clickfnctn('not')" class="textBox">
+                                                        <div *ngIf="policyForm.controls['email'] && (policyForm.controls['email'].touched) && !policyForm.controls['email'].valid" class="error">Email is required</div>
+                                                            <div *ngIf="policyForm.controls['email'] && (policyForm.controls['email'].touched) && !policyForm.controls['email'].valid" class="error">Please enter valid Email ID</div>
+                                                              </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row controlWrap"> 
+                                                    <div class="col-sm-4">
+                                                        <div [ngClass]="{'errorBlock':policyForm.controls['pincode'] && policyForm.controls['pincode'].touched && policyForm.controls['pincode'].invalid,'active': !policyForm.controls['pincode'] }" class="inputEffect">
+                                                            <label class="effectLabel star labelFocus"><span data-content="Pin Code" class="placeHolder">Pin Code</span></label>
+                                                            <input type="tel" appOnlynumber name="pincode" id="pin" [(ngModel)]="quoteDetails.pincode" required minlength="6" maxlength="6"
+                                                            (focus)="clickfnctn('pin')" (blur)="changeCityState(quoteDetails.pincode)" 
+                                                             (blur)="clickfnctn('not')" (keydown)="keyfnctn('pin')" class="textBox">
+                                                            <div *ngIf="policyForm.controls['pincode'] && (policyForm.controls['pincode'].touched) && !policyForm.controls['pincode'].valid" class="error">Please enter valid Pincode</div>
+                                                            <div id="pinonly" *ngIf="policyForm.controls['pincode'] && policyForm.controls['pincode'].dirty && test =='pin'" class="error"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 topPadding">
+                                                        <div [ngClass]="{'errorBlock':policyForm.controls['state'] && policyForm.controls['state'].touched && policyForm.controls['state'].invalid}" class="inputEffect active">
+                                                            <label class="effectLabel  labelFocus"><span data-content="State" class="placeHolder">State</span></label>
+                                                            <div class="selectOption">
+                                                            <select  required name="state" select 
+                                                            [(ngModel)]="quoteDetails.state" >
+                                                               <option value="">Select State</option> 
+                                                               <!-- ng-options="master.genericMasterId as master.masterKey for master in masters | filter:{masterType:'state'}" -->
+                                                            
+                                                            </select>
+                                                            </div>
+                                                            <div *ngIf="policyForm.controls['state'] && (policyForm.controls['state'].touched) && !policyForm.controls['state'].valid" class="error">Please select State</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 topPadding">
+                                                        <div [ngClass]="{'errorBlock':policyForm.controls['city'] && policyForm.controls['city'].touched && policyForm.controls['city'].invalid}" class="inputEffect active">
+                                                            <label class="effectLabel labelFocus"><span data-content="City" class="placeHolder">City</span></label>
+                                                            <div class="selectOption">
+                                                            <select  required name="city" select 
+                                                            [(ngModel)]="quoteDetails.city">
+                                                             <!-- ng-options="master.genericMasterId as master.masterKey for master in masters | filter:{masterType:'City'}"-->
+                                                               <option value="">Select City</option>  
+                                                            </select> 
+                                                            </div>
+                                                            <div *ngIf="policyForm.controls['city'] && (policyForm.controls['city'].touched) && !policyForm.controls['city'].valid" class="error">Please select City</div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <div class="row controlWrap ng-scope" *ngIf="quoteDetails.productID!=7">
+                                            <div class="BiTnc">
+                                            <div class="BiTncOuterDiv">
+                                            <div class="BiTncInnerDiv">
+                                                <div class="biTncHeader">
+                                                    
+                                                    <div>Premium Quote Declaration</div>
+                                                </div>
+                                                
+                                                <div ng-if="quoteDetails.riskCoverOption==1 || quoteDetails.riskCoverOption==6 ||
+                                                quoteDetails.riskCoverOption==7 || quoteDetails.riskCoverOption==8 || quoteDetails.riskCoverOption==9">
+                                                <ul class="optionTncList" >
+                                                        <li>1. Please consult our 'Insurance Consultant' for any clarifications on this premium quote.</li>
+                                                        <li>2. Annualized Premium excludes underwriting extra premium, frequency loadings on premiums, the premiums paid towards the riders, if any, and Goods and Services Tax.</li>
+                                                        <li>3. Refer Sales Literature for explantion of terms used in the Premium Quote and more details on risk factors, exclusions and other terms and conditions about the product.</li>
+                                                        <li>4. Premiums payable maybe eligible for tax benefits as per Income Tax Act (as applicable from time to time).</li>
+                                                        <li>5. All benefits payable under the Policy maybe subject to the tax laws and other financial enactments, as applicable from time to time.</li>
+                                                        <li>6. The Company declares that it may charge extra premium subject to underwriting of proposal before the acceptance of risk.</li>
+                                                </ul><!-- end ngIf: quoteDetails.selectedPlanMasterId==8||quoteDetails.selectedPlanMasterId==6 || quoteDetails.selectedPlanMasterId==4||quoteDetails.selectedPlanMasterId==2||quoteDetails.selectedPlanMasterId==1 -->	
+                                                </div>
+                                                <div ng-if="quoteDetails.riskCoverOption==2" >
+                                                <ul class="optionTncList" >
+                                                        <li>1. Please consult our 'Insurance Consultant' for any clarifications on this premium quote.</li>
+                                                        <li>2. Annualized Premium excludes underwriting extra premium, frequency loadings on premiums, the premiums paid towards the riders, if any, and Goods and Services Tax.</li>
+                                                        <li>3. Refer Sales Literature for explantion of terms used in the Premium Quote and more details on risk factors, exclusions and other terms and conditions about the product.</li>
+                                                        <li>4. Premiums payable maybe eligible for tax benefits as per Income Tax Act (as applicable from time to time).</li>
+                                                        <li>5. All benefits payable under the Policy maybe subject to the tax laws and other financial enactments, as applicable from time to time.</li>
+                                                        <li>6. The Company declares that it may charge extra premium subject to underwriting of proposal before the acceptance of risk.</li>
+                                                        <li>7. Option to receive back total premiums paid, after a specified point in the term of the policy. Please refer sales literature for more detail. </li>
+                                                </ul><!-- end ngIf: quoteDetails.selectedPlanMasterId==8||quoteDetails.selectedPlanMasterId==6 || quoteDetails.selectedPlanMasterId==4||quoteDetails.selectedPlanMasterId==2||quoteDetails.selectedPlanMasterId==1 -->	
+                                                </div>
+                                                <div ng-if="quoteDetails.riskCoverOption==3 || quoteDetails.riskCoverOption==4 || quoteDetails.riskCoverOption==5" >
+                                                <ul class="optionTncList" >
+                                                        <li>1. Please consult our 'Insurance Consultant' for any clarifications on this premium quote.</li>
+                                                        <li>2. Annualized Premium excludes underwriting extra premium, frequency loadings on premiums, the premiums paid towards the riders, if any, and Goods and Services Tax.</li>
+                                                        <li>3. Refer Sales Literature for explantion of terms used in the Premium Quote and more details on risk factors, exclusions and other terms and conditions about the product.</li>
+                                                        <li>4. Premiums payable maybe eligible for tax benefits as per Income Tax Act (as applicable from time to time).</li>
+                                                        <li>5. All benefits payable under the Policy maybe subject to the tax laws and other financial enactments, as applicable from time to time.</li>
+                                                        <li>6. The Company declares that it may charge extra premium subject to underwriting of proposal before the acceptance of risk.</li>
+                                                        <div ng-if="quoteDetails.riskCoverOption=='3'">
+                                                        <li>7. Sum Assured increases by 5% p.a. simple from the start of 2nd year onwards, subject to a maximum increase of 100% of Base Sum Assured. </li>
+                                                        </div>
+                                                        <div ng-if="quoteDetails.riskCoverOption=='4'">
+                                                        <li>7. Sum Assured reduces by 5% p.a. simple from the start of 2nd year onwards, subject to a maximum reduction of 50% of Base Sum Assured.</li>
+                                                        </div>
+                                                        <div ng-if="quoteDetails.riskCoverOption=='5'">
+                                                        <li>7. Sum Assured increases by 5% p.a. simple rate from the start of 2nd year till 20th policy year, subject to a maximum increase of 100% of Base Sum Assured. Thereafter, the Sum assured will reduce by 5% p.a.(of Base Sum Assured) simple rate, till the end of policy term.</li>
+                                                        </div>
+                                                </ul><!-- end ngIf: quoteDetails.selectedPlanMasterId==8||quoteDetails.selectedPlanMasterId==6 || quoteDetails.selectedPlanMasterId==4||quoteDetails.selectedPlanMasterId==2||quoteDetails.selectedPlanMasterId==1 -->	
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div> 
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <p class="checkBox" style="margin-bottom: .5rem;">
+                                                            <input id="authorize" ng-model="quoteDetails.desclaimerSelected"  ng-click="disclaimerClick()" type="checkbox">
+                                                            <label for="authorize">I authorize IndiaFirst Life to contact me overriding my registry on NDNC.</label>
+                                                        </p>
+                                                        <p class="checkBox disclaimerP ng-scope" style="margin-bottom: .5rem;" ng-if="quoteDetails.productID!=7">
+                                            <input id="gppDisclaimer1" ng-model="quoteDetails.desclaimerSelected2" type="checkbox" class="ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off"> <label for="gppDisclaimer1">I confirm that I have read the above Terms and Conditions</label>
+                                        </p>
+                                        
+                                        <p class="checkBox disclaimerP" style="margin-bottom: .5rem;" ng-if="quoteDetails.productID!=7">
+                                            <input id="gppDisclaimer2" ng-model="quoteDetails.desclaimerSelected3" type="checkbox" class="ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off"> 
+                                                <label for="gppDisclaimer2">I confirm that I have read and understood the 
+                                                                                <a ng-show="quoteDetails.selectedPlanMasterId==9 || quoteDetails.selectedPlanMasterId==10" ng-click="downloadBiPDFInNewTab(quoteDetails,policyForm)" class="ng-hide">Benefit Illustration </a>
+                                                                                <a ng-show="!(quoteDetails.selectedPlanMasterId==9 || quoteDetails.selectedPlanMasterId==10 || quoteDetails.productID==7)" ng-click="downloadBiPDFInNewTab(quoteDetails,policyForm)">Premium Quote </a>
+                                                                                <span ng-show="!(quoteDetails.selectedPlanMasterId==9 || quoteDetails.selectedPlanMasterId==10 || quoteDetails.productID==7)" class="icon-icon_downloads"></span>
+                                                </label>
+                                        </p>
+                                                        
+                                                         <br>
+                                                        <p class="monthlyNotice">
+                                                        *Please ensure that you fill the form and provide required document at the earliest.
+                                                        </p>
+                                                    </div>
+                                                </div> 
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="btnWrap"> 
+                                                            <a class="defaultBtn greyBtn" [routerLink]="[ '/premium' ]">Back</a>
+                                                        <!-- <a class="defaultBtn greyBtn"  ng-click="backToInsurance()">Back</a> -->
+                                                        <button ng-value="false"  class="defaultBtn blueBtn" ng-click="proceedToPayment(quoteDetails,policyForm)"> <span>Proceed </span>
+                                                        </button>
+                                                        <button ng-value="false"  class="defaultBtn blueBtn" ng-click="proceedToPayment(quoteDetails,policyForm,true)"> <span>Dummy BillDesk </span>
+                                                        </button>
+                                                        <button ng-value="false"  class="defaultBtn blueBtn" ng-click="proceedToPayment(quoteDetails,policyForm,true,true)"> <span>Dummy BOB </span>
+                                                        </button>
+                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start footer-->
+                 <!-- <ng-include src="'../views/templates/footer.html'" />
+                 <ng-include src="'../views/templates/help_section.html'" /> -->
+                <!-- <div class="overlay"></div>
+                <div class="loaderOverlay"></div> -->
+                <div class="loaderDiv" *ngIf="showLoader">
+                    <img src="/assets/images/loader.svg" class="ajax-loader"/>
+                </div>
+                
+                <!-- <div id="loaderDiv" ng-if="showLoader"> 
+                <img src="/assets/images/loader.svg" class="ajax-loader"/>
+                </div> -->
+            </div>
+            
+        <!-- <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+    
+        var config = {
+    
+        apiKey: "AIzaSyCLLfVveJTaKScTahpR82UgOz_-CdJk39w",
+    
+        authDomain: "ifl-push-project.firebaseapp.com",
+    
+        databaseURL: "https://ifl-push-project.firebaseio.com",
+    
+        projectId: "ifl-push-project",
+    
+        storageBucket: "ifl-push-project.appspot.com",
+    
+        messagingSenderId: "1013272750698"
+    
+        };
+    
+        firebase.initializeApp(config);
+    
+        </script> -->
