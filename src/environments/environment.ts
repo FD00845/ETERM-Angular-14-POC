@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:9090/onlineInsurance-rest/',//http://192.168.41.120/onlineInsurance-rest/
+  apiUrl: 'http://192.168.41.119:9800/',//http://192.168.41.120/onlineInsurance-rest/ //https://uat.indiafirstlife.com/onlineInsurance-rest/
   ase_Key : 'encyptAES25616Bit@Alhilal.lifeFD'
 };
 

@@ -40,17 +40,119 @@ export class TermLadingComponent implements OnInit {
         incomePeriod:5,
         riskCoverOptionEtermPlus:"1"
   }; 
- 
+
+ quote1={
+  "lifeAssuredDetail": {
+      "Salutation": "Mr.",
+      "FirstName": "Akash Name",
+      "MiddleName": "Kumar",
+      "LastName": "Kaushik",
+      "Address1": "RZ Block",
+      "Address2": "Extn Janakpuri",
+      "Landmark": "Near Janakpuri Mall",
+      "Gender": "Male",
+      "IsSmoker": true,
+      "DOB": "1994-01-01",
+      "EmailId": "akaushiK@yopmail.com",
+      "EmailId2": "mansi.naik@gmail.com",
+      "MobileNumber": "8906911089",
+      "MobileNumber2": "8906911089",
+      "Pincode": "387320",
+      "City": "Kheda",
+      "State": "Gujarat",
+      "nsap": false,
+      "cdf": false
+  },
+  "planSectionDetails": {
+      "SumAssured": 300000,
+      "PremiumPayingTerm": 1,
+      "AnnualPremiumAmount": 0,
+      "IsStaff": true,
+      "EmpoyeeCode": "Code101",
+      "EmpoyerName": "IndiaFirst Life",
+      "ProductName": "IndiaFirst Life Plan",
+      "PlanTerm": 10,
+      "IncomeBenefitOption": "Definite Income Option",
+      "InstallmentPremiumAmount": 50000,
+      "MonthlyIncomeBenefit": 0,
+      "GapPeriod": 0,
+      "IsRiderOpted": true,
+      "IsWOPRiderOpted": false,
+      "WOPTerm": 5,
+      "WOPRiskCover": "WOP on Death",
+      "IsTermRiderOpted": true,
+      "RiderSumAssured": 250000,
+      "RiderTerm": 6,
+      "PremiumFrequency": "Single",
+      "IncomePeriod": 0,
+      "PayoutGapYear": 0,
+      "IncomeOption": "5 Years",
+      "IsExtraLifeSelected": "",
+      "UIN": "143N054V04",
+      "PremiumType": "Single",
+      "RiskCoverOption": "1",
+      "PayOutOption": 0,
+      "DeathBenefit": "5 Years",
+      "Operation": "generateBI",
+      "ProposalStartDate": "2022-05-06",
+      "IsExistingCustomer": true,
+      "IsClientNumber": true,
+      "ClientNumber": "C10102",
+      "IsPolicyNumber": false,
+      "PolicyNumber": "P10102",
+      "FundFuturePremiumWithSurvivalBenefit": true,
+      "SurvivalPayoutAdjustmentForRenewalPremium": true,
+      "IncomePayoutFrequency": "Yearly",
+      "Source": "BlueChip"
+  },
+  "proposerDetail": {
+      "Salutation": "Mr.",
+      "FirstName": "Sanchit First",
+      "MiddleName": "Kumar",
+      "LastName": "Sharma",
+      "Address1": "Noida Sec 62",
+      "Address2": "Sunflower Society",
+      "Address3": "",
+      "Landmark": "near city center",
+      "Gender": "Male",
+      "IsSmoker": true,
+      "DOB": "2000-01-01",
+      "EmailId": "sanchit@yopmail.com",
+      "EmailId2": "test@gmail.com",
+      "MobileNumber": "8765432190",
+      "MobileNumber2": "9898989898",
+      "Pincode": "387320",
+      "City": "Kheda",
+      "State": "Gujarat",
+      "InsuranceType": "HUF",
+      "IsLAPR": false
+  },
+  "agentInformation": {
+      "partnerName": "GIRNAR INSURANCE BROKERS PRIVATE LIMITED",
+      "branchCode": "OB002",
+      "branchName": "GIRNAR INSURANCE BROKERS",
+      "channelCode": "SC1081",
+      "channelName": "Broker",
+      "partnerAgentCode": "CA000217",
+      "partnerAgentName": "GIRNAR INSURANCE BROKERS PRIVATE LIMITED",
+      "lgCode": "CA000217",
+      "lgName": "GIRNAR INSURANCE BROKERS PRIVATE LIMITED",
+      "spCode": "CA000217",
+      "spName": "GIRNAR INSURANCE BROKERS PRIVATE LIMITED",
+      "intermediaryLicenceNumber":"abcd000111",
+      "intermediaryLicenceCode":"abcd0002222"
+  }
+}
  showLoader =false; 
- Userdetails = {userName: "eTermUser", password: "Fulcrum#1", role: "BDM"};
+ Userdetails = {username: "Santosh", password: "123456"};
 
 generateToken(){ 
   this.showLoader =true;  
-  this.http.Post('token/generate',this.Userdetails).subscribe((respose:any)=>{
+  this.http.Post('buyonline-auth-service/auth/generateToken',this.Userdetails).subscribe((respose:any)=>{
     this.showLoader =false;
     this.toastr.success("token generated successfully...");
-    var tokenstr = "Token " + respose.Token;
-    this.commonser.setCookie("_tokenId", btoa(tokenstr)); 
+    var tokenstr = "Bearer " + respose.token;
+    //this.commonser.setCookie("Barer ", btoa(tokenstr)); 
    
     // this.http.GetWithToken('master/master-data-list?requestedPage=bi-page',tokenstr).subscribe((respose:any)=>{
     //   this.toastr.success("Masters fetching successfully..."); 
@@ -64,7 +166,7 @@ generateToken(){
     //   console.log(respose.data);
     // });  
 
-    this.http.PostWithToken('quoteDetails/generateETermPremium',this.quote,tokenstr).subscribe((respose:any)=>{
+    this.http.PostWithToken('buyonline-quote-service/generate/quote',this.quote1,tokenstr).subscribe((respose:any)=>{
          this.toastr.success("quote generated successfully..."); 
          this.router.navigate(['/premium'], {state: {data: this.quote}});
 
